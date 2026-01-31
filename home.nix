@@ -22,6 +22,23 @@
   programs.keepassxc.enable = true;  
   programs.vesktop.enable = true;
 
+  programs.git = {
+    enable = true;
+    settings = {
+      user = {
+        name = "GroboChan";
+        email = "230193800+grobo-chan@users.noreply.github.com";
+      };
+      init.defaultBranch = "main";
+    };
+    lfs.enable = true;
+  };
+
+  programs.gh = {
+    enable = true;
+    gitCredentialHelper.enable = true;
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

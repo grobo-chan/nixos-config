@@ -106,7 +106,6 @@
   environment.systemPackages = with pkgs; [
     vim
     wget
-    git
     htop
     alsa-utils
   ];
