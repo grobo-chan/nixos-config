@@ -28,8 +28,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot";
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelModules = [ "rtw89" "igc" ];
   hardware.enableRedistributableFirmware = true;
 
   networking.hostName = "grobo-nixos";
