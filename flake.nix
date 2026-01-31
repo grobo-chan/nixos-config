@@ -12,11 +12,16 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { nixpkgs, ... } @ inputs: {
+  outputs = { nixpkgs, ... } @ inputs:
+  let
+    system = "x86_64-linux";
+  in
+  {
 
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.grobo-nixos = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
+        { nixpkgs = { inherit system; config.allowUnfree = true; }; }
         ./configuration.nix
         inputs.home-manager.nixosModules.default
         inputs.nixos-hardware.nixosModules.lenovo-legion-16iax10h

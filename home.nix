@@ -6,8 +6,9 @@
 
   home.stateVersion = "25.11"; # DO NOT EDIT
 
-  home.packages = [
-
+  home.packages = with pkgs; [
+    hello
+    hello-unfree
   ];
 
   home.file = {

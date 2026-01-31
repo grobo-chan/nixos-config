@@ -93,7 +93,7 @@
   };
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { inherit inputs; inherit pkgs; };
     users = {
       "grobo" = import ./home.nix;
     };
@@ -101,13 +101,16 @@
 
   programs.firefox.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
+  environment.sessionVariables = {
+    NH_FLAKE = "/etc/nixos";
+  };
 
   environment.systemPackages = with pkgs; [
     vim
     wget
     htop
     alsa-utils
+    nh
   ];
 
   fileSystems."/mnt/windows-disk" = {
