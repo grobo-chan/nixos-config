@@ -22,7 +22,7 @@
       specialArgs = { inherit inputs; };
       modules = [
         { nixpkgs = { inherit system; config.allowUnfree = true; }; }
-        ./configuration.nix
+        ./hosts/grobo-nixos/configuration.nix
         inputs.home-manager.nixosModules.default
         inputs.nixos-hardware.nixosModules.lenovo-legion-16iax10h
       ];      
