@@ -111,6 +111,7 @@
     htop
     alsa-utils
     nh
+    hyfetch
   ];
 
   fileSystems."/mnt/windows-disk" = {
