@@ -9,6 +9,7 @@
   home.packages = with pkgs; [
     hello
     hello-unfree
+    gimp-with-plugins
   ];
 
   home.file = {
