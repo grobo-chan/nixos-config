@@ -1,18 +1,21 @@
-{ config, pkgs, lib, inputs, ... }:
-
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-    ];
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
+  imports = [
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+  ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   boot.loader.systemd-boot.enable = false;
   boot.loader.grub = {
     enable = true;
-    devices = [ "nodev" ];
+    devices = ["nodev"];
     useOSProber = true;
     efiSupport = true;
 
@@ -73,7 +76,7 @@
     shell = pkgs.bash;
     isNormalUser = true;
     description = "GroboChan";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       kdePackages.kate
     ];
@@ -91,7 +94,10 @@
   };
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs; inherit pkgs; };
+    extraSpecialArgs = {
+      inherit inputs;
+      inherit pkgs;
+    };
     users = {
       "grobo" = import ./home.nix;
     };
@@ -110,7 +116,11 @@
     alsa-utils
     nh
     hyfetch
+    alejandra
+    nixd
   ];
+
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   fileSystems."/mnt/windows-disk" = {
     device = "/dev/nvme0n1p3";
@@ -118,7 +128,7 @@
     options = ["noatime" "x-systemd.automount" "x-systemd.device-timeout=10" "x-systemd.idle-timeout=1min"];
   };
 
-  systemd.tmpfiles.rules = [ "d /mnt/windows-disk 0755 grobo wheel" ];
+  systemd.tmpfiles.rules = ["d /mnt/windows-disk 0755 grobo wheel"];
 
   system.stateVersion = "25.11"; # DO NOT EDIT
 }
