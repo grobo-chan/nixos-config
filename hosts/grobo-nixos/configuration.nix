@@ -120,7 +120,7 @@
     nixd
   ];
 
-  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
   fileSystems."/mnt/windows-disk" = {
     device = "/dev/nvme0n1p3";

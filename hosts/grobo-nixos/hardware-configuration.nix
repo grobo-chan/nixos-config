@@ -4,7 +4,17 @@
   pkgs,
   modulesPath,
   ...
-}: {
+}: let
+  cml-ucm-conf = pkgs.alsa-ucm-conf.overrideAttrs (old: {
+    postInstall =
+      (old.postInstall or "")
+      + ''
+        mkdir -p $out/share/alsa/ucm2/HDA
+        cp ${./ucm2/HiFi-analog.conf} $out/share/alsa/ucm2/HDA/HiFi-analog.conf
+        cp ${./ucm2/HiFi-mic.conf} $out/share/alsa/ucm2/HDA/HiFi-mic.conf
+      '';
+  });
+in {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
@@ -38,6 +48,14 @@
         SND_SOC_SOF_INTEL_MTL = module;
         SND_SOC_SOF_INTEL_LNL = module;
       };
+    }
+  ];
+
+  environment.sessionVariables.ALSA_CONFIG_UCM2 = "${cml-ucm-conf}/share/alsa/ucm2";
+  system.replaceDependencies.replacements = [
+    {
+      original = pkgs.alsa-ucm-conf;
+      replacement = cml-ucm-conf;
     }
   ];
 
