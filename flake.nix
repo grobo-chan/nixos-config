@@ -15,19 +15,35 @@
   outputs = {nixpkgs, ...} @ inputs: let
     system = "x86_64-linux";
   in {
-    nixosConfigurations.grobo-nixos = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        {
-          nixpkgs = {
-            inherit system;
-            config.allowUnfree = true;
-          };
-        }
-        ./hosts/grobo-nixos/configuration.nix
-        inputs.home-manager.nixosModules.default
-        inputs.nixos-hardware.nixosModules.lenovo-legion-16iax10h
-      ];
+    nixosConfigurations = {
+      grobo-nixos = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          {
+            nixpkgs = {
+              inherit system;
+              config.allowUnfree = true;
+            };
+          }
+          ./hosts/grobo-nixos/configuration.nix
+          inputs.home-manager.nixosModules.default
+          inputs.nixos-hardware.nixosModules.lenovo-legion-16iax10h
+        ];
+      };
+
+      television = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          {
+            nixpkgs = {
+              inherit system;
+              config.allowUnfree = true;
+            };
+          }
+          ./hosts/television/configuration.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
     };
   };
 }
