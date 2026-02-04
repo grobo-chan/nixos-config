@@ -23,6 +23,20 @@
             nixpkgs = {
               inherit system;
               config.allowUnfree = true;
+
+              overlays = [
+                (self: super: {
+                  alsa-ucm-conf = super.alsa-ucm-conf.overrideAttrs (oldAttrs: {
+                    postInstall =
+                      (oldAttrs.postInstall or "")
+                      + ''
+                        # Copy the custom config files to the correct location in the package
+                        cp ${./hosts/grobo-nixos/ucm2/HiFi-analog.conf} $out/share/alsa/ucm2/HDA/HiFi-analog.conf
+                        cp ${./hosts/grobo-nixos/ucm2/HiFi-mic.conf} $out/share/alsa/ucm2/HDA/HiFi-mic.conf
+                      '';
+                  });
+                })
+              ];
             };
           }
           ./hosts/grobo-nixos/configuration.nix
