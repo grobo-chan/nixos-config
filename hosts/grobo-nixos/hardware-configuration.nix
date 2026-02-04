@@ -4,7 +4,10 @@
   pkgs,
   modulesPath,
   ...
-}: {
+}: let
+  analogConf = builtins.readFile ./ucm2/HiFi-analog.conf;
+  micConf = builtins.readFile ./ucm2/HiFi-mic.conf;
+in {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
@@ -40,6 +43,11 @@
       };
     }
   ];
+
+  hardware.alsa = {
+    enablePersistence = true;
+    config = "${analogConf}\n${micConf}";
+  };
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/9adc18c6-602e-460b-b128-5fcbb22cfcbb";
