@@ -4,7 +4,17 @@
   pkgs,
   modulesPath,
   ...
-}: {
+}: let
+  patchedAlsaUcm = pkgs.alsa-ucm-conf.overrideAttrs (oldAttrs: {
+    postInstall =
+      (oldAttrs.postInstal or "")
+      + ''
+        mkdir -p $out/share/alsa/ucm2/HDA
+        cp ${./ucm2/HiFi-analog.conf} $out/share/alsa/ucm2/HDA/HiFi-analog.conf
+        cp ${./ucm2/HiFi-mic.conf} $out/share/alsa/ucm2/HDA/HiFi-mic.conf
+      '';
+  });
+in {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
@@ -14,6 +24,7 @@
   boot.kernelModules = ["kvm-intel" "rtw89" "igc"];
   boot.extraModulePackages = [];
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelParams = ["snd_intel_dspcfg.dsp_driver=3"];
 
   hardware.firmware = [
     (pkgs.runCommand "legion-audio-patch" {
@@ -40,6 +51,8 @@
       };
     }
   ];
+
+  environment.variables.ALSA_CONFIG_UCM2 = "${patchedAlsaUcm}/share/alsa/ucm2";
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/9adc18c6-602e-460b-b128-5fcbb22cfcbb";

@@ -118,6 +118,14 @@
     hyfetch
     alejandra
     nixd
+    (writeShellScriptBin "fix-audio" ''
+      ${alsa-utils}/bin/alsaucm -c hw:1 reset
+      ${alsa-utils}/bin/alsaucm -c hw:1 reload
+      systemctl --user restart pipewire pipewire-pulse wireplumber
+      ${alsa-utils}/bin/amixer sset -c 1 Master 100%
+      ${alsa-utils}/bin/amixer sset -c 1 Headphone 100%
+      ${alsa-utils}/bin/amixer sset -c 1 Speaker 100%
+    '')
   ];
 
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
