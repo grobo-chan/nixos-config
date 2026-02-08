@@ -116,8 +116,6 @@
     alsa-utils
     nh
     hyfetch
-    alejandra
-    nixd
     (writeShellScriptBin "fix-audio" ''
       ${alsa-utils}/bin/alsaucm -c hw:1 reset
       ${alsa-utils}/bin/alsaucm -c hw:1 reload

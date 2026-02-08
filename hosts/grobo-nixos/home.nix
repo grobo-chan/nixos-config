@@ -3,6 +3,10 @@
   pkgs,
   ...
 }: {
+  imports = [
+    ../../modules/home-manager/default.nix
+  ];
+
   home.username = "grobo";
   home.homeDirectory = "/home/grobo";
 
@@ -25,47 +29,13 @@
   programs.keepassxc.enable = true;
   programs.vesktop.enable = true;
 
-  programs.git = {
+  git = {
     enable = true;
-    settings = {
-      user = {
-        name = "GroboChan";
-        email = "230193800+grobo-chan@users.noreply.github.com";
-      };
-      init.defaultBranch = "main";
-    };
-    lfs.enable = true;
+    userName = "GroboChan";
+    userEmail = "230193800+grobo-chan@users.noreply.github.com";
   };
 
-  programs.gh = {
-    enable = true;
-    gitCredentialHelper.enable = true;
-  };
-
-  programs.zed-editor = {
-    enable = true;
-    extensions = ["nix" "toml" "rust"];
-    userSettings = {
-      theme = {
-        mode = "system";
-        dark = "One Dark";
-        light = "One Light";
-      };
-      hour_format = "hour24";
-      vim_mode = true;
-      languages = {
-        Nix = {
-          language_servers = ["nixd" "!nil"];
-          formatter = {
-            external = {
-              command = "alejandra";
-              arguments = ["--quiet" "--"];
-            };
-          };
-        };
-      };
-    };
-  };
+  zed.enable = true;
 
   programs.obs-studio.enable = true;
 

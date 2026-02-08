@@ -3,6 +3,10 @@
   pkgs,
   ...
 }: {
+  imports = [
+    ../../modules/home-manager/default.nix
+  ];
+
   home.username = "grobo";
   home.homeDirectory = "/home/grobo";
 
@@ -23,22 +27,13 @@
   programs.fish.enable = true;
   programs.keepassxc.enable = true;
 
-  programs.git = {
+  git = {
     enable = true;
-    settings = {
-      user = {
-        name = "GroboChan";
-        email = "230193800+grobo-chan@users.noreply.github.com";
-      };
-      init.defaultBranch = "main";
-    };
-    lfs.enable = true;
+    userName = "GroboChan";
+    userEmail = "230193800+grobo-chan@users.noreply.github.com";
   };
 
-  programs.gh = {
-    enable = true;
-    gitCredentialHelper.enable = true;
-  };
+  zed.enable = false;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
