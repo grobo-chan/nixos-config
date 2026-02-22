@@ -118,6 +118,7 @@
     alejandra
     nixd
     tor-browser
+    vlc
   ];
 
   system.stateVersion = "25.11"; # DO NOT EDIT
