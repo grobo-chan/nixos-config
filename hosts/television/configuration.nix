@@ -109,6 +109,8 @@
     NH_FLAKE = "/etc/nixos";
   };
 
+  hardware.bluetooth.enable = true;
+
   environment.systemPackages = with pkgs; [
     vim
     wget
