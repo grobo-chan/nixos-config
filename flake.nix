@@ -1,49 +1,11 @@
 {
-  description = "Grobo's NixOS Flake";
-
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
 
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    wrappers.url = "github:Lassulus/wrappers";
   };
 
-  outputs = {nixpkgs, ...} @ inputs: let
-    system = "x86_64-linux";
-  in {
-    nixosConfigurations = {
-      grobo-nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        modules = [
-          {
-            nixpkgs = {
-              inherit system;
-              config.allowUnfree = true;
-            };
-          }
-          ./hosts/grobo-nixos/configuration.nix
-          inputs.home-manager.nixosModules.default
-          inputs.nixos-hardware.nixosModules.lenovo-legion-16iax10h
-        ];
-      };
-
-      television = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        modules = [
-          {
-            nixpkgs = {
-              inherit system;
-              config.allowUnfree = true;
-            };
-          }
-          ./hosts/television/configuration.nix
-          inputs.home-manager.nixosModules.default
-        ];
-      };
-    };
-  };
+  outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
 }
