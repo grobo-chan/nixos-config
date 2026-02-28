@@ -104,6 +104,7 @@
   };
 
   programs.firefox.enable = true;
+  programs.nix-ld.enable = true;
 
   environment.sessionVariables = {
     NH_FLAKE = "/etc/nixos";
