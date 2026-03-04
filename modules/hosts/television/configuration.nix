@@ -45,6 +45,7 @@
       vlc
       keepassxc
       zed-editor
+      gimp
     ];
 
     system.stateVersion = "25.11"; # DO NOT EDIT
