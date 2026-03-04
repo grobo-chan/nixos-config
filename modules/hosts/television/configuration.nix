@@ -46,6 +46,7 @@
       keepassxc
       zed-editor
       gimp
+      deltachat-desktop
     ];
 
     system.stateVersion = "25.11"; # DO NOT EDIT
