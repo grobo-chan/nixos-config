@@ -13,6 +13,7 @@
     imports = [
       self.nixosModules.desktop
       self.nixosModules.general
+      self.nixosModules.gaming
     ];
 
     boot.loader.systemd-boot.enable = false;
