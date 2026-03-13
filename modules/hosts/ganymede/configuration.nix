@@ -3,13 +3,13 @@
   self,
   ...
 }: {
-  flake.nixosConfigurations.television = inputs.nixpkgs.lib.nixosSystem {
+  flake.nixosConfigurations.ganymede = inputs.nixpkgs.lib.nixosSystem {
     modules = [
-      self.nixosModules.hostTV
+      self.nixosModules.hostGanymede
     ];
   };
 
-  flake.nixosModules.hostTV = {pkgs, ...}: {
+  flake.nixosModules.hostGanymede = {pkgs, ...}: {
     imports = [
       self.nixosModules.desktop
       self.nixosModules.general
@@ -35,7 +35,7 @@
     boot.loader.efi.canTouchEfiVariables = true;
     boot.loader.efi.efiSysMountPoint = "/boot";
 
-    networking.hostName = "television";
+    networking.hostName = "ganymede";
     networking.networkmanager.enable = true;
 
     services.printing.enable = true;

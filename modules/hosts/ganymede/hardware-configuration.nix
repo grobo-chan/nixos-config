@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.hostTV = {
+  flake.nixosModules.hostGanymede = {
     config,
     lib,
     pkgs,
@@ -12,8 +12,9 @@
 
     boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" "sr_mod" "rtsx_usb_sdmmc"];
     boot.initrd.kernelModules = [];
-    boot.kernelModules = ["kvm-intel"];
+    boot.kernelModules = ["kvm-intel" "rtw89" "igc"];
     boot.extraModulePackages = [];
+    boot.kernelPackages = pkgs.linuxPackages_latest;
 
     fileSystems."/" = {
       device = "/dev/disk/by-uuid/57f5e02a-7418-4ba3-9f3f-3ee3537abd00";
