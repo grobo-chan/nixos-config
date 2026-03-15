@@ -10,8 +10,8 @@
       (oldAttrs.postInstal or "")
       + ''
         mkdir -p $out/share/alsa/ucm2/HDA
-        cp ${./ucm2/HiFi-analog.conf} $out/share/alsa/ucm2/HDA/HiFi-analog.conf
-        cp ${./ucm2/HiFi-mic.conf} $out/share/alsa/ucm2/HDA/HiFi-mic.conf
+        cp ${./audio-fix/ucm2/HiFi-analog.conf} $out/share/alsa/ucm2/HDA/HiFi-analog.conf
+        cp ${./audio-fix/ucm2/HiFi-mic.conf} $out/share/alsa/ucm2/HDA/HiFi-mic.conf
       '';
   });
 in {
@@ -28,7 +28,7 @@ in {
 
   hardware.firmware = [
     (pkgs.runCommand "legion-audio-patch" {
-        src = ./aw88399_acf.bin;
+        src = ./audio-fix/firmware/aw88399_acf.bin;
       } ''
         mkdir -p $out/lib/firmware
         cp -f $src $out/lib/firmware/aw88399_acf.bin
@@ -37,8 +37,8 @@ in {
 
   boot.kernelPatches = [
     {
-      name = "16iax10h-audio-linux-6.18";
-      patch = ./16iax10h-audio-linux-6.18.patch;
+      name = "16iax10h-audio-linux-6.19";
+      patch = ./audio-fix/patches/16iax10h-audio-linux-6.19.patch;
 
       structuredExtraConfig = with lib.kernel; {
         SND_HDA_SCODEC_AW88399 = module;
