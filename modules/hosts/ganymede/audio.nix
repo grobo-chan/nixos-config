@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.hostGanymede = {
+  flake.nixosModules.ganymedeAudio = {
     lib,
     pkgs,
     ...

@@ -1,4 +1,4 @@
-{
+{self, ...}: {
   flake.nixosModules.hostGanymede = {
     config,
     lib,
@@ -8,24 +8,33 @@
   }: {
     imports = [
       (modulesPath + "/installer/scan/not-detected.nix")
+      # self.nixosModules.ganymedeAudio
     ];
 
-    boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" "sr_mod" "rtsx_usb_sdmmc"];
+    boot.initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod"];
     boot.initrd.kernelModules = [];
     boot.kernelModules = ["kvm-intel" "rtw89" "igc"];
     boot.extraModulePackages = [];
     boot.kernelPackages = pkgs.linuxPackages_latest;
 
     fileSystems."/" = {
-      device = "/dev/disk/by-uuid/57f5e02a-7418-4ba3-9f3f-3ee3537abd00";
+      device = "/dev/disk/by-uuid/9adc18c6-602e-460b-b128-5fcbb22cfcbb";
       fsType = "ext4";
     };
 
     fileSystems."/boot" = {
-      device = "/dev/disk/by-uuid/4388-7609";
+      device = "/dev/disk/by-uuid/EED8-A26E";
       fsType = "vfat";
       options = ["fmask=0077" "dmask=0077"];
     };
+
+    fileSystems."/mnt/windows-disk" = {
+      device = "/dev/nvme0n1p3";
+      fsType = "auto";
+      options = ["noatime" "x-systemd.automount" "x-systemd.device-timeout=10" "x-systemd.idle-timeout=1min"];
+    };
+
+    systemd.tmpfiles.rules = ["d /mnt/windows-disk 0777 grobo wheel"];
 
     swapDevices = [];
 
