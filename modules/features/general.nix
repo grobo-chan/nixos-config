@@ -13,10 +13,6 @@
       isNormalUser = true;
       description = "GroboChan";
       extraGroups = ["networkmanager" "wheel"];
-      packages = with pkgs; [
-        kdePackages.kate
-        thunderbird
-      ];
     };
   };
 }

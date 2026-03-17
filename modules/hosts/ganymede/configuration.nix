@@ -40,16 +40,6 @@
 
     services.printing.enable = true;
 
-    environment.systemPackages = with pkgs; [
-      vim
-      tor-browser
-      vlc
-      keepassxc
-      zed-editor
-      gimp
-      deltachat-desktop
-    ];
-
     system.stateVersion = "25.11"; # DO NOT EDIT
   };
 }

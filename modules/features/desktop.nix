@@ -6,7 +6,12 @@
   }: {
     imports = [
       self.nixosModules.pipewire
-      self.nixosModules.firefox
+      self.nixosModules.browsers
+      self.nixosModules.communication
+      self.nixosModules.editors
+      self.nixosModules.media
+      self.nixosModules.art
+      self.nixosModules.keepassxc
     ];
 
     services.xserver.enable = true;
@@ -17,9 +22,13 @@
     services.xserver.xkb = {
       layout = "us";
       variant = "";
+      options = "compose:caps";
     };
 
-    time.timeZone = "Asia/Kolkata";
+    time = {
+      timeZone = "Asia/Kolkata";
+      hardwareClockInLocalTime = true;
+    };
 
     i18n.defaultLocale = "en_IN";
     i18n.extraLocaleSettings = {

@@ -22,7 +22,7 @@
 
     packages.environment = inputs.wrappers.lib.wrapPackage {
       inherit pkgs;
-      package = pkgs.fish;
+      package = self'.packages.fish;
       runtimeInputs = [
         # nix
         pkgs.nil
