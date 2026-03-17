@@ -8,14 +8,13 @@
   }: {
     imports = [
       (modulesPath + "/installer/scan/not-detected.nix")
-      # self.nixosModules.ganymedeAudio
+      self.nixosModules.ganymedeAudio
     ];
 
     boot.initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod"];
     boot.initrd.kernelModules = [];
     boot.kernelModules = ["kvm-intel" "rtw89" "igc"];
     boot.extraModulePackages = [];
-    boot.kernelPackages = pkgs.linuxPackages_latest;
 
     fileSystems."/" = {
       device = "/dev/disk/by-uuid/9adc18c6-602e-460b-b128-5fcbb22cfcbb";

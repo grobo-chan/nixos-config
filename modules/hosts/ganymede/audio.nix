@@ -15,6 +15,7 @@
     });
   in {
     systemd.user.services.audio-patch = {
+      enable = true;
       description = "Audio patch for the Lenovo Legion 16IAX10H";
       serviceConfig.PassEnvironment = "DISPLAY";
       script = with pkgs; ''
@@ -38,8 +39,8 @@
 
     boot.kernelPatches = [
       {
-        name = "16iax10h-audio-linux-6.19";
-        patch = ./audio-fix/patches/16iax10h-audio-linux-6.19.patch;
+        name = "16iax10h-audio-linux-6.18";
+        patch = ./audio-fix/patches/16iax10h-audio-linux-6.18.patch;
 
         structuredExtraConfig = with lib.kernel; {
           SND_HDA_SCODEC_AW88399 = module;
