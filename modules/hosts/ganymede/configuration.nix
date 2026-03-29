@@ -14,6 +14,11 @@
       self.nixosModules.desktop
       self.nixosModules.general
       self.nixosModules.gaming
+
+      self.nixosModules.editors
+      self.nixosModules.communication
+      self.nixosModules.media
+      self.nixosModules.editing
     ];
 
     boot.loader.systemd-boot.enable = false;

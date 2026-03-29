@@ -7,17 +7,13 @@
     imports = [
       self.nixosModules.pipewire
       self.nixosModules.browsers
-      self.nixosModules.communication
-      self.nixosModules.editors
-      self.nixosModules.media
-      self.nixosModules.art
       self.nixosModules.keepassxc
+      self.nixosModules.niri
     ];
 
     services.xserver.enable = true;
 
     services.displayManager.sddm.enable = true;
-    services.desktopManager.plasma6.enable = true;
 
     services.xserver.xkb = {
       layout = "us";
