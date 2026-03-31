@@ -50,6 +50,7 @@
         pkgs.dust
         pkgs.ripgrep
         pkgs.hyfetch
+        pkgs.fastfetch
         pkgs.tree-sitter
         pkgs.imagemagick
         pkgs.imv

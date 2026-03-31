@@ -15,9 +15,12 @@
     });
   in {
     systemd.user.services.audio-patch = {
-      enable = true;
       description = "Audio patch for the Lenovo Legion 16IAX10H";
-      serviceConfig.PassEnvironment = "DISPLAY";
+      after = ["graphical-session.target"];
+      wantedBy = ["multi-user.target"];
+      serviceConfig = {
+        Type = "oneshot";
+      };
       script = with pkgs; ''
         ${alsa-utils}/bin/alsaucm -c hw:1 reset
         ${alsa-utils}/bin/alsaucm -c hw:1 reload

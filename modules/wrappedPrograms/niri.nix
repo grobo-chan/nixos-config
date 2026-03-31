@@ -65,6 +65,8 @@
           "Mod+Down".focus-window-down = _: {};
 
           "Mod+Shift+E".quit = _: {};
+
+          "Mod+S".spawn-sh = "${lib.getExe pkgs.pavucontrol}";
         };
       };
     };

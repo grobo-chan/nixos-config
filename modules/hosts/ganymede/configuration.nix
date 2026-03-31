@@ -44,6 +44,8 @@
     networking.networkmanager.enable = true;
 
     services.printing.enable = true;
+    services.power-profiles-daemon.enable = true;
+    services.upower.enable = true;
 
     system.stateVersion = "25.11"; # DO NOT EDIT
   };
