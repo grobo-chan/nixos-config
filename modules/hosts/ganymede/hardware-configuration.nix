@@ -16,6 +16,8 @@
     boot.kernelModules = ["kvm-intel" "rtw89" "igc"];
     boot.extraModulePackages = [];
 
+    boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_19;
+
     fileSystems."/" = {
       device = "/dev/disk/by-uuid/9adc18c6-602e-460b-b128-5fcbb22cfcbb";
       fsType = "ext4";
