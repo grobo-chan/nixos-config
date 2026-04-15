@@ -66,6 +66,8 @@
 
           "Mod+Shift+E".quit = _: {};
 
+          "Print".screenshot = _: {};
+
           "Mod+S".spawn-sh = "${lib.getExe pkgs.pavucontrol}";
         };
       };
