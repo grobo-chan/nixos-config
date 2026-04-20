@@ -27,6 +27,18 @@
           mSurfaceVariant = "#3c3836";
           mTertiary = "#83a598";
         };
+
+        preInstalledPlugins = {
+          pomodoro = {
+            enabled = true;
+            src = "${inputs.noctalia-plugins.outPath}/pomodoro";
+            settings = {
+              autoStartWork = true;
+              autoStartBreaks = true;
+            };
+          };
+        };
+
         settings = {
           appLauncher = {
             customLaunchPrefix = "";

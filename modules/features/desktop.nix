@@ -21,6 +21,20 @@
       options = "compose:caps";
     };
 
+    fonts.packages = with pkgs; [
+      nerd-fonts.jetbrains-mono
+      ubuntu-sans
+      cm_unicode
+      corefonts
+      unifont
+    ];
+
+    fonts.fontconfig.defaultFonts = {
+      serif = ["Ubuntu Sans"];
+      sansSerif = ["Ubuntu Sans"];
+      monospace = ["JetBrainsMono Nerd Font"];
+    };
+
     time = {
       timeZone = "Asia/Kolkata";
       hardwareClockInLocalTime = true;
@@ -54,5 +68,9 @@
         enable32Bit = true;
       };
     };
+
+    environment.systemPackages = with pkgs; [
+      thunar
+    ];
   };
 }

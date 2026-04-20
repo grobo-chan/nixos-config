@@ -10,7 +10,7 @@ https://en.wikipedia.org/wiki/Moons_of_Jupiter#List
 
 ## TODO List
 - [x] Re-add Ganymede
-  - [ ] Fix Audio on it
+  - [x] Fix Audio on it
 - [ ] System Customisation
     - [ ] Niri
     - [ ] Impermanence

@@ -13,14 +13,9 @@
       gamescope.enable = true;
       steam = {
         enable = true;
-        extraCompatPackages = with pkgs; [
-          proton-ge-bin
-        ];
-        extraPackages = with pkgs; [
-          SDL2
-          gamescope
-        ];
         protontricks.enable = true;
+        remotePlay.openFirewall = true;
+        dedicatedServer.openFirewall = true;
       };
     };
 
@@ -28,9 +23,7 @@
       lutris
       steam-run
       dxvk
-      gamescope
       mangohud
-      heroic
       bottles
       steamtinkerlaunch
       prismlauncher

@@ -29,6 +29,5 @@
         };
       }
     ];
-    boot.kernelParams = ["snd_intel_dspcfg.dsp_driver=3"];
   };
 }

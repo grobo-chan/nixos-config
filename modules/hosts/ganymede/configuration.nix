@@ -6,6 +6,7 @@
   flake.nixosConfigurations.ganymede = inputs.nixpkgs.lib.nixosSystem {
     modules = [
       self.nixosModules.hostGanymede
+      inputs.nixos-hardware.nixosModules.lenovo-legion-16iax10h
     ];
   };
 
