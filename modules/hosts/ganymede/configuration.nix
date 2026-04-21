@@ -48,6 +48,11 @@
     services.power-profiles-daemon.enable = true;
     services.upower.enable = true;
 
+    services.udisks2.enable = true;
+    xdg.mime.addedAssociations = {
+      "inode/directory" = "org.kde.dolphin.desktop";
+    };
+
     system.stateVersion = "25.11"; # DO NOT EDIT
   };
 }

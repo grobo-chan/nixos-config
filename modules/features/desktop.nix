@@ -70,7 +70,7 @@
     };
 
     environment.systemPackages = with pkgs; [
-      thunar
+      kdePackages.dolphin
     ];
   };
 }

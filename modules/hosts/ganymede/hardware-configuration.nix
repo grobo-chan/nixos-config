@@ -38,14 +38,6 @@
       options = ["fmask=0077" "dmask=0077"];
     };
 
-    fileSystems."/mnt/windows-disk" = {
-      device = "/dev/nvme0n1p3";
-      fsType = "auto";
-      options = ["noatime" "x-systemd.automount" "x-systemd.device-timeout=10" "x-systemd.idle-timeout=1min"];
-    };
-
-    systemd.tmpfiles.rules = ["d /mnt/windows-disk 0777 grobo wheel"];
-
     swapDevices = [];
 
     nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
