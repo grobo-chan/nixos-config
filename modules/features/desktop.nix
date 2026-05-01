@@ -53,8 +53,6 @@
       LC_TIME = "en_IN";
     };
 
-    services.upower.enable = true;
-
     security.polkit.enable = true;
 
     hardware = {
@@ -68,6 +66,9 @@
         enable32Bit = true;
       };
     };
+
+    services.power-profiles-daemon.enable = true;
+    services.upower.enable = true;
 
     environment.systemPackages = with pkgs; [
       kdePackages.dolphin

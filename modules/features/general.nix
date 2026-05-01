@@ -12,7 +12,7 @@
       shell = self.packages.${pkgs.stdenv.hostPlatform.system}.environment;
       isNormalUser = true;
       description = "GroboChan";
-      extraGroups = ["networkmanager" "wheel"];
+      extraGroups = ["networkmanager" "wheel" "video"];
     };
   };
 }

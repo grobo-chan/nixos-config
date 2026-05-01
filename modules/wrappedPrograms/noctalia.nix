@@ -173,16 +173,6 @@
               }
             ];
           };
-          # colorSchemes = {
-          #   darkMode = true;
-          #   generateTemplatesForPredefined = true;
-          #   manualSunrise = "06:30";
-          #   manualSunset = "18:30";
-          #   matugenSchemeType = "scheme-fruit-salad";
-          #   predefinedScheme = "Gruvbox";
-          #   schedulingMode = "off";
-          #   useWallpaperColors = false;
-          # };
           controlCenter = {
             cards = [
               {
@@ -350,7 +340,7 @@
             audioCodec = "opus";
             audioSource = "default_output";
             colorRange = "limited";
-            directory = "/home/yurii/Videos";
+            directory = "/home/grobo/Videos";
             frameRate = 60;
             quality = "very_high";
             showCursor = true;

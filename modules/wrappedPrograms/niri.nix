@@ -68,8 +68,8 @@
           "XF86AudioRaiseVolume".spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0";
           "XF86AudioLowerVolume".spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-";
 
-          "XF86MonBrightnessUp".spawn = ["${lib.getExe pkgs.brightnessctl}" "--class=backlight" "set" "+10%"];
-          "XF86MonBrightnessDown".spawn = ["${lib.getExe pkgs.brightnessctl}" "--class=backlight" "set" "10%-"];
+          "XF86MonBrightnessUp".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call brightness increase";
+          "XF86MonBrightnessDown".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call brightness decrease";
 
           "Mod+Q".close-window = _: {};
           "Mod+O".toggle-overview = _: {};
