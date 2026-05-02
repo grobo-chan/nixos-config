@@ -2,7 +2,7 @@
   flake.nixosModules.sshServer = {...}: {
     services.openssh = {
       enable = true;
-      ports = [6543];
+      ports = [22];
       settings = {
         PasswordAuthentication = true;
         KbdInteractiveAuthentication = false;
