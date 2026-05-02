@@ -15,8 +15,8 @@
 
     boot.kernelPatches = [
       {
-        name = "16iax10h-audio-linux-6.19.11";
-        patch = ./audio-fix/patches/16iax10h-audio-linux-6.19.11.patch;
+        name = "16iax10h-audio-linux-7.0";
+        patch = ./audio-fix/patches/16iax10h-audio-linux-7.0.patch;
 
         structuredExtraConfig = with lib.kernel; {
           SND_HDA_SCODEC_AW88399 = module;

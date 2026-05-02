@@ -16,14 +16,14 @@
     boot.kernelModules = ["kvm-intel" "rtw89" "igc"];
     boot.extraModulePackages = [];
 
-    boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_6_19.override {
+    boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_7_0.override {
       argsOverride = rec {
         src = pkgs.fetchurl {
-          url = "mirror://kernel/linux/kernel/v6.x/linux-${version}.tar.xz";
-          sha256 = "sha256-IAOde2slbAi+L4+sQ8P/mmIDCMcDxkPPL4DDkQub1Zs=";
+          url = "mirror://kernel/linux/kernel/v7.x/linux-${version}.tar.xz";
+          sha256 = "sha256-u39tgLOHx1e30Uu5MCj8uQ95PFwNNnc27oFaEAs4kfA=";
         };
-        version = "6.19.11";
-        modDirVersion = "6.19.11";
+        version = "7.0";
+        modDirVersion = "7.0.0";
       };
     });
 

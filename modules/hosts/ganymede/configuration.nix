@@ -19,7 +19,7 @@
       self.nixosModules.editors
       self.nixosModules.communication
       self.nixosModules.media
-      self.nixosModules.editing
+      self.nixosModules.creative
     ];
 
     boot.loader.systemd-boot.enable = false;
