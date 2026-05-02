@@ -4,6 +4,7 @@
       kdePackages.kate
       zed-editor
       vim
+      obsidian
     ];
   };
 }

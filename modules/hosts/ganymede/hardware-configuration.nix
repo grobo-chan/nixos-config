@@ -13,7 +13,7 @@
 
     boot.initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod"];
     boot.initrd.kernelModules = [];
-    boot.kernelModules = ["kvm-intel" "rtw89" "igc"];
+    boot.kernelModules = ["kvm-intel" "rtw89" "igc" "uinput"];
     boot.extraModulePackages = [];
 
     boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_7_0.override {

@@ -19,12 +19,21 @@
       };
     };
 
+    # See: https://github.com/NixOS/nixpkgs/issues/514113#issuecomment-4338976393
+    nixpkgs.overlays = [
+      (_: prev: {
+        openldap = prev.openldap.overrideAttrs {
+          doCheck = !prev.stdenv.hostPlatform.isi686;
+        };
+      })
+    ];
+
     environment.systemPackages = with pkgs; [
       lutris
+      bottles
       steam-run
       dxvk
       mangohud
-      bottles
       steamtinkerlaunch
       prismlauncher
       lsfg-vk

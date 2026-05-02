@@ -59,3 +59,10 @@ https://en.wikipedia.org/wiki/Moons_of_Jupiter#List
     - [x] Network Manager
     - [ ] DNS
     - [ ] Virt Manager
+
+# References n stuff
+Just a general list of shit I saw while I made this
+I may/may not be forgetting some
+Will keep updating (Hopefully)
+- [Flatpaks](https://www.reddit.com/r/NixOS/comments/1hzgxns/fully_declarative_flatpak_management_on_nixos/)
+- [Niri + Noctalia Shell](https://youtu.be/aNgujRXDTdE)

@@ -5,8 +5,9 @@
       krita
       obs-studio
       kdePackages.kdenlive
-
-      libsForQt5.xp-pen-deco-01-v2-driver
     ];
+
+    hardware.opentabletdriver.enable = true;
+    hardware.uinput.enable = true;
   };
 }
