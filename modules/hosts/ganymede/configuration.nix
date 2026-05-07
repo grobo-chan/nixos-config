@@ -24,6 +24,8 @@
       self.nixosModules.communication
       self.nixosModules.media
       self.nixosModules.creative
+
+      self.nixosModules.kdeConnect
     ];
 
     boot.loader.systemd-boot.enable = false;
