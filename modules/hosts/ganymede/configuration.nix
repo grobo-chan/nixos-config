@@ -10,7 +10,11 @@
     ];
   };
 
-  flake.nixosModules.hostGanymede = {pkgs, ...}: {
+  flake.nixosModules.hostGanymede = {
+    pkgs,
+    lib,
+    ...
+  }: {
     imports = [
       self.nixosModules.desktop
       self.nixosModules.general
@@ -46,10 +50,27 @@
 
     services.printing.enable = true;
 
-    services.udisks2.enable = true;
-    xdg.mime.addedAssociations = {
-      "inode/directory" = "org.kde.dolphin.desktop";
+    hardware.nvidia.prime = {
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
     };
+
+    specialisation = {
+      gaming-time.configuration = {
+        hardware.nvidia.prime = {
+          sync.enable = true;
+
+          offload = {
+            enable = lib.mkForce false;
+            enableOffloadCmd = lib.mkForce false;
+          };
+        };
+      };
+    };
+
+    services.udisks2.enable = true;
 
     system.stateVersion = "25.11"; # DO NOT EDIT
   };
