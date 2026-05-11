@@ -3,11 +3,7 @@
   lib,
   ...
 }: {
-  perSystem = {
-    pkgs,
-    self',
-    ...
-  }: let
+  perSystem = {pkgs, ...}: let
     fishConf =
       pkgs.writeText "fishy-fishy"
       # fish
@@ -20,6 +16,10 @@
         fish_vi_key_bindings
 
         ${lib.getExe pkgs.zoxide} init fish | source
+
+        function lf --wraps="lf" --description="lf - Terminal file manager (changing directory on exit)"
+            cd "$(command lf -print-last-dir $argv)"
+        end
 
         if type -q direnv
             direnv hook fish | source

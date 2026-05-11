@@ -14,16 +14,6 @@
       steam = {
         enable = true;
         protontricks.enable = true;
-
-        package = pkgs.steam.override {
-          extraBwrapArgs = [
-            "--bind $HOME/.local/share/Valve/Steam $HOME"
-            "--unsetenv XDG_CACHE_HOME"
-            "--unsetenv XDG_CONFIG_HOME"
-            "--unsetenv XDG_DATA_HOME"
-            "--unsetenv XDG_STATE_HOME"
-          ];
-        };
       };
     };
 
@@ -46,6 +36,10 @@
       prismlauncher
       lsfg-vk
       lsfg-vk-ui
+
+      protonup-ng
+      wine
+      wine64
     ];
   };
 }

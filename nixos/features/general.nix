@@ -6,6 +6,7 @@
   }: {
     imports = [
       self.nixosModules.nix
+      self.nixosModules.extra_hjem
     ];
 
     users.users.grobo = {

@@ -61,6 +61,7 @@
 
         # wrapped
         self'.packages.git
+        self'.packages.lf
       ];
       env = {
         EDITOR = "vim";

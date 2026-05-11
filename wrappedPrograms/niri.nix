@@ -59,7 +59,7 @@
         binds = {
           "Mod+Shift+Slash".show-hotkey-overlay = _: {};
 
-          "Mod+T".spawn-sh = lib.getExe pkgs.kitty;
+          "Mod+T".spawn-sh = lib.getExe self'.packages.kitty;
           "Mod+D".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
           "Super+Alt+L".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call lockScreen lock";
 
