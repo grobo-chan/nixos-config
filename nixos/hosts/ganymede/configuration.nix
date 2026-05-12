@@ -5,8 +5,10 @@
 }: {
   flake.nixosConfigurations.ganymede = inputs.nixpkgs.lib.nixosSystem {
     modules = [
-      self.nixosModules.hostGanymede
       inputs.nixos-hardware.nixosModules.lenovo-legion-16iax10h
+      inputs.disko.nixosModules.disko
+      inputs.preservation.nixosModules.default
+      self.nixosModules.hostGanymede
     ];
   };
 
@@ -26,6 +28,14 @@
       self.nixosModules.creative
 
       self.nixosModules.kdeConnect
+
+      # disko
+      inputs.disko.nixosModules.disko
+      self.diskoConfigurations.hostGanymede
+
+      # preservation
+      inputs.preservation.nixosModules.default
+      self.nixosModules.preservation
     ];
 
     boot.loader.systemd-boot.enable = false;
