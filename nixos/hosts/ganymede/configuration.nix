@@ -20,14 +20,14 @@
     imports = [
       self.nixosModules.desktop
       self.nixosModules.general
-      self.nixosModules.gaming
+      # self.nixosModules.gaming
 
-      self.nixosModules.editors
-      self.nixosModules.communication
-      self.nixosModules.media
-      self.nixosModules.creative
+      # self.nixosModules.editors
+      # self.nixosModules.communication
+      # self.nixosModules.media
+      # self.nixosModules.creative
 
-      self.nixosModules.kdeConnect
+      # self.nixosModules.kdeConnect
 
       # disko
       inputs.disko.nixosModules.disko
