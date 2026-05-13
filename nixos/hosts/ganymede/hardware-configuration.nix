@@ -8,7 +8,7 @@
   }: {
     imports = [
       (modulesPath + "/installer/scan/not-detected.nix")
-      # self.nixosModules.ganymedeAudio
+      self.nixosModules.ganymedeAudio
     ];
 
     boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod" ];

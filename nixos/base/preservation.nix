@@ -11,6 +11,15 @@
             directory = "/var/lib/nixos";
             inInitrd = true;
           }
+          {
+            directory = "/var/lib/systemd/coredump";
+            inInitrd = true;
+          }
+          { 
+            directory = "/etc/NetworkManager/system-connections";
+            inInitrd = true;
+          }
+          "/tmp"
         ];
 
         files = [
