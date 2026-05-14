@@ -14,6 +14,10 @@
     services.xserver.enable = true;
 
     services.displayManager.sddm.enable = true;
+    services.displayManager.autoLogin = {
+      enable = true;
+      user = "grobo";
+    };
 
     services.xserver.xkb = {
       layout = "us";

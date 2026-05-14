@@ -39,6 +39,7 @@
         pkgs.zip
         pkgs.p7zip
         pkgs.wget
+        pkgs.tree
         pkgs.killall
         pkgs.sshfs
         pkgs.fzf

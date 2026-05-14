@@ -6,14 +6,15 @@
   }: {
     imports = [
       self.nixosModules.nix
-      self.nixosModules.extra_hjem
+      self.nixosModules.hjem
     ];
 
     users.users.grobo = {
       shell = self.packages.${pkgs.stdenv.hostPlatform.system}.environment;
       isNormalUser = true;
       description = "GroboChan";
-      extraGroups = ["networkmanager" "wheel" "video"];
+      initialPassword = "12345";
+      extraGroups = ["networkmanager" "wheel" "video" "nopasswdlogin"];
     };
   };
 }

@@ -19,7 +19,10 @@
             directory = "/etc/NetworkManager/system-connections";
             inInitrd = true;
           }
-          "/tmp"
+          {
+            directory="/tmp";
+            mode="0777";
+          }
         ];
 
         files = [

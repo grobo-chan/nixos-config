@@ -48,8 +48,10 @@ https://en.wikipedia.org/wiki/Moons_of_Jupiter#List
 
 - [ ] Other Things
     - [x] Steam
+    - [x] Lutris
     - [x] Minecraft (Prism Launcher)
-    - [ ] Discord
+    - [x] Discord
+    - [x] Deltachat
     - [x] VLC
     - [ ] LibreOffice
     - [x] KeePassXC
@@ -64,5 +66,8 @@ https://en.wikipedia.org/wiki/Moons_of_Jupiter#List
 Just a general list of shit I saw while I made this
 I may/may not be forgetting some
 Will keep updating (Hopefully)
-- [Flatpaks](https://www.reddit.com/r/NixOS/comments/1hzgxns/fully_declarative_flatpak_management_on_nixos/)
-- [Niri + Noctalia Shell](https://youtu.be/aNgujRXDTdE)
+- [Vimjoyer's Niri + Noctalia Shell guide](https://youtu.be/aNgujRXDTdE)
+- [Saylesss88's Impermanence (BTRFS Encrypted) guide](https://saylesss88.github.io/installation/enc/encrypted_impermanence.html)
+  NOTE: The above uses [nix-impermanence](https://github.com/nix-community/impermanence) while this flake uses [nix-preservation](https://github.com/nix-community/preservation)
+- [Vimjoyer's Impermanence guide](https://www.youtube.com/watch?v=ZKBSWS7OOb4)
+  NOTE: The above uses a tmpfs root while this flake uses a btrfs root subvolume which is nuked on boot via a bootscript

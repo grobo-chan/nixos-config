@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.nixosModules.extra_hjem = {...}: {
+  flake.nixosModules.hjem = {...}: {
     imports = [
       inputs.hjem.nixosModules.default
     ];

@@ -1,6 +1,7 @@
 {
   flake.diskoConfigurations.hostGanymede = {
     fileSystems."/nix".neededForBoot = true;
+    fileSystems."/persistent".neededForBoot = true;
     
     disko.devices.disk.main = {
       type = "disk";
