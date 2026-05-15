@@ -31,7 +31,6 @@
         pkgs.alejandra
         pkgs.manix
         pkgs.nix-inspect
-        self'.packages.nh
 
         # other
         pkgs.file
