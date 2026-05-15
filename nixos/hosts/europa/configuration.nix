@@ -11,8 +11,9 @@
 
   flake.nixosModules.hostEuropa = {pkgs, ...}: {
     imports = [
-      self.nixosModules.desktop
+      self.nixosModules.base
       self.nixosModules.general
+      self.nixosModules.desktop
       self.nixosModules.sshServer
       self.nixosModules.editors
     ];

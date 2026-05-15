@@ -12,6 +12,7 @@
 
   flake.nixosModules.hostCallisto = {pkgs, ...}: {
     imports = [
+      self.nixosModules.base
       self.nixosModules.general
       self.nixosModules.sshServer
     ];

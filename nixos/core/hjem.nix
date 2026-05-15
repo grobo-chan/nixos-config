@@ -1,5 +1,7 @@
 {inputs, ...}: {
-  flake.nixosModules.hjem = {...}: {
+  flake.nixosModules.hjem = {config, ...}: let
+    user = config.preferences.user.name;
+  in {
     imports = [
       inputs.hjem.nixosModules.default
     ];
@@ -8,8 +10,8 @@
       hjem = {
         users.grobo = {
           enable = true;
-          directory = "/home/grobo";
-          user = "grobo";
+          directory = "/home/${user}";
+          inherit user;
         };
 
         clobberByDefault = true;

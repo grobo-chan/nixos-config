@@ -18,8 +18,9 @@
     ...
   }: {
     imports = [
-      self.nixosModules.desktop
+      self.nixosModules.base
       self.nixosModules.general
+      self.nixosModules.desktop
 
       self.nixosModules.gaming
 
