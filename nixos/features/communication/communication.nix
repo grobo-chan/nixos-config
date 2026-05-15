@@ -15,5 +15,9 @@
       vesktop
       thunderbird
     ];
+
+    persistance.user.directories = [
+      ".config/vesktop"
+    ];
   };
 }

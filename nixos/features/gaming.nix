@@ -41,5 +41,16 @@
       wine
       wine64
     ];
+
+    persistance.user.directories = [
+      ".steam"
+      ".local/share/Steam"
+      ".cache/lutris"
+      ".local/share/lutris"
+      ".local/share/bottles"
+      ".local/share/PrismLauncher"
+      ".local/share/Terraria"
+      ".local/share/Paradox Interactive"
+    ];
   };
 }

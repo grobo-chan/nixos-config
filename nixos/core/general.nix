@@ -14,7 +14,25 @@
       isNormalUser = true;
       description = config.preferences.user.description;
       initialPassword = "12345";
-      extraGroups = ["networkmanager" "wheel" "video" "nopasswdlogin"];
+      extraGroups = ["networkmanager" "wheel"];
     };
+
+    persistance.user.directories = [
+      "nixos-config"
+      "Videos"
+      "Music"
+      "Documents"
+      "Projects"
+      ".ssh"
+
+      # TODO: Move
+      ".local/share/zoxide"
+      ".local/share/direnv"
+      ".local/share/nvim"
+      ".local/share/fish"
+      ".config/nvim"
+      ".config/gh"
+      ".local/state/gh"
+    ];
   };
 }

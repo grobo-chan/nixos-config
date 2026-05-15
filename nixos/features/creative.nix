@@ -9,5 +9,10 @@
 
     hardware.opentabletdriver.enable = true;
     hardware.uinput.enable = true;
+
+    persistance.user.directories = [
+      ".config/GIMP"
+      ".config/obs-studio"
+    ];
   };
 }
