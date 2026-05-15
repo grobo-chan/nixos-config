@@ -37,13 +37,11 @@
       lsfg-vk
       lsfg-vk-ui
 
-      protonup-ng
       wine
       wine64
     ];
 
     persistance.user.directories = [
-      ".steam"
       ".local/share/Steam"
       ".cache/lutris"
       ".local/share/lutris"

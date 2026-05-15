@@ -13,6 +13,8 @@
     persistance.user.directories = [
       ".config/GIMP"
       ".config/obs-studio"
+      ".cache/krita"
+      ".local/share/krita"
     ];
   };
 }
