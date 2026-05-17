@@ -6,5 +6,11 @@
       vim
       obsidian
     ];
+
+    persistance.user.directories = [
+      ".cache/zed"
+      ".config/zed"
+      ".local/share/zed"
+    ];
   };
 }

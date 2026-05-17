@@ -78,6 +78,7 @@
 
     environment.systemPackages = [
       pkgs.kdePackages.dolphin
+      pkgs.ddcutil
     ];
   };
 }
