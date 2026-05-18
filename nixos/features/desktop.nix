@@ -9,11 +9,10 @@
       self.nixosModules.browsers
       self.nixosModules.keepassxc
       self.nixosModules.niri
+      self.nixosModules.sddm
     ];
 
     services.xserver.enable = true;
-
-    services.displayManager.sddm.enable = false;
 
     services.xserver.xkb = {
       layout = "us";

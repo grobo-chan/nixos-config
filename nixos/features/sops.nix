@@ -8,7 +8,7 @@
       defaultSopsFile = ../hosts/secrets.json;
       defaultSopsFormat = "json";
 
-      age.keyFile = "${config.hj.directory}/.config/sops/age/keys.txt";
+      age.keyFile = "/persistent${config.hj.directory}/.config/sops/age/keys.txt";
     };
 
     persistance.user.directories = [

@@ -10,15 +10,15 @@
       self.nixosModules.sops
     ];
 
-    sops.secrets.up.neededForUsers = true;
+    sops.secrets.user_password.neededForUsers = true;
     users = {
       mutableUsers = false;
       users.${config.preferences.user.name} = {
         shell = self.packages.${pkgs.stdenv.hostPlatform.system}.environment;
         isNormalUser = true;
-        hashedPasswordFile = config.sops.secrets.up.path;
+        hashedPasswordFile = config.sops.secrets.user_password.path;
+        initialPassword = "password";
         description = config.preferences.user.description;
-        initialPassword = "12345";
         extraGroups = ["networkmanager" "wheel"];
       };
     };
