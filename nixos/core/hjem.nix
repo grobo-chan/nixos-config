@@ -8,7 +8,7 @@
 
     config = {
       hjem = {
-        users.grobo = {
+        users.${user} = {
           enable = true;
           directory = "/home/${user}";
           inherit user;

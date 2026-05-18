@@ -7,6 +7,7 @@
     imports = [
       self.nixosModules.nix
       self.nixosModules.hjem
+      self.nixosModules.sops
     ];
 
     users.users.${config.preferences.user.name} = {
