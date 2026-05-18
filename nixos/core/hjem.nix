@@ -4,6 +4,7 @@
   in {
     imports = [
       inputs.hjem.nixosModules.default
+      (inputs.nixpkgs.lib.mkAliasOptionModule [ "hj" ] [ "hjem" "users" user ])
     ];
 
     config = {

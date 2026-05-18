@@ -43,10 +43,7 @@
 
         files =
           [
-            {
-              file = "/etc/machine-id";
-              inInitrd = true;
-            }
+            # I left this here blank incase I wanna add something in the future™
           ]
           ++ cfg.sys.files;
 
