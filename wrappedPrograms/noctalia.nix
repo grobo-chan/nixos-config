@@ -293,13 +293,13 @@
           };
           network = {wifiEnabled = true;};
           nightLight = {
-            autoSchedule = true;
+            enabled = true;
+            autoSchedule = false;
             dayTemp = "6500";
-            enabled = false;
-            forced = false;
-            manualSunrise = "06:30";
-            manualSunset = "18:30";
             nightTemp = "4000";
+            forced = false;
+            manualSunrise = "06:00";
+            manualSunset = "19:00";
           };
           notifications = {
             backgroundOpacity = 1;
