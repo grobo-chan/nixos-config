@@ -26,6 +26,9 @@
       cm_unicode
       corefonts
       unifont
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-color-emoji
     ];
 
     fonts.fontconfig.defaultFonts = {
