@@ -31,7 +31,6 @@
         pkgs.alejandra
         pkgs.manix
         pkgs.nix-inspect
-        self'.packages.nh
 
         # other
         pkgs.file
@@ -39,6 +38,7 @@
         pkgs.zip
         pkgs.p7zip
         pkgs.wget
+        pkgs.tree
         pkgs.killall
         pkgs.sshfs
         pkgs.fzf
@@ -58,6 +58,8 @@
         pkgs.yt-dlp
         pkgs.lazygit
         pkgs.gh
+        pkgs.sops
+        pkgs.age
 
         # wrapped
         self'.packages.git

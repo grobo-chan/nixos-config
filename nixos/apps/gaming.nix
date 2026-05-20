@@ -37,9 +37,18 @@
       lsfg-vk
       lsfg-vk-ui
 
-      protonup-ng
       wine
       wine64
+    ];
+
+    persistance.user.directories = [
+      ".local/share/Steam"
+      ".cache/lutris"
+      ".local/share/lutris"
+      ".local/share/bottles"
+      ".local/share/PrismLauncher"
+      ".local/share/Terraria"
+      ".local/share/Paradox Interactive"
     ];
   };
 }

@@ -12,9 +12,15 @@
 
   flake.nixosModules.hostCallisto = {pkgs, ...}: {
     imports = [
+      self.nixosModules.base
       self.nixosModules.general
       self.nixosModules.sshServer
     ];
+
+    persistance = {
+      enable = false;
+      nukeRoot.enable = false;
+    };
 
     hardware = {
       enableRedistributableFirmware = true;

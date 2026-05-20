@@ -5,8 +5,10 @@
 }: {
   flake.nixosConfigurations.ganymede = inputs.nixpkgs.lib.nixosSystem {
     modules = [
-      self.nixosModules.hostGanymede
       inputs.nixos-hardware.nixosModules.lenovo-legion-16iax10h
+      inputs.disko.nixosModules.disko
+      inputs.preservation.nixosModules.default
+      self.nixosModules.hostGanymede
     ];
   };
 
@@ -16,8 +18,10 @@
     ...
   }: {
     imports = [
-      self.nixosModules.desktop
+      self.nixosModules.base
       self.nixosModules.general
+      self.nixosModules.desktop
+
       self.nixosModules.gaming
 
       self.nixosModules.editors
@@ -26,7 +30,44 @@
       self.nixosModules.creative
 
       self.nixosModules.kdeConnect
+
+      # disko
+      inputs.disko.nixosModules.disko
+      self.diskoConfigurations.hostGanymede
+
+      # preservation
+      self.nixosModules.preservation
     ];
+
+    persistance = {
+      enable = true;
+      nukeRoot = {
+        enable = false;
+        volumeGroup = "mapper/cryptroot";
+      };
+    };
+
+    boot = {
+      # silence first boot output
+      consoleLogLevel = 3;
+      initrd.verbose = false;
+      initrd.systemd.enable = true;
+      kernelParams = [
+        "quiet"
+        "splash"
+        "intremap=on"
+        "boot.shell_on_fail"
+        "udev.log_priority=3"
+        "rd.systemd.show_status=auto"
+      ];
+
+      # plymouth, showing after LUKS unlock
+      plymouth = {
+        enable = true;
+        font = "${pkgs.hack-font}/share/fonts/truetype/Hack-Regular.ttf";
+        logo = "${pkgs.nixos-icons}/share/icons/hicolor/128x128/apps/nix-snowflake.png";
+      };
+    };
 
     boot.loader.systemd-boot.enable = false;
     boot.loader.grub = {

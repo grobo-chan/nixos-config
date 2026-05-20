@@ -1,5 +1,5 @@
-{inputs, ...}: {
-  flake.nixosModules.nix = {pkgs, ...}: {
+{...}: {
+  flake.nixosModules.nix = {pkgs, config, lib, ...}: {
     imports = [];
 
     programs.direnv = {
@@ -10,6 +10,13 @@
       nix-direnv = {
         enable = true;
       };
+    };
+
+    programs.nh = {
+      enable = true;
+      clean.enable = true;
+      clean.extraArgs = "--keep-since 4d --keep 3";
+      flake = "/home/${config.preferences.user.name}/nixos-config";
     };
 
     nix.settings.experimental-features = ["nix-command" "flakes"];

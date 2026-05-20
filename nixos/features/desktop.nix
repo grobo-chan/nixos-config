@@ -1,7 +1,6 @@
 {self, ...}: {
   flake.nixosModules.desktop = {
     pkgs,
-    lib,
     ...
   }: {
     imports = [
@@ -9,11 +8,10 @@
       self.nixosModules.browsers
       self.nixosModules.keepassxc
       self.nixosModules.niri
+      self.nixosModules.sddm
     ];
 
     services.xserver.enable = true;
-
-    services.displayManager.sddm.enable = true;
 
     services.xserver.xkb = {
       layout = "us";
@@ -27,6 +25,9 @@
       cm_unicode
       corefonts
       unifont
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-color-emoji
     ];
 
     fonts.fontconfig.defaultFonts = {
@@ -78,6 +79,7 @@
 
     environment.systemPackages = [
       pkgs.kdePackages.dolphin
+      pkgs.ddcutil
     ];
   };
 }

@@ -9,13 +9,19 @@
     ];
   };
 
-  flake.nixosModules.hostEuropa = {pkgs, ...}: {
+  flake.nixosModules.hostEuropa = {...}: {
     imports = [
-      self.nixosModules.desktop
+      self.nixosModules.base
       self.nixosModules.general
+      self.nixosModules.desktop
       self.nixosModules.sshServer
       self.nixosModules.editors
     ];
+
+    persistance = {
+      enable = false;
+      nukeRoot.enable = false;
+    };
 
     boot.loader.systemd-boot.enable = false;
     boot.loader.grub = {

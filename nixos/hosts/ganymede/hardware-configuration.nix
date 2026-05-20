@@ -15,23 +15,36 @@
     boot.initrd.kernelModules = [];
     boot.kernelModules = ["kvm-intel" "rtw89" "igc" "uinput"];
     boot.extraModulePackages = [];
-
     boot.kernelPackages = pkgs.linuxPackages_7_0;
 
-    fileSystems."/" = {
-      device = "/dev/disk/by-uuid/9adc18c6-602e-460b-b128-5fcbb22cfcbb";
-      fsType = "ext4";
+    boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-partlabel/disk-main-luks";
+
+    fileSystems."/nix" = {
+      device = "/dev/mapper/cryptroot";
+      fsType = "btrfs";
+      options = ["subvol=nix"];
+    };
+
+    fileSystems."/persistent" = {
+      device = "/dev/mapper/cryptroot";
+      fsType = "btrfs";
+      options = ["subvol=persistent"];
+    };
+
+    fileSystems."/persistent/swap" = {
+      device = "/dev/mapper/cryptroot";
+      fsType = "btrfs";
+      options = ["subvol=persistent/swap"];
     };
 
     fileSystems."/boot" = {
-      device = "/dev/disk/by-uuid/EED8-A26E";
+      device = "/dev/disk/by-partlabel/disk-main-ESP";
       fsType = "vfat";
-      options = ["fmask=0077" "dmask=0077"];
+      options = ["fmask=0022" "dmask=0022"];
     };
 
-    swapDevices = [];
-
     nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+    hardware.cpu.intel.npu.enable = true;
     hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   };
 }
