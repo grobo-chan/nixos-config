@@ -31,7 +31,22 @@
       };
     };
 
-    programs.tmux.enable = true;
+    /*
+    To see the status of the timer run
+    systemctl status nixos-upgrade.timer
+
+    To see upgrade logs run
+    systemctl status nixos-upgrade.service
+    */
+    system.autoUpgrade = {
+      enable = true;
+      flake = inputs.self.outPath;
+      flags = [
+        "-L"
+      ];
+      dates = "12:00";
+      randomizedDelaySec = "45min";
+    };
 
     environment.systemPackages = with pkgs; [
       libraspberrypi
