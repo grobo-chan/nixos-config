@@ -17,6 +17,11 @@
       self.nixosModules.sshServer
     ];
 
+    persistance = {
+      enable = false;
+      nukeRoot.enable = false;
+    };
+
     hardware = {
       enableRedistributableFirmware = true;
       raspberry-pi."4".apply-overlays-dtmerge.enable = true;

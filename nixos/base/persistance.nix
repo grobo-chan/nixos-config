@@ -5,11 +5,16 @@
     ...
   }: {
     options.persistance = {
-      volumeGroup = lib.mkOption {
-        default = "mapper/cryptroot";
-        description = ''
-          Btrfs volume group name
-        '';
+      enable = lib.mkEnableOption "enable persistance";
+      nukeRoot = {
+        enable = lib.mkEnableOption "enable nuking root on boot";
+
+        volumeGroup = lib.mkOption {
+          default = "mapper/cryptroot";
+          description = ''
+            Btrfs volume group name
+          '';
+        };
       };
 
       sys = {

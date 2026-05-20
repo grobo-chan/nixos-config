@@ -1,5 +1,7 @@
 {inputs, ...}: {
-  flake.nixosModules.sops = {config, pkgs, ...}: {
+  flake.nixosModules.sops = {config, ...}: let
+    homeDir = if config.persistance.enable then "/persistent${config.hj.directory}" else config.hj.directory;
+  in {
     imports = [
       inputs.sops-nix.nixosModules.sops
     ];
@@ -8,7 +10,7 @@
       defaultSopsFile = ../hosts/secrets.json;
       defaultSopsFormat = "json";
 
-      age.keyFile = "/persistent${config.hj.directory}/.config/sops/age/keys.txt";
+      age.keyFile = "${homeDir}/.config/sops/age/keys.txt";
     };
 
     persistance.user.directories = [

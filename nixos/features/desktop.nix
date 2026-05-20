@@ -1,7 +1,6 @@
 {self, ...}: {
   flake.nixosModules.desktop = {
     pkgs,
-    lib,
     ...
   }: {
     imports = [

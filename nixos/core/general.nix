@@ -12,7 +12,7 @@
 
     sops.secrets.user_password.neededForUsers = true;
     users = {
-      mutableUsers = false;
+      mutableUsers = if config.persistance.enable then false else true;
       users.${config.preferences.user.name} = {
         shell = self.packages.${pkgs.stdenv.hostPlatform.system}.environment;
         isNormalUser = true;

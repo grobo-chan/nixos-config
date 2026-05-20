@@ -39,6 +39,14 @@
       self.nixosModules.preservation
     ];
 
+    persistance = {
+      enable = true;
+      nukeRoot = {
+        enable = false;
+        volumeGroup = "mapper/cryptroot";
+      };
+    };
+
     boot = {
       # silence first boot output
       consoleLogLevel = 3;
