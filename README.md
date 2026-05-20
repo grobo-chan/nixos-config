@@ -14,8 +14,8 @@ https://en.wikipedia.org/wiki/Moons_of_Jupiter#List
   - [x] Fix Audio on it
 - [ ] System Customisation
     - [ ] Niri
-    - [ ] Impermanence
-    - [ ] Backups (very extremely ultra important yes)
+    - [x] Impermanence
+    - [x] Backups (very extremely ultra important yes)
     - [ ] Fish
     - [ ] Bar
     - [ ] Widgets
@@ -56,8 +56,7 @@ https://en.wikipedia.org/wiki/Moons_of_Jupiter#List
     - [ ] LibreOffice
     - [x] KeePassXC
     - [x] Pipewire
-    - [ ] SOPS
-    - [ ] FZF
+    - [x] SOPS
     - [x] Network Manager
     - [ ] DNS
     - [ ] Virt Manager
@@ -67,7 +66,15 @@ Just a general list of shit I saw while I made this
 I may/may not be forgetting some
 Will keep updating (Hopefully)
 - [Vimjoyer's Niri + Noctalia Shell guide](https://youtu.be/aNgujRXDTdE)
+
 - [Saylesss88's Impermanence (BTRFS Encrypted) guide](https://saylesss88.github.io/installation/enc/encrypted_impermanence.html)
+
   NOTE: The above uses [nix-impermanence](https://github.com/nix-community/impermanence) while this flake uses [nix-preservation](https://github.com/nix-community/preservation)
+
 - [Vimjoyer's Impermanence guide](https://www.youtube.com/watch?v=ZKBSWS7OOb4)
+
   NOTE: The above uses a tmpfs root while this flake uses a btrfs root subvolume which is nuked on boot via a bootscript
+
+- [Goxore's Nixconf](https://github.com/goxore/nixconf)
+
+- [Iynaix's Dotfiles](https://github.com/iynaix/dotfiles)
