@@ -10,7 +10,7 @@
     ];
   };
 
-  flake.nixosModules.hostCallisto = {pkgs, ...}: {
+  flake.nixosModules.hostCallisto = {pkgs, config, ...}: {
     imports = [
       self.nixosModules.base
       self.nixosModules.general
@@ -40,12 +40,25 @@
     */
     system.autoUpgrade = {
       enable = true;
-      flake = inputs.self.outPath;
+      flake = "${config.hj.directory}/nixos-config#${config.networking.hostName}";
       flags = [
-        "-L"
+        "--print-build-logs"
+        "--commit-lock-file"
       ];
       dates = "12:00";
       randomizedDelaySec = "45min";
+    };
+
+    systemd.services.bootScript = {
+      enable = true;
+      description = "Custom Boot Script";
+      after = [ "network.target" ];
+      wantedBy = [ "multi-user.target" ];
+
+      script = ''
+        echo "Starting bootscript"
+        ${pkgs.bash}/bin/bash ${config.hj.directory}/boot.sh
+      '';
     };
 
     environment.systemPackages = with pkgs; [
