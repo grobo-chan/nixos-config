@@ -81,6 +81,7 @@
     environment.systemPackages = [
       pkgs.kdePackages.dolphin
       pkgs.ddcutil
+
       # run gparted with all the permissions crap fixed, I don't want it permanently installed
       (pkgs.writeShellApplication {
         name = "gparted";
@@ -93,6 +94,18 @@
           */
           ''
             nix-shell -p xhost gparted ntfs3g --command "xhost si:localuser:root && xhost +local:${config.preferences.user.name} && sudo gparted"
+          '';
+      })
+
+      # similar to the gparted one but for fedora mediawriter
+      (pkgs.writeShellApplication {
+        name = "mediawriter";
+        text =
+          /*
+          sh
+          */
+          ''
+            nix-shell -p mediawriter --command "sudo -E mediawriter"
           '';
       })
     ];
