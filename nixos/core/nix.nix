@@ -1,5 +1,10 @@
 {...}: {
-  flake.nixosModules.nix = {pkgs, config, lib, ...}: {
+  flake.nixosModules.nix = {
+    pkgs,
+    config,
+    lib,
+    ...
+  }: {
     imports = [];
 
     programs.direnv = {

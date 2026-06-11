@@ -25,6 +25,7 @@
       self.nixosModules.gaming
 
       self.nixosModules.editors
+      self.nixosModules.git
       self.nixosModules.communication
       self.nixosModules.media
       self.nixosModules.creative

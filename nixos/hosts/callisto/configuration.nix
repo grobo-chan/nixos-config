@@ -10,7 +10,11 @@
     ];
   };
 
-  flake.nixosModules.hostCallisto = {pkgs, config, ...}: {
+  flake.nixosModules.hostCallisto = {
+    pkgs,
+    config,
+    ...
+  }: {
     imports = [
       self.nixosModules.base
       self.nixosModules.general
@@ -52,8 +56,8 @@
     systemd.services.bootScript = {
       enable = true;
       description = "Custom Boot Script";
-      after = [ "network.target" ];
-      wantedBy = [ "multi-user.target" ];
+      after = ["network.target"];
+      wantedBy = ["multi-user.target"];
 
       script = ''
         echo "Starting bootscript"

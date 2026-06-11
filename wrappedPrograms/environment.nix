@@ -57,12 +57,10 @@
         pkgs.ffmpeg
         pkgs.yt-dlp
         pkgs.lazygit
-        pkgs.gh
         pkgs.sops
         pkgs.age
 
         # wrapped
-        self'.packages.git
         self'.packages.lf
       ];
       env = {

@@ -81,16 +81,20 @@
     environment.systemPackages = [
       pkgs.kdePackages.dolphin
       pkgs.ddcutil
-        # run gparted with all the permissions crap fixed, I don't want it permanently installed
-        (pkgs.writeShellApplication {
-          name = "gparted";
-          # fix Authorization required, but no authorization protocol specified error
-          # fix gparted "cannot open display: :0" error
-          # respectively
-          text = /* sh */ ''
+      # run gparted with all the permissions crap fixed, I don't want it permanently installed
+      (pkgs.writeShellApplication {
+        name = "gparted";
+        # fix Authorization required, but no authorization protocol specified error
+        # fix gparted "cannot open display: :0" error
+        # respectively
+        text =
+          /*
+          sh
+          */
+          ''
             nix-shell -p xhost gparted ntfs3g --command "xhost si:localuser:root && xhost +local:${config.preferences.user.name} && sudo gparted"
           '';
-        })
-      ];
+      })
+    ];
   };
 }

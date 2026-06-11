@@ -1,6 +1,9 @@
 {
-  flake.nixosModules.virtManager = {pkgs, config, ...}:
-  let
+  flake.nixosModules.virtManager = {
+    pkgs,
+    config,
+    ...
+  }: let
     user = config.preferences.user.name;
   in {
     virtualisation = {
@@ -12,7 +15,7 @@
     # https://discourse.nixos.org/t/virt-manager-cannot-find-virtiofsd/26752/2
     # add virtiofsd to filesystem xml
     # <binary path="/run/current-system/sw/bin/virtiofsd"/>
-    environment.systemPackages = with pkgs; [ virtiofsd ];
+    environment.systemPackages = with pkgs; [virtiofsd];
 
     users.users.${user}.extraGroups = ["libvirtd"];
 

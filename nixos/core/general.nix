@@ -12,7 +12,10 @@
 
     sops.secrets.user_password.neededForUsers = true;
     users = {
-      mutableUsers = if config.persistance.enable then false else true;
+      mutableUsers =
+        if config.persistance.enable
+        then false
+        else true;
       users.${config.preferences.user.name} = {
         shell = self.packages.${pkgs.stdenv.hostPlatform.system}.environment;
         isNormalUser = true;
@@ -37,8 +40,6 @@
       ".local/share/nvim"
       ".local/share/fish"
       ".config/nvim"
-      ".config/gh"
-      ".local/state/gh"
     ];
   };
 }
