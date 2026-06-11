@@ -1,7 +1,7 @@
 {
   disko.devices.disk.main = {
     type = "disk";
-    device = "/dev/disk/by-id/nvme-SKHynix_HFS001TEM4X182N_5ME9N008015109O63";
+    device = "/dev/disk/by-id/ata-Samsung_SSD_860_EVO_M.2_250GB_S5GFNG0M903341P";
     content = {
       type = "gpt";
       partitions = {
@@ -49,7 +49,7 @@
                 "/persistent/swap" = {
                   mountpoint = "/persistent/swap";
                   mountOptions = ["subvol=swap" "noatime" "nodatacow" "compress=no"];
-                  swap.swapfile.size = "18G";
+                  swap.swapfile.size = "10G";
                 };
               };
             };

@@ -39,6 +39,7 @@
     isNixModule = file:
       file.hasExt "nix"
       && file.name != "flake.nix"
+      && file.name != "disko.nix"
       && !lib.hasPrefix "_" file.name;
 
     importTree = path:

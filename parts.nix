@@ -2,6 +2,7 @@
   imports = [
     inputs.wrapper-modules.flakeModules.wrappers
     inputs.flake-parts.flakeModules.modules
+    inputs.disko.flakeModules.default
   ];
 
   options = {

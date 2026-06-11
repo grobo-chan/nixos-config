@@ -95,6 +95,7 @@
 
     services.printing.enable = true;
 
+    hardware.enableRedistributableFirmware = true;
     hardware.nvidia.prime = {
       offload = {
         enable = true;

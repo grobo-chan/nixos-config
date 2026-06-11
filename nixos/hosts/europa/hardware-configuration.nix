@@ -16,19 +16,6 @@
     boot.extraModulePackages = [];
     boot.kernelPackages = pkgs.linuxPackages_7_0;
 
-    fileSystems."/" = {
-      device = "/dev/disk/by-uuid/57f5e02a-7418-4ba3-9f3f-3ee3537abd00";
-      fsType = "ext4";
-    };
-
-    fileSystems."/boot" = {
-      device = "/dev/disk/by-uuid/4388-7609";
-      fsType = "vfat";
-      options = ["fmask=0077" "dmask=0077"];
-    };
-
-    swapDevices = [];
-
     nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
     hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   };
