@@ -8,11 +8,13 @@
     gitProfiles = {
       default = "~/";
       alternate = "~/Projects/alternate/";
+      college = "~/Projects/college/";
+      polygit = "~/Projects/polygit/";
     };
   in {
     sops.secrets = builtins.listToAttrs (builtins.concatMap (
       name:
-        lib.forEach ["name" "email" "key_path" "host"] (x: {
+        lib.forEach ["name" "email" "key_path" "host/name" "host/alias" "host/port"] (x: {
           name = "git/${name}/${x}";
           value = {owner = user;};
         })
@@ -34,8 +36,9 @@
         name = "ssh-config-${name}";
         value = {
           content = ''
-            Host ${name}.${config.sops.placeholder."git/${name}/host"}
-              HostName ${config.sops.placeholder."git/${name}/host"}
+            Host ${config.sops.placeholder."git/${name}/host/alias"}
+              HostName ${config.sops.placeholder."git/${name}/host/name"}
+              Port ${config.sops.placeholder."git/${name}/host/port"}
               User git
               IdentityFile ${config.sops.placeholder."git/${name}/key_path"}
               IdentitiesOnly yes
