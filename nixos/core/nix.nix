@@ -2,7 +2,6 @@
   flake.nixosModules.nix = {
     pkgs,
     config,
-    lib,
     ...
   }: {
     imports = [];
