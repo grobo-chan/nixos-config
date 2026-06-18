@@ -15,7 +15,20 @@
     boot.initrd.kernelModules = [];
     boot.kernelModules = ["kvm-intel" "rtw89" "igc" "uinput"];
     boot.extraModulePackages = [];
-    boot.kernelPackages = pkgs.linuxPackages_7_0;
+
+    # boot.kernelPackages = pkgs.linuxPackages_7_0;
+    # Temporarily pinned to 7.0.11
+    # See this: https://github.com/nadimkobeissi/16iax10h-linux-sound-saga/issues/61
+    boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_7_0.override {
+      argsOverride = rec {
+        src = pkgs.fetchurl {
+          url = "mirror://kernel/linux/kernel/v7.x/linux-${version}.tar.xz";
+          sha256 = "sha256-5WyDVt2gETamBBxu+DK9Dsmb0tNd/5eDKqXsEO0BQwQ=";
+        };
+        version = "7.0.11";
+        modDirVersion = "7.0.11";
+      };
+    });
 
     boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-partlabel/disk-main-luks";
 
