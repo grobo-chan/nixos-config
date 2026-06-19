@@ -39,6 +39,7 @@
       prismlauncher
       lsfg-vk
       lsfg-vk-ui
+      archipelago
 
       wine
       wine64
