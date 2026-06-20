@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   enable = true;
+  autoStart = false;
   package = pkgs.neoforgeServers.neoforge-1_21_11;
 
   serverProperties = {
