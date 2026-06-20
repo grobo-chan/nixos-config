@@ -12,8 +12,6 @@
           default = "GroboChan";
         };
       };
-
-      useLix = lib.mkEnableOption "Use Lix";
     };
   };
 }

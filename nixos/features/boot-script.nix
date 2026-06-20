@@ -1,5 +1,9 @@
 {
-  flake.nixosModules.bootScript = {pkgs, config, ...}: {
+  flake.nixosModules.bootScript = {
+    pkgs,
+    config,
+    ...
+  }: {
     systemd.services.bootScript = {
       enable = true;
       description = "Custom Boot Script";

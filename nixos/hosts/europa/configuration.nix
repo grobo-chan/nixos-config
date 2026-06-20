@@ -7,6 +7,7 @@
     modules = [
       inputs.disko.nixosModules.disko
       inputs.preservation.nixosModules.default
+      inputs.nix-minecraft.nixosModules.minecraft-servers
       self.nixosModules.hostEuropa
     ];
   };
@@ -16,10 +17,13 @@
       self.nixosModules.base
       self.nixosModules.general
       self.nixosModules.desktop
-      self.nixosModules.sshServer
-      self.nixosModules.bootScript
       self.nixosModules.git
       self.nixosModules.editors
+
+      # server stuff
+      self.nixosModules.sshServer
+      self.nixosModules.bootScript
+      self.nixosModules.minecraftServer
 
       # disko
       inputs.disko.nixosModules.disko

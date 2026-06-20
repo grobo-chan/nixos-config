@@ -29,6 +29,7 @@
     };
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
   # Import all .nix files from current directory except flake.nix recursively

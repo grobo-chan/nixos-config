@@ -48,7 +48,6 @@
         volumeGroup = "mapper/cryptroot";
       };
     };
-    preferences.useLix = true;
 
     boot = {
       # silence first boot output
