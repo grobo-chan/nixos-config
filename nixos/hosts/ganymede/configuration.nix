@@ -44,7 +44,7 @@
     persistance = {
       enable = true;
       nukeRoot = {
-        enable = false;
+        enable = true;
         volumeGroup = "mapper/cryptroot";
       };
     };
