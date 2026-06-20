@@ -17,6 +17,7 @@
       self.nixosModules.general
       self.nixosModules.desktop
       self.nixosModules.sshServer
+      self.nixosModules.bootScript
       self.nixosModules.git
       self.nixosModules.editors
 
