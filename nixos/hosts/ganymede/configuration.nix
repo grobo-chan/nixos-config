@@ -118,6 +118,7 @@
     };
 
     services.udisks2.enable = true;
+    services.logind.settings.Login.HandleLidSwitch = "poweroff"; # Poweroff when lid is closed
 
     system.stateVersion = "25.11"; # DO NOT EDIT
   };

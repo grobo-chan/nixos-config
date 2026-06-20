@@ -81,6 +81,8 @@
     services.udisks2.enable = true;
     hardware.enableRedistributableFirmware = true;
 
+    services.logind.settings.Login.HandleLidSwitch = "ignore"; # Do nothing when Lid is closed
+
     system.stateVersion = "25.11"; # DO NOT EDIT
   };
 }
