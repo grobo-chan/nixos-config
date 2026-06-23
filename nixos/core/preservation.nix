@@ -19,6 +19,7 @@
         enable = true;
 
         preserveAt."/persistent" = {
+          commonMountOptions = ["x-gvfs-hide"];
           directories =
             [
               "/etc/nixos"

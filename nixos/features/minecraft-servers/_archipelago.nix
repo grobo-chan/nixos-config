@@ -4,8 +4,8 @@
   package = pkgs.neoforgeServers.neoforge-1_21_11;
 
   serverProperties = {
-    difficulty=2;
-    enforce-secure-profile=false; # I HATE CHAT REPORT I HATE CHAT REPORT FUCK THAT SHIT
+    difficulty = 2;
+    enforce-secure-profile = false; # I HATE CHAT REPORT I HATE CHAT REPORT FUCK THAT SHIT
   };
 
   symlinks = {
