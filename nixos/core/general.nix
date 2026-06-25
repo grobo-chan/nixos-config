@@ -30,6 +30,7 @@
       "nixos-config"
       "Videos"
       "Music"
+      "Pictures"
       "Documents"
       "Projects"
       ".ssh"

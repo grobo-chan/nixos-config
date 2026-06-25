@@ -15,6 +15,8 @@
       ".config/obs-studio"
       ".cache/krita"
       ".local/share/krita"
+      ".config/kritarc"
+      ".config/OpenTabletDriver"
     ];
   };
 }
