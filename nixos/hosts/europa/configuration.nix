@@ -37,6 +37,7 @@
       enable = true;
       nukeRoot.enable = true;
     };
+    preferences.enableGuest = true;
 
     boot = {
       # silence first boot output

@@ -14,7 +14,7 @@
       # NOTE: Make sure to start all file names with _
       # Or else the flake.nix file will try to read it as a flake parts module
       servers = {
-        archipelago = import ./_archipelago.nix {inherit pkgs;};
+        ap = import ./_archipelago.nix {inherit pkgs;};
       };
     };
 

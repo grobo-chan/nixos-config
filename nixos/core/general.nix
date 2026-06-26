@@ -2,6 +2,7 @@
   flake.nixosModules.general = {
     pkgs,
     config,
+    lib,
     ...
   }: {
     imports = [
@@ -11,18 +12,29 @@
     ];
 
     sops.secrets.user_password.neededForUsers = true;
+    sops.secrets.guest_password.neededForUsers = true;
     users = {
       mutableUsers =
         if config.persistance.enable
         then false
         else true;
-      users.${config.preferences.user.name} = {
-        shell = self.packages.${pkgs.stdenv.hostPlatform.system}.environment;
-        isNormalUser = true;
-        hashedPasswordFile = config.sops.secrets.user_password.path;
-        initialPassword = "password";
-        description = config.preferences.user.description;
-        extraGroups = ["networkmanager" "wheel"];
+      users = {
+        ${config.preferences.user.name} = {
+          shell = self.packages.${pkgs.stdenv.hostPlatform.system}.environment;
+          isNormalUser = true;
+          hashedPasswordFile = config.sops.secrets.user_password.path;
+          initialPassword = "password";
+          description = config.preferences.user.description;
+          extraGroups = ["networkmanager" "wheel"];
+        };
+
+        guest = lib.mkIf config.preferences.enableGuest {
+          shell = self.packages.${pkgs.stdenv.hostPlatform.system}.environment;
+          isNormalUser = true;
+          hashedPasswordFile = config.sops.secrets.guest_password.path;
+          initialPassword = "password";
+          description = "Guest User";
+        };
       };
     };
 
