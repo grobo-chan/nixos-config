@@ -10,13 +10,29 @@
     hardware.opentabletdriver.enable = true;
     hardware.uinput.enable = true;
 
-    persistance.user.directories = [
-      ".config/GIMP"
-      ".config/obs-studio"
-      ".cache/krita"
-      ".local/share/krita"
-      ".config/kritarc"
-      ".config/OpenTabletDriver"
-    ];
+    persistance.user = {
+      directories = [
+        ".config/GIMP"
+        ".config/obs-studio"
+        ".cache/krita"
+        ".local/share/krita"
+        ".config/OpenTabletDriver"
+      ];
+
+      files = [
+        {
+          file = ".config/kritadisplayrc";
+          mode = "0644";
+        }
+        {
+          file = ".config/kritarc";
+          mode = "0600";
+        }
+        {
+          file = ".config/kritashortcutsrc";
+          mode = "0600";
+        }
+      ];
+    };
   };
 }

@@ -2,7 +2,6 @@
   flake.nixosModules.browsers = {pkgs, ...}: {
     environment.systemPackages = [
       pkgs.tor-browser
-      pkgs.ungoogled-chromium
       pkgs.qbittorrent
     ];
 
@@ -12,7 +11,6 @@
       ".mozilla"
       ".cache/mozilla"
       ".config/mozilla"
-      ".config/chromium"
     ];
   };
 }
