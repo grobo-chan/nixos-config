@@ -31,6 +31,22 @@
             system files to persist
           '';
         };
+
+        cache = {
+          directories = lib.mkOption {
+            default = [];
+            description = ''
+              system directories to persist in cache
+            '';
+          };
+
+          files = lib.mkOption {
+            default = [];
+            description = ''
+              system files to persist in cache
+            '';
+          };
+        };
       };
 
       user = {
@@ -53,6 +69,22 @@
           description = ''
             user files to persist
           '';
+        };
+
+        cache = {
+          directories = lib.mkOption {
+            default = [];
+            description = ''
+              user directories to persist
+            '';
+          };
+
+          files = lib.mkOption {
+            default = [];
+            description = ''
+              user files to persist
+            '';
+          };
         };
       };
     };

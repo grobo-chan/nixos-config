@@ -19,7 +19,7 @@
 
     users.users.${user}.extraGroups = ["libvirtd"];
 
-    persistance.sys.directories = [
+    persistance.sys.cache.directories = [
       {
         directory = "/var/lib/libvirt";
         mode = "755";

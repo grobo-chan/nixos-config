@@ -2,6 +2,7 @@
   flake.nixosModules.preservation = {
     lib,
     config,
+    pkgs,
     ...
   }: let
     cfg = config.persistance;
@@ -13,6 +14,7 @@
     config = lib.mkIf cfg.enable {
       fileSystems."/nix".neededForBoot = true;
       fileSystems."/persistent".neededForBoot = true;
+      fileSystems."/cache".neededForBoot = true;
       boot.tmp.cleanOnBoot = lib.mkDefault true;
 
       preservation = {
@@ -26,10 +28,6 @@
               "/var/lib/bluetooth"
               {
                 directory = "/var/lib/nixos";
-                inInitrd = true;
-              }
-              {
-                directory = "/var/lib/systemd/coredump";
                 inInitrd = true;
               }
               {
@@ -52,6 +50,29 @@
           users.${cfg.user.name} = {
             directories = cfg.user.directories;
             files = cfg.user.files;
+          };
+        };
+
+        preserveAt."/cache" = {
+          commonMountOptions = ["x-gvfs-hide"];
+          directories =
+            [
+              {
+                directory = "/var/lib/systemd/coredump";
+                inInitrd = true;
+              }
+            ]
+            ++ cfg.sys.cache.directories;
+
+          files =
+            [
+              # I left this here blank incase I wanna add something in the future™
+            ]
+            ++ cfg.sys.files;
+
+          users.${cfg.user.name} = {
+            directories = cfg.user.directories;
+            files = cfg.user.cache.files;
           };
         };
       };
@@ -78,7 +99,7 @@
               btrfs subvolume delete "$1"
           }
 
-          for i in $(find /btrfs_tmp/old_roots/ -maxdepth 1 -mtime +10); do
+          for i in $(find /btrfs_tmp/old_roots/ -maxdepth 1 -mindepth 1 -mtime +30); do
               delete_subvolume_recursively "$i"
           done
 
@@ -86,6 +107,36 @@
           umount /btrfs_tmp
         '';
       };
+
+      environment.systemPackages = [
+        (pkgs.writeShellApplication {
+          name = "cleanOldRoots";
+          text =
+            /*
+            sh
+            */
+            ''
+              mkdir /btrfs_tmp
+              mount /dev/${cfg.nukeRoot.volumeGroup} /btrfs_tmp
+
+              delete_subvolume_recursively() {
+                  local i
+
+                  btrfs subvolume list -o "$1" | cut -f 9- -d " " | while IFS= read -r i; do
+                      delete_subvolume_recursively "/btrfs_tmp/$i"
+                  done
+
+                  btrfs subvolume delete "$1"
+              }
+
+              find /btrfs_tmp/old_roots/ -maxdepth 1 -mindepth 1 -print0 | while IFS= read -r -d "" i; do
+                  delete_subvolume_recursively "$i"
+              done
+
+              umount /btrfs_tmp
+            '';
+        })
+      ];
     };
   };
 }

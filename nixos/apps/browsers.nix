@@ -9,8 +9,11 @@
 
     persistance.user.directories = [
       ".mozilla"
-      ".cache/mozilla"
       ".config/mozilla"
+    ];
+
+    persistance.user.cache.directories = [
+      ".cache/mozilla"
     ];
   };
 }

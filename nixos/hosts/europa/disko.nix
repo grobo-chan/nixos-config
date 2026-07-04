@@ -42,6 +42,10 @@
                   mountOptions = ["subvol=persistent" "compress=zstd" "noatime"];
                   mountpoint = "/persistent";
                 };
+                "/cache" = {
+                  mountOptions = ["subvol=cache" "compress=zstd" "noatime"];
+                  mountpoint = "/cache";
+                };
                 "/nix" = {
                   mountOptions = ["subvol=nix" "compress=zstd" "noatime"];
                   mountpoint = "/nix";

@@ -7,10 +7,15 @@
       obsidian
     ];
 
-    persistance.user.directories = [
-      ".cache/zed"
-      ".config/zed"
-      ".local/share/zed"
-    ];
+    persistance.user = {
+      directories = [
+        ".config/zed"
+        ".local/share/zed"
+      ];
+
+      cache.directories = [
+        ".cache/zed"
+      ];
+    };
   };
 }

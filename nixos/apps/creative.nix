@@ -14,7 +14,6 @@
       directories = [
         ".config/GIMP"
         ".config/obs-studio"
-        ".cache/krita"
         ".local/share/krita"
         ".config/OpenTabletDriver"
       ];
@@ -32,6 +31,10 @@
           file = ".config/kritashortcutsrc";
           mode = "0600";
         }
+      ];
+
+      cache.directories = [
+        ".cache/krita"
       ];
     };
   };
