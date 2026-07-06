@@ -2,8 +2,8 @@
   flake.nixosModules.sops = {config, ...}: let
     homeDir =
       if config.persistance.enable
-      then "/persistent${config.hj.directory}"
-      else config.hj.directory;
+      then "/persistent${config.home}"
+      else config.home;
   in {
     imports = [
       inputs.sops-nix.nixosModules.sops

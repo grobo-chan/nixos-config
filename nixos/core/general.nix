@@ -1,14 +1,17 @@
-{self, ...}: {
+{self, inputs, ...}: {
   flake.nixosModules.general = {
     pkgs,
     config,
     lib,
     ...
-  }: {
+  }: let
+    user = config.preferences.user.name;
+  in {
     imports = [
       self.nixosModules.nix
-      self.nixosModules.hjem
+      self.nixosModules.hm
       self.nixosModules.sops
+      (inputs.nixpkgs.lib.mkAliasOptionModule ["home"] ["users" "users" user "home"])
     ];
 
     sops.secrets.user_password.neededForUsers = true;
@@ -19,8 +22,9 @@
         then false
         else true;
       users = {
-        ${config.preferences.user.name} = {
-          shell = self.packages.${pkgs.stdenv.hostPlatform.system}.environment;
+        ${user} = {
+          # shell = self.packages.${pkgs.stdenv.hostPlatform.system}.environment;
+          shell = pkgs.fish;
           isNormalUser = true;
           hashedPasswordFile = config.sops.secrets.user_password.path;
           initialPassword = "password";
@@ -28,15 +32,20 @@
           extraGroups = ["networkmanager" "wheel"];
         };
 
-        guest = lib.mkIf config.preferences.enableGuest {
-          shell = self.packages.${pkgs.stdenv.hostPlatform.system}.environment;
-          isNormalUser = true;
-          hashedPasswordFile = config.sops.secrets.guest_password.path;
-          initialPassword = "password";
-          description = "Guest User";
-        };
+        # TODO: Re-add guest user later
+        # guest = lib.mkIf config.preferences.enableGuest {
+        #   shell = self.packages.${pkgs.stdenv.hostPlatform.system}.environment;
+        #   isNormalUser = true;
+        #   hashedPasswordFile = config.sops.secrets.guest_password.path;
+        #   initialPassword = "password";
+        #   description = "Guest User";
+        # };
       };
     };
+
+    programs.fish.enable = true;
+
+    home-manager.users.${user} = self.homeModules.mainUserModule;
 
     persistance.user.directories = [
       "nixos-config"
