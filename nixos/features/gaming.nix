@@ -40,6 +40,8 @@
       lsfg-vk
       lsfg-vk-ui
       archipelago
+      melonds
+      mgba
 
       wine
       wine64
