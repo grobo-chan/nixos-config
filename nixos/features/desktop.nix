@@ -8,9 +8,11 @@
       self.nixosModules.pipewire
       self.nixosModules.browsers
       self.nixosModules.keepassxc
-      self.nixosModules.niri
       self.nixosModules.sddm
     ];
+
+    # TODO: Move to https://github.com/sodiboo/niri-flake
+    programs.niri.enable = true;
 
     services.xserver.enable = true;
 

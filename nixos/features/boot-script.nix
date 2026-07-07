@@ -12,7 +12,7 @@
 
       script = ''
         echo "Starting bootscript"
-        ${pkgs.bash}/bin/bash ${config.hj.directory}/boot.sh
+        ${pkgs.bash}/bin/bash ${config.home}/boot.sh
       '';
     };
 
