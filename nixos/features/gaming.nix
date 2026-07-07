@@ -52,6 +52,7 @@
       ".local/share/PrismLauncher"
       ".local/share/Terraria"
       ".local/share/Paradox Interactive"
+      ".local/share/Archipelago"
     ];
 
     persistance.user.cache.directories = [
