@@ -40,6 +40,8 @@
       lsfg-vk
       lsfg-vk-ui
       archipelago
+      melonds
+      mgba
 
       wine
       wine64
@@ -52,6 +54,7 @@
       ".local/share/PrismLauncher"
       ".local/share/Terraria"
       ".local/share/Paradox Interactive"
+      ".local/share/Archipelago"
     ];
 
     persistance.user.cache.directories = [
