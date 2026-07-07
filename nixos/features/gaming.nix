@@ -40,9 +40,13 @@
       lsfg-vk
       lsfg-vk-ui
       archipelago
+      melonds
+      mgba
 
       wine
       wine64
+      umu-launcher
+      heroic
     ];
 
     persistance.user.directories = [

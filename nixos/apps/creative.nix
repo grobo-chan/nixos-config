@@ -22,14 +22,17 @@
         {
           file = ".config/kritadisplayrc";
           mode = "0644";
+          how = "symlink";
         }
         {
           file = ".config/kritarc";
           mode = "0600";
+          how = "symlink";
         }
         {
           file = ".config/kritashortcutsrc";
           mode = "0600";
+          how = "symlink";
         }
       ];
 
