@@ -14,12 +14,12 @@
   flake.nixosModules.hostVM = {pkgs, ...}: {
     imports = [
       self.nixosModules.base
-      # self.nixosModules.general
-      # self.nixosModules.desktop
-      # self.nixosModules.git
+      self.nixosModules.general
+      self.nixosModules.desktop
+      self.nixosModules.git
 
       # server stuff
-      # self.nixosModules.sshServer
+      self.nixosModules.sshServer
 
       # disko
       inputs.disko.nixosModules.disko
@@ -28,12 +28,6 @@
       # preservation
       self.nixosModules.preservation
     ];
-
-    users.users.grobo = {
-      isNormalUser = true;
-      extraGroups = ["networkManager" "wheel"];
-      initialPassword = "password";
-    };
 
     persistance = {
       enable = true;
