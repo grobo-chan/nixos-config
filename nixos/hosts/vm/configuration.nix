@@ -63,10 +63,14 @@
       };
     };
 
+    boot.loader.systemd-boot.enable = false;
     boot.loader.grub = {
       enable = true;
       devices = ["nodev"];
+      efiSupport = true;
     };
+    boot.loader.efi.canTouchEfiVariables = true;
+    boot.loader.efi.efiSysMountPoint = "/boot";
 
     networking.hostName = "vm";
     networking.networkmanager.enable = true;
