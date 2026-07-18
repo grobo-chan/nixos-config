@@ -45,6 +45,8 @@
 
       wine
       wine64
+      heroic
+      umu-launcher
     ];
 
     persistance.user.directories = [

@@ -7,6 +7,7 @@ https://en.wikipedia.org/wiki/Moons_of_Jupiter#List
 | -------- | ------------- | ------ |
 | Europa   | Dell Inspiron 15 5000 | Works. Also has the really interesting property of ~~ASPD~~ refusing to let w*ndows work. |
 | Ganymede | Lenovo Legion Pro 7 16IAX10H | Works with an audio patch from [here](https://github.com/nadimkobeissi/16iax10h-linux-sound-saga) |
+| VM       | A Virtual Machine | Meant to test shit |
 
 ## TODO List
 - [x] Re-add Ganymede
