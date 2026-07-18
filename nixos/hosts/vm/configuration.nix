@@ -56,22 +56,17 @@
       ];
 
       # plymouth, showing after LUKS unlock
-      # plymouth = {
-      #   enable = true;
-      #   font = "${pkgs.hack-font}/share/fonts/truetype/Hack-Regular.ttf";
-      #   logo = "${pkgs.nixos-icons}/share/icons/hicolor/128x128/apps/nix-snowflake.png";
-      # };
+      plymouth = {
+        enable = true;
+        font = "${pkgs.hack-font}/share/fonts/truetype/Hack-Regular.ttf";
+        logo = "${pkgs.nixos-icons}/share/icons/hicolor/128x128/apps/nix-snowflake.png";
+      };
     };
 
-    boot.loader.systemd-boot.enable = false;
     boot.loader.grub = {
       enable = true;
       devices = ["nodev"];
-      useOSProber = true;
-      efiSupport = true;
     };
-    boot.loader.efi.canTouchEfiVariables = true;
-    boot.loader.efi.efiSysMountPoint = "/boot";
 
     networking.hostName = "vm";
     networking.networkmanager.enable = true;
