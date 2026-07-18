@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.hostEuropa = {
+  flake.nixosModules.hostVM = {
     config,
     lib,
     pkgs,
