@@ -12,12 +12,12 @@
 
       script = ''
         echo "Starting bootscript"
-        ${pkgs.bash}/bin/bash ${config.hj.directory}/boot.sh
+        ${pkgs.bash}/bin/bash /home/${config.preferences.user.name}/boot/run.sh
       '';
     };
 
-    persistance.user.files = [
-      "boot.sh"
+    persistance.user.directories = [
+      "boot"
     ];
   };
 }
