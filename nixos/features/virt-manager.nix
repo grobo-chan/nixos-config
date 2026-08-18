@@ -17,15 +17,17 @@
     # <binary path="/run/current-system/sw/bin/virtiofsd"/>
     environment.systemPackages = with pkgs; [virtiofsd];
 
+    # solution to this issue: https://github.com/NixOS/nixpkgs/issues/501336
+    systemd.services.virtFix = {
+      enable = true;
+      wantedBy = [ "multi-user.target" ];
+      before = [ "libvirtd.service" ];
+
+      script = ''rm -f /var/lib/libvirt/secrets/secrets-encryption-key'';
+    };
+
     users.users.${user}.extraGroups = ["libvirtd"];
 
-    persistance.sys.cache.directories = [
-      {
-        directory = "/var/lib/libvirt";
-        mode = "755";
-        user = "root";
-        group = "root";
-      }
-    ];
+    persistance.sys.cache.directories = ["/var/lib/libvirt"];
   };
 }

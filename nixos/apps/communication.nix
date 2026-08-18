@@ -12,11 +12,11 @@
               ++ [
                 (pkgs.fetchpatch2 {
                   url = "https://coca.codes/override-name.patch";
-                  hash = "sha256-1vV9UsWlvYb1+1RwtB57DTYoA7jW9dYjBOU8rabnqvE=";
+                  hash = "sha256-Q49opq4Ebnqz5U23+0dok/nOOotPd+FchcD89GAGeZ0=";
                 }).outPath
                 (pkgs.fetchpatch2 {
                   url = "https://coca.codes/no-override-tilde.patch";
-                  hash = "sha256-xD3QL69dUYMnlUjiC6NE6hFrUragdBXlMJCv5o4Vqww=";
+                  hash = "sha256-G5M/7eatHTFj5dSTOt8HJUvAb4rT73IQzmjr80m+xC0=";
                 }).outPath
               ];
           });

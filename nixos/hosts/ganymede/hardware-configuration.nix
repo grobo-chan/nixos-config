@@ -16,7 +16,7 @@
     boot.kernelModules = ["kvm-intel" "rtw89" "igc" "uinput"];
     boot.extraModulePackages = [];
 
-    boot.kernelPackages = pkgs.linuxPackages_7_1;
+    boot.kernelPackages = pkgs.linuxPackages_latest;
     # Incase I need to pin for whatever reason
     # boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_7_0.override {
     #   argsOverride = rec {
