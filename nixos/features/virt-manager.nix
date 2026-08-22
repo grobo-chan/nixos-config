@@ -17,14 +17,15 @@
     # <binary path="/run/current-system/sw/bin/virtiofsd"/>
     environment.systemPackages = with pkgs; [virtiofsd];
 
-    # solution to this issue: https://github.com/NixOS/nixpkgs/issues/501336
-    systemd.services.virtFix = {
-      enable = true;
-      wantedBy = [ "multi-user.target" ];
-      before = [ "libvirtd.service" ];
+    # Was meant to be a solution to this issue: https://github.com/NixOS/nixpkgs/issues/501336
+    # Doesnt work, makes nh os switch run twice for some reason
+    # I'm too tired to care, someone help me
+    # systemd.services.virtFix = {
+    #   enable = true;
+    #   wantedBy = [ "multi-user.target" ];
 
-      script = ''rm -f /var/lib/libvirt/secrets/secrets-encryption-key'';
-    };
+    #   script = ''rm -f /var/lib/libvirt/secrets/secrets-encryption-key'';
+    # };
 
     users.users.${user}.extraGroups = ["libvirtd"];
 

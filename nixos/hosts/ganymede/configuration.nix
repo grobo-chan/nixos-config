@@ -26,6 +26,7 @@
 
       self.nixosModules.editors
       self.nixosModules.git
+      self.nixosModules.podman
       self.nixosModules.communication
       self.nixosModules.media
       self.nixosModules.creative

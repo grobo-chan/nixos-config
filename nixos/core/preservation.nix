@@ -41,14 +41,7 @@
             ]
             ++ cfg.sys.directories;
 
-          files =
-            [
-              {
-                file = "/etc/machine-id";
-                inInitrd = true;
-              }
-            ]
-            ++ cfg.sys.files;
+          files = [] ++ cfg.sys.files;
 
           users.${cfg.user.name} = {
             directories = cfg.user.directories;
