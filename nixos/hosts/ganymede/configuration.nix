@@ -27,12 +27,13 @@
       self.nixosModules.editors
       self.nixosModules.git
       self.nixosModules.podman
+      self.nixosModules.ollama
       self.nixosModules.communication
       self.nixosModules.media
       self.nixosModules.creative
 
       self.nixosModules.kdeConnect
-      self.nixosModules.virtManager
+      # self.nixosModules.virtManager
 
       # disko
       inputs.disko.nixosModules.disko

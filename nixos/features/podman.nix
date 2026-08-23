@@ -28,6 +28,6 @@
       podman-compose
     ];
 
-    persistance.user.cache.directories = [ ".local/share/containers" ];
+    persistance.user.cache.directories = [".local/share/containers"];
   };
 }

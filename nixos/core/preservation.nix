@@ -60,11 +60,7 @@
             ]
             ++ cfg.sys.cache.directories;
 
-          files =
-            [
-              # I left this here blank incase I wanna add something in the future™
-            ]
-            ++ cfg.sys.files;
+          files = [] ++ cfg.sys.cache.files;
 
           users.${cfg.user.name} = {
             directories = cfg.user.directories;
