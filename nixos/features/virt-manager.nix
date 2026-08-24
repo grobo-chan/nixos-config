@@ -6,6 +6,9 @@
   }: let
     user = config.preferences.user.name;
   in {
+    # If this happens: https://github.com/NixOS/nixpkgs/issues/501336
+    # Do this: https://github.com/NixOS/nixpkgs/issues/501336#issuecomment-5404972715
+
     virtualisation = {
       libvirtd.enable = true;
       spiceUSBRedirection.enable = true;
@@ -17,18 +20,18 @@
     # <binary path="/run/current-system/sw/bin/virtiofsd"/>
     environment.systemPackages = with pkgs; [virtiofsd];
 
-    # Was meant to be a solution to this issue: https://github.com/NixOS/nixpkgs/issues/501336
-    # Doesnt work, makes nh os switch run twice for some reason
-    # I'm too tired to care, someone help me
-    # systemd.services.virtFix = {
-    #   enable = true;
-    #   wantedBy = [ "multi-user.target" ];
-
-    #   script = ''rm -f /var/lib/libvirt/secrets/secrets-encryption-key'';
-    # };
-
     users.users.${user}.extraGroups = ["libvirtd"];
 
-    persistance.sys.cache.directories = ["/var/lib/libvirt"];
+    persistance.sys = {
+      cache.directories = [
+        "/var/lib/libvirt"
+      ];
+      files = [
+        {
+          file = "/var/lib/systemd/credential.secret";
+          mode = "400";
+        }
+      ];
+    };
   };
 }

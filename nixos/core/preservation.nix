@@ -41,7 +41,15 @@
             ]
             ++ cfg.sys.directories;
 
-          files = [] ++ cfg.sys.files;
+          files =
+            [
+              {
+                file = "/etc/machine-id";
+                inInitrd = true;
+                how = "symlink";
+              }
+            ]
+            ++ cfg.sys.files;
 
           users.${cfg.user.name} = {
             directories = cfg.user.directories;
@@ -63,10 +71,22 @@
           files = [] ++ cfg.sys.cache.files;
 
           users.${cfg.user.name} = {
-            directories = cfg.user.directories;
+            directories = cfg.user.cache.directories;
             files = cfg.user.cache.files;
           };
         };
+      };
+
+      # See https://github.com/NixOS/nixpkgs/pull/351151#issuecomment-2440122776
+      systemd.services.systemd-machine-id-commit = {
+        unitConfig.ConditionPathIsMountPoint = [
+          ""
+          "/persistent/etc/machine-id"
+        ];
+        serviceConfig.ExecStart = [
+          ""
+          "systemd-machine-id-setup --commit --root /persistent"
+        ];
       };
 
       boot.initrd.systemd.services.nukeRoot = lib.mkIf cfg.nukeRoot.enable {

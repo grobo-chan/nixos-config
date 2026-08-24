@@ -33,7 +33,7 @@
       self.nixosModules.creative
 
       self.nixosModules.kdeConnect
-      # self.nixosModules.virtManager
+      self.nixosModules.virtManager
 
       # disko
       inputs.disko.nixosModules.disko

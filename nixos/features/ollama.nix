@@ -26,6 +26,8 @@
       {
         directory = "/var/lib/ollama";
         how = "symlink";
+        user = "ollama";
+        group = "ollama";
       }
     ];
   };

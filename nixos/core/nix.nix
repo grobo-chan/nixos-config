@@ -23,7 +23,10 @@
       flake = "/home/${config.preferences.user.name}/nixos-config";
     };
 
-    nix.settings.experimental-features = ["nix-command" "flakes"];
+    nix.settings = {
+      experimental-features = ["nix-command" "flakes"];
+      trusted-users = ["root" "@wheel" "${config.preferences.user.name}"];
+    };
     programs.nix-ld.enable = true;
     nixpkgs.config = {
       allowUnfree = true;
