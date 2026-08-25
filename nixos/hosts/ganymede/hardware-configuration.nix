@@ -49,6 +49,12 @@
       options = ["subvol=persistent/swap"];
     };
 
+    fileSystems."/cache" = {
+      device = "/dev/mapper/cryptroot";
+      fsType = "btrfs";
+      options = ["subvol=cache"];
+    };
+
     fileSystems."/boot" = {
       device = "/dev/disk/by-partlabel/disk-main-ESP";
       fsType = "vfat";

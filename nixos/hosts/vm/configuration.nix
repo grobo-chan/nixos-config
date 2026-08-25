@@ -3,28 +3,29 @@
   self,
   ...
 }: {
-  flake.nixosConfigurations.europa = inputs.nixpkgs.lib.nixosSystem {
+  flake.nixosConfigurations.vm = inputs.nixpkgs.lib.nixosSystem {
     modules = [
       inputs.disko.nixosModules.disko
       inputs.preservation.nixosModules.default
-      self.nixosModules.hostEuropa
+      self.nixosModules.hostVM
     ];
   };
 
-  flake.nixosModules.hostEuropa = {pkgs, ...}: {
+  flake.nixosModules.hostVM = {pkgs, ...}: {
     imports = [
       self.nixosModules.base
       self.nixosModules.general
       self.nixosModules.desktop
-      self.nixosModules.git
+
       self.nixosModules.editors
+      self.nixosModules.git
 
       # server stuff
       self.nixosModules.sshServer
 
       # disko
       inputs.disko.nixosModules.disko
-      self.diskoConfigurations.hostEuropa
+      self.diskoConfigurations.hostVM
 
       # preservation
       self.nixosModules.preservation
@@ -39,16 +40,13 @@
     };
 
     boot = {
-      # silence first boot output
-      consoleLogLevel = 3;
-      initrd.verbose = false;
+      consoleLogLevel = 4;
+      initrd.verbose = true;
       initrd.systemd.enable = true;
       kernelParams = [
-        "quiet"
         "splash"
         "intremap=on"
         "boot.shell_on_fail"
-        "udev.log_priority=3"
         "rd.systemd.show_status=auto"
       ];
 
@@ -79,13 +77,14 @@
     boot.loader.efi.canTouchEfiVariables = true;
     boot.loader.efi.efiSysMountPoint = "/boot";
 
-    networking.hostName = "europa";
+    networking.hostName = "vm";
     networking.networkmanager.enable = true;
 
     services.udisks2.enable = true;
     hardware.enableRedistributableFirmware = true;
 
-    services.logind.settings.Login.HandleLidSwitch = "ignore"; # Do nothing when Lid is closed
+    services.qemuGuest.enable = true;
+    services.spice-vdagentd.enable = true;
 
     system.stateVersion = "25.11"; # DO NOT EDIT
   };
