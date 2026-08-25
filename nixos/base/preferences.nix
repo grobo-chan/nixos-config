@@ -12,8 +12,6 @@
           default = "GroboChan";
         };
       };
-
-      enableGuest = lib.mkEnableOption "enable the creation of a guest user";
     };
   };
 }

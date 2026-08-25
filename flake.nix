@@ -29,7 +29,6 @@
     };
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
   nixConfig = {

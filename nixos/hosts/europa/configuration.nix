@@ -7,7 +7,6 @@
     modules = [
       inputs.disko.nixosModules.disko
       inputs.preservation.nixosModules.default
-      inputs.nix-minecraft.nixosModules.minecraft-servers
       self.nixosModules.hostEuropa
     ];
   };
@@ -22,8 +21,6 @@
 
       # server stuff
       self.nixosModules.sshServer
-      self.nixosModules.bootScript
-      self.nixosModules.minecraftServer
 
       # disko
       inputs.disko.nixosModules.disko
@@ -37,7 +34,6 @@
       enable = true;
       nukeRoot.enable = true;
     };
-    preferences.enableGuest = true;
 
     boot = {
       # silence first boot output

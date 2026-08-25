@@ -50,7 +50,6 @@
         volumeGroup = "mapper/cryptroot";
       };
     };
-    preferences.enableGuest = false;
 
     boot = {
       # silence first boot output
