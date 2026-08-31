@@ -14,6 +14,7 @@
     boot.initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod"];
     boot.initrd.kernelModules = [];
     boot.kernelModules = ["kvm-intel" "rtw89" "igc" "uinput"];
+    boot.kernelParams = ["pcie_aspm=off"];
     boot.extraModulePackages = [];
 
     boot.kernelPackages = pkgs.linuxPackages_latest;

@@ -22,7 +22,7 @@
 
     boot.kernelPatches = [
       {
-        name = "16iax10h-audio-linux-7.1.2";
+        name = "16iax10h-audio-linux-7.2.2";
         patch = audioPatch + "/fix/patches/16iax10h-audio-linux-7.2.patch";
 
         structuredExtraConfig = with lib.kernel; {
