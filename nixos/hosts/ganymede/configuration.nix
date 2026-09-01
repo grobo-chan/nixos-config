@@ -23,6 +23,7 @@
       self.nixosModules.desktop
 
       self.nixosModules.gaming
+      self.nixosModules.wireguard
 
       self.nixosModules.editors
       self.nixosModules.git
