@@ -1,64 +1,72 @@
 ## Devices List
-All Devices are named after the moons of Jupiter in order of discovery.
-(Io was skipped to avoid confusion with I/O (Input/Output))
+All Devices are named after the moons of Jupiter in order of discovery. <br />
+(Io was skipped to avoid confusion with I/O (Input/Output)) <br />
 https://en.wikipedia.org/wiki/Moons_of_Jupiter#List
 
-| Hostname | Device Model  | Status |
-| -------- | ------------- | ------ |
-| Europa   | Dell Inspiron 15 5000 | Works. Also has the really interesting property of ~~ASPD~~ refusing to let w*ndows work. |
-| Ganymede | Lenovo Legion Pro 7 16IAX10H | Works with an audio patch from [here](https://github.com/nadimkobeissi/16iax10h-linux-sound-saga) |
+| Hostname | Device Model  | Notes |
+| --- | --- | --- |
+| Europa | Dell Inspiron 15 5000 | N/A |
+| Ganymede | Lenovo Legion Pro 7 16IAX10H | Uses [@nadimkobeissi's audio patch](https://github.com/nadimkobeissi/16iax10h-linux-sound-saga) and [NixOS Hardware](https://github.com/NixOS/nixos-hardware) |
+| VM | A QEMU/KVM Virtual Machine | Needs Virtio Video, 3D Acceleration enabled, OpenGL enabled, and UEFI Firmware with i440FX Chipset |
 
 ## TODO List
-- [x] Re-add Ganymede
-  - [x] Fix Audio on it
-- [ ] System Customisation
-    - [ ] Niri
-    - [x] Impermanence
-    - [x] Backups (very extremely ultra important yes)
-    - [ ] Fish
-    - [ ] Bar
-    - [ ] Widgets
-    - [ ] Notification Manager
-    - [ ] SDDM
-    - [ ] Monitors
-    - [ ] Hotkeys
-    - [ ] Kitty
-    - [ ] LF
+- [ ] Core
+  - [x] Impermanence
+  - [x] Backups (very extremely ultra important yes)
+  - [x] Disk Encryption
+  - [ ] Secure Boot 
+  - [x] Pipewire
+  - [x] SOPS
+  - [x] Network Manager
+  - [ ] Moving from `hjem`+`wrappedPrograms` to `home-manager`
+    - [ ] Keep the Niri / Noctalia wrappedPrograms
+    - [ ] Make a new wrappedProgram for neovim
+
+- [ ] Ricing
+  - [ ] Add Stylix
+  - [ ] Niri
+  - [ ] Noctalia Shell
+  - [ ] Fish
+  - [ ] Widgets
+  - [ ] SDDM
+  - [ ] Hotkeys
+  - [ ] Kitty
+  - [ ] LF
 
 - [ ] Browser Config
-    - [ ] Zen Browser
-    - [ ] Tor Browser
-    - [ ] Ungoogled Chromium
+  - [x] Firefox (TODO: Remove)
+  - [ ] Zen Browser
+  - [x] Tor Browser
+  - [ ] Helium Browser
 
 - [ ] Editors
-    - [ ] Neovim
-    - [ ] Zed
-    - [ ] Obsidian
+  - [ ] Neovim
+  - [ ] Zed-Editor
+  - [ ] Obsidian
 
 - [ ] Programming Stuff
+  - [ ] Nix Flake Templates
     - [ ] Python
     - [ ] NodeJS
-    - [ ] C++
     - [ ] Rust
     - [ ] Java
-    - [ ] Docker
-    - [x] Git
-    - [x] GitHub CLI
+  - [x] Podman
+  - [x] Git
+  - [ ] GitHub CLI
 
 - [ ] Other Things
-    - [x] Steam
-    - [x] Lutris
-    - [x] Minecraft (Prism Launcher)
-    - [x] Discord
-    - [x] Deltachat
-    - [x] VLC
-    - [ ] LibreOffice
-    - [x] KeePassXC
-    - [x] Pipewire
-    - [x] SOPS
-    - [x] Network Manager
-    - [ ] DNS
-    - [ ] Virt Manager
+  - [x] Steam
+  - [x] Lutris
+  - [x] Minecraft (Prism Launcher)
+  - [x] Discord
+  - [x] Deltachat
+  - [x] VLC
+  - [x] KeePassXC
+  - [x] Virt Manager
+  - [x] KDE Connect
+  - [x] Thunderbird
+  - [ ] LibreOffice
+  - [ ] SyncThing
 
 # References n stuff
 Just a general list of shit I saw while I made this
