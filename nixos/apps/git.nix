@@ -35,5 +35,9 @@
     };
 
     environment.systemPackages = [pkgs.gh];
+
+    persistance.user.directories = [
+      ".config/gh"
+    ];
   };
 }

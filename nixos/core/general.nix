@@ -12,6 +12,7 @@
     ];
 
     sops.secrets.user_password.neededForUsers = true;
+    sops.secrets.root_password.neededForUsers = true;
     users = {
       mutableUsers =
         if config.persistance.enable
@@ -25,6 +26,10 @@
           initialPassword = "password";
           description = config.preferences.user.description;
           extraGroups = ["networkmanager" "wheel"];
+        };
+        root = {
+          hashedPasswordFile = config.sops.secrets.root_password.path;
+          initialPassword = "password";
         };
       };
     };
@@ -43,6 +48,7 @@
       ".local/share/direnv"
       ".local/share/nvim"
       ".local/share/fish"
+      ".local/share/keyrings"
       ".local/state/wireplumber"
       ".config/nvim"
     ];

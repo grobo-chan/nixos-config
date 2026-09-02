@@ -10,9 +10,7 @@
     ];
 
     sops = {
-      defaultSopsFile = ../hosts/secrets.json;
-      # workaround for https://github.com/Mic92/sops-nix/issues/604
-      # yaml is a superset of json apparently
+      defaultSopsFile = ../hosts/secrets.yaml;
       defaultSopsFormat = "yaml";
 
       age.keyFile = "${homeDir}/.config/sops/age/keys.txt";
