@@ -24,7 +24,7 @@
     };
 
     nix.settings = {
-      experimental-features = ["nix-command" "flakes"];
+      experimental-features = ["nix-command" "flakes" "pipe-operator"];
       trusted-users = ["root" "@wheel" "${config.preferences.user.name}"];
     };
     programs.nix-ld.enable = true;

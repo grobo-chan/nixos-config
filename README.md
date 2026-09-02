@@ -52,7 +52,7 @@ https://en.wikipedia.org/wiki/Moons_of_Jupiter#List
     - [ ] Java
   - [x] Podman
   - [x] Git
-  - [ ] GitHub CLI
+  - [x] GitHub CLI
 
 - [ ] Other Things
   - [x] Steam

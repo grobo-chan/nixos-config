@@ -1,71 +1,39 @@
 {
   flake.nixosModules.git = {
-    config,
+    pkgs,
     lib,
     ...
-  }: let
-    user = config.preferences.user.name;
-    gitProfiles = {
-      default = "~/";
-      alternate = "~/Projects/alternate/";
-      college = "~/Projects/college/";
-      polygit = "~/Projects/polygit/";
-    };
-  in {
-    sops.secrets = builtins.listToAttrs (builtins.concatMap (
-      name:
-        lib.forEach ["name" "email" "key_path" "host/name" "host/alias" "host/port"] (x: {
-          name = "git/${name}/${x}";
-          value = {owner = user;};
-        })
-    ) (builtins.attrNames gitProfiles));
-
-    sops.templates = builtins.listToAttrs (builtins.concatMap (name: [
-      {
-        name = "git-config-${name}";
-        value = {
-          content = ''
-            [user]
-              name = "${config.sops.placeholder."git/${name}/name"}"
-              email = "${config.sops.placeholder."git/${name}/email"}"
-          '';
-          owner = user;
-        };
-      }
-      {
-        name = "ssh-config-${name}";
-        value = {
-          content = ''
-            Host ${config.sops.placeholder."git/${name}/host/alias"}
-              HostName ${config.sops.placeholder."git/${name}/host/name"}
-              Port ${config.sops.placeholder."git/${name}/host/port"}
-              User git
-              IdentityFile ${config.sops.placeholder."git/${name}/key_path"}
-              IdentitiesOnly yes
-          '';
-          owner = user;
-        };
-      }
-    ]) (builtins.attrNames gitProfiles));
-
+  }: {
     programs.git = {
       enable = true;
       lfs.enable = true;
 
-      config =
-        {
-          init = {
-            defaultBranch = "main";
-          };
-        }
-        // builtins.listToAttrs (map (name: {
-          name = "includeIf \"gitdir:${gitProfiles.${name}}\"";
-          value = {path = config.sops.templates."git-config-${name}".path;};
-        }) (builtins.attrNames gitProfiles));
+      config = {
+        init = {
+          defaultBranch = "main";
+        };
+
+        # needed for github authentication for private repos
+        # adapted from home-manager:
+        # https://github.com/nix-community/home-manager/blob/142acd7a7d9eb7f0bb647f053b4ddfd01fdfbf1d/modules/programs/gh.nix#L191
+        credential =
+          [
+            "https://github.com"
+            "https://gist.github.com"
+          ]
+          |> map (
+            host:
+              lib.nameValuePair host {
+                helper = [
+                  ""
+                  "${lib.getExe pkgs.gh} auth git-credential"
+                ];
+              }
+          )
+          |> lib.listToAttrs;
+      };
     };
 
-    programs.ssh.extraConfig = builtins.concatStringsSep "\n" (map (
-      name: "Include ${config.sops.templates."ssh-config-${name}".path}"
-    ) (builtins.attrNames gitProfiles));
+    environment.systemPackages = [pkgs.gh];
   };
 }
