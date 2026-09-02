@@ -11,11 +11,13 @@
     persistance.user.directories = [
       ".mozilla"
       ".config/mozilla"
+      ".tor project"
       ".config/qBittorrent"
     ];
 
     persistance.user.cache.directories = [
       ".cache/mozilla"
+      ".cache/tor project"
     ];
   };
 }

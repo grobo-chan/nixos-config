@@ -4,6 +4,7 @@
       gimp
       krita
       obs-studio
+      tenacity
       kdePackages.kdenlive
     ];
 
@@ -14,6 +15,7 @@
       directories = [
         ".config/GIMP"
         ".config/obs-studio"
+        ".config/tenacity"
         ".local/share/krita"
         ".config/OpenTabletDriver"
       ];

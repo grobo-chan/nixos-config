@@ -32,6 +32,11 @@
     persistance.user.directories = [
       ".config/vesktop"
       ".config/DeltaChat"
+      ".config/thunderbird"
+    ];
+
+    persistance.user.cache.directories = [
+      ".cache/thunderbird"
     ];
   };
 }

@@ -8,9 +8,16 @@
       };
 
       containers = {
-        registries.search = [
-          "docker.io"
-        ];
+        registries.settings = {
+          registry = [
+            {
+              location = "docker.io";
+            }
+            {
+              location = "quay.io";
+            }
+          ];
+        };
 
         storage.settings = {
           storage = {
