@@ -14,7 +14,7 @@ https://en.wikipedia.org/wiki/Moons_of_Jupiter#List
   - [x] Impermanence
   - [x] Backups (very extremely ultra important yes)
   - [x] Disk Encryption
-  - [ ] Secure Boot 
+  - [x] Secure Boot 
   - [x] Pipewire
   - [x] SOPS
   - [x] Network Manager

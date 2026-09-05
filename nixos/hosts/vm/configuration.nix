@@ -58,21 +58,10 @@
       };
     };
 
-    boot.loader.systemd-boot.enable = false;
-    boot.loader.grub = {
+    boot.loader.limine = {
       enable = true;
-      devices = ["nodev"];
-      useOSProber = true;
       efiSupport = true;
-
-      extraEntries = ''
-        menuentry "Reboot" {
-          reboot
-        }
-        menuentry "Poweroff" {
-          halt
-        }
-      '';
+      secureBoot.enable = false;
     };
     boot.loader.efi.canTouchEfiVariables = true;
     boot.loader.efi.efiSysMountPoint = "/boot";
