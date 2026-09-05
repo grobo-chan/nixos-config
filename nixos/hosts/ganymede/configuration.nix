@@ -74,24 +74,22 @@
       };
     };
 
-    boot.loader.systemd-boot.enable = false;
-    boot.loader.grub = {
+    boot.loader.limine = {
       enable = true;
-      devices = ["nodev"];
-      useOSProber = true;
       efiSupport = true;
-
+      secureBoot.enable = true;
       extraEntries = ''
-        menuentry "Reboot" {
-          reboot
-        }
-        menuentry "Poweroff" {
-          halt
-        }
+        /Windows
+        protocol: efi
+        path: boot():/EFI/Microsoft/Boot/bootmgfw.efi
       '';
     };
     boot.loader.efi.canTouchEfiVariables = true;
     boot.loader.efi.efiSysMountPoint = "/boot";
+
+    # Secure Boot stuff
+    environment.systemPackages = [pkgs.sbctl];
+    persistance.sys.directories = ["/var/lib/sbctl"];
 
     networking.hostName = "ganymede";
     networking.networkmanager.enable = true;
