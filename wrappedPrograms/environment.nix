@@ -59,6 +59,7 @@
         pkgs.lazygit
         pkgs.sops
         pkgs.age
+        pkgs.jq
 
         # wrapped
         self'.packages.lf
