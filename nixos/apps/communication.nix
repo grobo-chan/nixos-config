@@ -24,7 +24,7 @@
     ];
 
     environment.systemPackages = with pkgs; [
-      deltachat-desktop
+      # deltachat-desktop
       vesktop
       thunderbird
     ];
