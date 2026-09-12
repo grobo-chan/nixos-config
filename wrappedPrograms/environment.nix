@@ -60,6 +60,7 @@
         pkgs.sops
         pkgs.age
         pkgs.jq
+        pkgs.tldr
 
         # wrapped
         self'.packages.lf
