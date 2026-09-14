@@ -22,6 +22,7 @@
 
       # server stuff
       self.nixosModules.sshServer
+      self.nixosModules.vnstat
 
       # disko
       inputs.disko.nixosModules.disko

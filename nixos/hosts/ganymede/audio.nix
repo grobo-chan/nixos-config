@@ -7,8 +7,8 @@
     audioPatch = pkgs.fetchFromGitHub {
       owner = "nadimkobeissi";
       repo = "16iax10h-linux-sound-saga";
-      rev = "fc45191";
-      hash = "sha256-AgrPToFHZ6oZLtxK/8iomJ1NF09U7waeM3sakLopXZQ=";
+      rev = "e306778";
+      hash = "sha256-m73fNZd9Kmv/QqbzUqZEjC+pKlae1Bia+zF9KP/vhKU=";
     };
   in {
     hardware.firmware = [
@@ -22,8 +22,8 @@
 
     boot.kernelPatches = [
       {
-        name = "16iax10h-audio-linux-7.2.2";
-        patch = audioPatch + "/fix/patches/16iax10h-audio-linux-7.2.patch";
+        name = "16iax10h-audio-linux-7.2.5";
+        patch = audioPatch + "/fix/patches/16iax10h-audio-linux-7.2.5.patch";
 
         structuredExtraConfig = with lib.kernel; {
           SND_HDA_SCODEC_AW88399 = module;

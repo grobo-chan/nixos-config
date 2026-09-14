@@ -23,7 +23,7 @@
       self.nixosModules.desktop
 
       self.nixosModules.gaming
-      # self.nixosModules.wireguard
+      self.nixosModules.wireguard
 
       self.nixosModules.editors
       self.nixosModules.git
@@ -35,6 +35,7 @@
 
       self.nixosModules.kdeConnect
       self.nixosModules.virtManager
+      self.nixosModules.vnstat
 
       # disko
       inputs.disko.nixosModules.disko

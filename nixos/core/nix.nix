@@ -25,13 +25,16 @@
 
     nix.settings = {
       experimental-features = ["nix-command" "flakes" "pipe-operator"];
-      trusted-users = ["root" "@wheel" "${config.preferences.user.name}"];
+      trusted-users = ["root" "@wheel"];
     };
     programs.nix-ld.enable = true;
     nixpkgs.config = {
       allowUnfree = true;
-      # cudaSupport = true;
     };
+
+    persistance.user.files = [
+      ".local/share/nix/trusted-settings.json"
+    ];
 
     environment.systemPackages = with pkgs; [
       # Nix tooling
