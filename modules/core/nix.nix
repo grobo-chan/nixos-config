@@ -34,6 +34,10 @@
     clean.enable = true;
     clean.extraArgs = "--keep-since 4d --keep 3";
   };
+  environment.variables = {
+    "NH_FILE" = "/etc/nixos/system.nix";
+    "NH_ATTRP" = config.networking.hostName;
+  };
 
   nix.channel.enable = false;
   environment.etc = {

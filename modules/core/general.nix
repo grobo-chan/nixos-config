@@ -21,11 +21,12 @@
       ${config.preferences.user.name} = {
         shell = pkgs.fish;
         isNormalUser = true;
-        hashedPasswordFile = config.sops.secrets.user_password.path;
-        initialPassword = "password";
         description = config.preferences.user.description;
         extraGroups = ["networkmanager" "wheel"];
+        hashedPasswordFile = config.sops.secrets.user_password.path;
+        initialPassword = "password";
       };
+
       root = {
         hashedPasswordFile = config.sops.secrets.root_password.path;
         initialPassword = "password";
