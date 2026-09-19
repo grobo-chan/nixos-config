@@ -37,5 +37,6 @@
 
   persistance.user.directories = [
     ".config/gh"
+    ".local/share/keyrings"
   ];
 }

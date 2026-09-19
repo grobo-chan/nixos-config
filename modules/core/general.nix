@@ -46,7 +46,5 @@
     ".local/share/zoxide"
     ".local/share/direnv"
     ".local/share/fish"
-    ".local/share/keyrings"
-    ".local/state/wireplumber"
   ];
 }

@@ -7,4 +7,8 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+
+  persistance.user.directories = [
+    ".local/state/wireplumber"
+  ];
 }

@@ -48,11 +48,10 @@ https://en.wikipedia.org/wiki/Moons_of_Jupiter#List
   - [ ] Obsidian
 
 - [ ] Programming Stuff
-  - [ ] Nix Flake Templates
+  - [ ] Nix Shell Templates
     - [ ] Python
     - [ ] NodeJS
     - [ ] Rust
-    - [ ] Java
   - [x] Podman
   - [x] Git
   - [x] GitHub CLI
