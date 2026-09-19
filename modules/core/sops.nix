@@ -1,7 +1,6 @@
 {
   sources,
   config,
-  lib,
   ...
 }: let
   homeDir =
