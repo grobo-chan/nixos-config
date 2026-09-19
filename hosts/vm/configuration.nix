@@ -7,10 +7,7 @@
     # hardware config
     ./hardware-configuration.nix
 
-    base
-    core.general
-    core.preservation
-
+    core
     desktop
     editors
     git

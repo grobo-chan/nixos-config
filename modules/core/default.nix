@@ -1,4 +1,7 @@
 {
-  general = import ./general.nix;
-  preservation = import ./preservation.nix;
+  imports = [
+    ./baseVars/default.nix
+    ./general.nix
+    ./preservation.nix
+  ];
 }
