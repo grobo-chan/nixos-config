@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ./browsers.nix
+    ./internet.nix
     ./pipewire.nix
     ./niri.nix
     ./sddm.nix
