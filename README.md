@@ -20,13 +20,14 @@ https://en.wikipedia.org/wiki/Moons_of_Jupiter#List
   - [x] Pipewire
   - [x] SOPS
   - [x] Network Manager
-  - [ ] Moving from `hjem`+`wrappedPrograms` to `home-manager`
-    - [ ] Keep the Niri / Noctalia wrappedPrograms
-    - [ ] Make a new wrappedProgram for neovim
-  - [ ] Moving from flakes to npins
+  - [x] Moving from flakes to npins
+  - [ ] Hjem
+  - [ ] Wrapped Programs for:
+    - [ ] Niri
+    - [ ] Noctalia
+    - [ ] LF
 
-- [ ] Ricing
-  - [ ] Add Stylix
+- [ ] Ricing/Customization
   - [ ] Niri
   - [ ] Noctalia Shell
   - [ ] Fish
