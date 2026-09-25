@@ -1,7 +1,6 @@
 {
   sources,
   pkgs,
-  config,
   ...
 }: {
   nixpkgs.overlays = [
@@ -29,24 +28,12 @@
     };
   };
 
-  programs.nh = {
-    enable = true;
-    clean.enable = true;
-    clean.extraArgs = "--keep-since 4d --keep 3";
-  };
-  environment.variables = {
-    "NH_FILE" = "/etc/nixos/system.nix";
-    "NH_ATTRP" = config.networking.hostName;
-  };
-
   nix.channel.enable = false;
   environment.etc = {
     "nixos/nixpkgs".source = builtins.storePath pkgs.path;
-    "nixos/rust-overlay".source = sources.rust-overlay;
   };
   nix.nixPath = [
     "nixpkgs=/etc/nixos/nixpkgs"
-    "rust-overlay=/etc/nixos/rust-overlay"
   ];
 
   # make `nix run nixpkgs#nixpkgs` use the same nixpkgs as the one used by nixos.

@@ -4,6 +4,7 @@
   ...
 }: {
   imports = [
+    ./nh.nix
     ./nix.nix
     ./sops.nix
   ];

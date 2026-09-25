@@ -13,24 +13,25 @@
       "url": "https://github.com/nix-community/disko/archive/725ea35e410ad83be4931d1bff7e090eacaf3563.tar.gz",
       "hash": "sha256-uZkBR7yHdIKUFB5SZdfgh1qkGfI3XmYmI/lTiquxbck="
     },
+    "flake-compat": {
+      "type": "Git",
+      "repository": {
+        "type": "Forgejo",
+        "server": "https://git.lix.systems/",
+        "owner": "lix-project",
+        "repo": "flake-compat"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "382052b74656a369c5408822af3f2501e9b1af81",
+      "url": "https://git.lix.systems/lix-project/flake-compat/archive/382052b74656a369c5408822af3f2501e9b1af81.tar.gz",
+      "hash": "sha256-Eg9b/rq/ECYwNwEXs5i9wHyhxNI0JrYx2srdI2uZMaQ="
+    },
     "helium": {
       "type": "Url",
       "url": "https://github.com/imputnet/helium-linux/releases/latest/download/helium-0.18.1.1-x86_64.AppImage",
       "unpack": false,
       "hash": "sha256-0eG5k9+/7gbp+Q6KKc1Y6HpHUZewT8BIdQYifDOFacs="
-    },
-    "nix-wrapper-modules": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "nix-community",
-        "repo": "nix-wrapper-modules"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "1db3c116a6aa61823f8d8f3c47c306846428fc54",
-      "url": "https://github.com/nix-community/nix-wrapper-modules/archive/1db3c116a6aa61823f8d8f3c47c306846428fc54.tar.gz",
-      "hash": "sha256-7xWS16u13YGlRNKWaAPzRbEyh4OLOXJe31k7h4AnXNU="
     },
     "nixos-hardware": {
       "type": "Git",
@@ -65,19 +66,6 @@
       "url": "https://github.com/nix-community/preservation/archive/93416f4614ad2dfed5b0dcf12f27e57d27a5ab11.tar.gz",
       "hash": "sha256-mMI9IanU+Xw+pVogD2oT0I2kTmvz2Un/Apc5+CwUpEY="
     },
-    "rust-overlay": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "oxalica",
-        "repo": "rust-overlay"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "84fb3c79e477d5e7ec4eff9c24dbc5d5c99b0fd1",
-      "url": "https://github.com/oxalica/rust-overlay/archive/84fb3c79e477d5e7ec4eff9c24dbc5d5c99b0fd1.tar.gz",
-      "hash": "sha256-JQBGEZDY6up5yu0ehQeDDnjvsw7MP8d4AlaBd9RxZVI="
-    },
     "sops-nix": {
       "type": "Git",
       "repository": {
@@ -90,6 +78,19 @@
       "revision": "2bd00bd9bb35fe6d114888c8f1c2e946c541dd8f",
       "url": "https://github.com/Mic92/sops-nix/archive/2bd00bd9bb35fe6d114888c8f1c2e946c541dd8f.tar.gz",
       "hash": "sha256-TNfgoHsqsYYvaJImlWctfRkh4PseTagzegU1Dgdbehw="
+    },
+    "wrappers": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "nix-wrapper-modules"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "1db3c116a6aa61823f8d8f3c47c306846428fc54",
+      "url": "https://github.com/nix-community/nix-wrapper-modules/archive/1db3c116a6aa61823f8d8f3c47c306846428fc54.tar.gz",
+      "hash": "sha256-7xWS16u13YGlRNKWaAPzRbEyh4OLOXJe31k7h4AnXNU="
     },
     "zen-browser": {
       "type": "Url",
