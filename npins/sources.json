@@ -41,16 +41,16 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "b2d7d02644f0002535a3bb51a73780945cdc7ba4",
-      "url": "https://github.com/NixOS/nixos-hardware/archive/b2d7d02644f0002535a3bb51a73780945cdc7ba4.tar.gz",
-      "hash": "sha256-q0J27mJDfd4BM9a7KcMVbcRmqyU+goQwudbMIu66qsg="
+      "revision": "30d48a0ec6035f8140d0125af274f0de95f1e9b5",
+      "url": "https://github.com/NixOS/nixos-hardware/archive/30d48a0ec6035f8140d0125af274f0de95f1e9b5.tar.gz",
+      "hash": "sha256-mZGHLGi217oLIwzDM4PNRZeCNa6g2WBXURyXbNMFs7Y="
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1075288.a32edd765451/nixexprs.tar.xz",
-      "hash": "sha256-j08lBbqaYwjsW0xy6Dh4MNZpQ/oSvLU1MLAo38OXphM="
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1078969.34ca302a9572/nixexprs.tar.xz",
+      "hash": "sha256-nuO5fxDxKTeYxSEfD4mVB+XwzOy5qj9T2LxVc5vk4Bc="
     },
     "preservation": {
       "type": "Git",
@@ -74,9 +74,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "fbdb2de9e7619d660ae7e8f752f38b261020b701",
-      "url": "https://github.com/oxalica/rust-overlay/archive/fbdb2de9e7619d660ae7e8f752f38b261020b701.tar.gz",
-      "hash": "sha256-hWw9vlrsFm9kOw8MT5k6IX/7xCzgROuJ6ZvQOrkq66Q="
+      "revision": "84fb3c79e477d5e7ec4eff9c24dbc5d5c99b0fd1",
+      "url": "https://github.com/oxalica/rust-overlay/archive/84fb3c79e477d5e7ec4eff9c24dbc5d5c99b0fd1.tar.gz",
+      "hash": "sha256-JQBGEZDY6up5yu0ehQeDDnjvsw7MP8d4AlaBd9RxZVI="
     },
     "sops-nix": {
       "type": "Git",
@@ -87,9 +87,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "1e73e8f7176d65e1b55e324de099bbfff4b2c574",
-      "url": "https://github.com/Mic92/sops-nix/archive/1e73e8f7176d65e1b55e324de099bbfff4b2c574.tar.gz",
-      "hash": "sha256-k+I+R6uwHX3VcJ7326qLV6vCahZUgsVl+i8sSU/Stxk="
+      "revision": "2bd00bd9bb35fe6d114888c8f1c2e946c541dd8f",
+      "url": "https://github.com/Mic92/sops-nix/archive/2bd00bd9bb35fe6d114888c8f1c2e946c541dd8f.tar.gz",
+      "hash": "sha256-TNfgoHsqsYYvaJImlWctfRkh4PseTagzegU1Dgdbehw="
     },
     "zen-browser": {
       "type": "Url",
