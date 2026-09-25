@@ -22,6 +22,14 @@
           };
         };
       };
+
+      helium = pkgs.callPackage ./packages/helium.nix {
+        inherit sources;
+        flags = [
+          "--restore-last-session"
+          "--hide-crash-restore-bubble"
+        ];
+      };
     })
   ];
 
@@ -30,7 +38,18 @@
     pkgs.qbittorrent
     pkgs.kdePackages.kget
     pkgs.zen-browser
+    pkgs.helium
   ];
+
+  programs.chromium = {
+    enable = true; # THIS IS NOT THE CHROMIUM BROWSER, IT'S ONLY FOR POLICIES!!!
+    extensions = [
+      # JSON Viewer
+      "gbdbademeighmnbliehmnoifmabbedbp"
+      # DDG Extension
+      "bkdgflcldnnnapblkhphbgpggdiikppg"
+    ];
+  };
 
   xdg.mime.defaultApplications = {
     "text/html" = "zen.desktop";
@@ -42,12 +61,14 @@
 
   persistance.user.directories = [
     ".config/zen"
+    ".config/net.imput.helium"
     ".tor project"
     ".config/qBittorrent"
   ];
 
   persistance.user.cache.directories = [
     ".cache/zen"
+    ".cache/net.imput.helium"
     ".cache/tor project"
   ];
 }

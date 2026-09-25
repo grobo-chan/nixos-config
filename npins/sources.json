@@ -13,6 +13,12 @@
       "url": "https://github.com/nix-community/disko/archive/725ea35e410ad83be4931d1bff7e090eacaf3563.tar.gz",
       "hash": "sha256-uZkBR7yHdIKUFB5SZdfgh1qkGfI3XmYmI/lTiquxbck="
     },
+    "helium": {
+      "type": "Url",
+      "url": "https://github.com/imputnet/helium-linux/releases/latest/download/helium-0.18.1.1-x86_64.AppImage",
+      "unpack": false,
+      "hash": "sha256-0eG5k9+/7gbp+Q6KKc1Y6HpHUZewT8BIdQYifDOFacs="
+    },
     "nix-wrapper-modules": {
       "type": "Git",
       "repository": {

@@ -15,7 +15,7 @@
   pciutils,
   pipewire,
   writeText,
-  zenPolicies,
+  zenPolicies ? {},
   ...
 }: let
   policies =

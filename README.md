@@ -37,15 +37,14 @@ https://en.wikipedia.org/wiki/Moons_of_Jupiter#List
   - [ ] Kitty
   - [ ] LF
 
-- [ ] Browser Config
-  - [x] Firefox (TODO: Remove)
-  - [ ] Zen Browser
+- [x] Browser Config
+  - [x] Zen Browser
   - [x] Tor Browser
-  - [ ] Helium Browser
+  - [x] Helium Browser
 
 - [ ] Editors
-  - [ ] Neovim
-  - [ ] Zed-Editor
+  - [ ] Helix
+  - [ ] Jupyter
   - [ ] Obsidian
 
 - [ ] Programming Stuff
