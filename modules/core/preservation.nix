@@ -19,8 +19,11 @@ in {
         commonMountOptions = ["x-gvfs-hide"];
         directories =
           [
-            "/etc/nixos"
             "/var/lib/bluetooth"
+            {
+              directory = "/etc/nixos";
+              mode = "0777";
+            }
             {
               directory = "/var/lib/nixos";
               inInitrd = true;

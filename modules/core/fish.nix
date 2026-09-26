@@ -1,6 +1,7 @@
 {
   nix-wrappers,
   pkgs,
+  lib,
   ...
 }: {
   imports = [
@@ -17,6 +18,7 @@
       end
 
       set fish_greeting
+      ${lib.getExe pkgs.zoxide} init fish | source
 
       if type -q direnv
           direnv hook fish | source
@@ -29,6 +31,7 @@
     };
 
     runtimePkgs = with pkgs; [
+      zoxide
       file
       unzip
       zip
