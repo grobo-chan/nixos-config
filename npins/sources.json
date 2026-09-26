@@ -1,0 +1,89 @@
+{
+  "pins": {
+    "disko": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "disko"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "725ea35e410ad83be4931d1bff7e090eacaf3563",
+      "url": "https://github.com/nix-community/disko/archive/725ea35e410ad83be4931d1bff7e090eacaf3563.tar.gz",
+      "hash": "sha256-uZkBR7yHdIKUFB5SZdfgh1qkGfI3XmYmI/lTiquxbck="
+    },
+    "helium": {
+      "type": "Url",
+      "url": "https://github.com/imputnet/helium-linux/releases/latest/download/helium-0.18.1.1-x86_64.AppImage",
+      "unpack": false,
+      "hash": "sha256-0eG5k9+/7gbp+Q6KKc1Y6HpHUZewT8BIdQYifDOFacs="
+    },
+    "nixos-hardware": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "NixOS",
+        "repo": "nixos-hardware"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "30d48a0ec6035f8140d0125af274f0de95f1e9b5",
+      "url": "https://github.com/NixOS/nixos-hardware/archive/30d48a0ec6035f8140d0125af274f0de95f1e9b5.tar.gz",
+      "hash": "sha256-mZGHLGi217oLIwzDM4PNRZeCNa6g2WBXURyXbNMFs7Y="
+    },
+    "nixpkgs": {
+      "type": "Channel",
+      "name": "nixpkgs-unstable",
+      "artifact": "nixexprs.tar.xz",
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1079672.79b6d20e5559/nixexprs.tar.xz",
+      "hash": "sha256-7dZDc7YUsLkMH2GAKunEeSV1Z32Zk3ssnwxV6ei575k="
+    },
+    "preservation": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "preservation"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "93416f4614ad2dfed5b0dcf12f27e57d27a5ab11",
+      "url": "https://github.com/nix-community/preservation/archive/93416f4614ad2dfed5b0dcf12f27e57d27a5ab11.tar.gz",
+      "hash": "sha256-mMI9IanU+Xw+pVogD2oT0I2kTmvz2Un/Apc5+CwUpEY="
+    },
+    "sops-nix": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Mic92",
+        "repo": "sops-nix"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "2bd00bd9bb35fe6d114888c8f1c2e946c541dd8f",
+      "url": "https://github.com/Mic92/sops-nix/archive/2bd00bd9bb35fe6d114888c8f1c2e946c541dd8f.tar.gz",
+      "hash": "sha256-TNfgoHsqsYYvaJImlWctfRkh4PseTagzegU1Dgdbehw="
+    },
+    "wrappers": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "nix-wrapper-modules"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "1db3c116a6aa61823f8d8f3c47c306846428fc54",
+      "url": "https://github.com/nix-community/nix-wrapper-modules/archive/1db3c116a6aa61823f8d8f3c47c306846428fc54.tar.gz",
+      "hash": "sha256-7xWS16u13YGlRNKWaAPzRbEyh4OLOXJe31k7h4AnXNU="
+    },
+    "zen-browser": {
+      "type": "Url",
+      "url": "https://github.com/zen-browser/desktop/releases/latest/download/zen.linux-x86_64.tar.xz",
+      "unpack": false,
+      "hash": "sha256-Cq7hs/Z/B0rr9/xsL+gkRBvK/UMemZEzZHnBY3BRndA="
+    }
+  },
+  "version": 8
+}
