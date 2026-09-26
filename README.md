@@ -22,11 +22,11 @@ https://en.wikipedia.org/wiki/Moons_of_Jupiter#List
   - [x] Network Manager
   - [x] Moving from flakes to npins
   - [ ] Hjem
-  - [ ] Wrapped Programs for:
+  - [x] Wrapped Programs for:
     - [x] NH
     - [x] Fish
     - [x] Kitty
-    - [ ] Niri
+    - [x] Niri
     - [x] Noctalia
     - [x] Helix
 
