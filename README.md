@@ -24,10 +24,10 @@ https://en.wikipedia.org/wiki/Moons_of_Jupiter#List
   - [ ] Hjem
   - [ ] Wrapped Programs for:
     - [x] NH
-    - [ ] Fish
+    - [x] Fish
+    - [ ] Kitty
     - [ ] Niri
     - [ ] Noctalia
-    - [ ] LF
     - [x] Helix
 
 - [ ] Ricing/Customization
@@ -38,7 +38,7 @@ https://en.wikipedia.org/wiki/Moons_of_Jupiter#List
   - [ ] SDDM
   - [ ] Hotkeys
   - [ ] Kitty
-  - [ ] LF
+  - [ ] Nemo
 
 - [x] Browser Config
   - [x] Zen Browser

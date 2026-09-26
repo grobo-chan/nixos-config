@@ -3,6 +3,10 @@
   pkgs,
   ...
 }: {
+  imports = [
+    ./nh.nix
+  ];
+
   nixpkgs.overlays = [
     (final: prev: {
       inherit

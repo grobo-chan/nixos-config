@@ -1,10 +1,6 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
+{config, ...}: {
   imports = [
-    ./nh.nix
+    ./fish.nix
     ./nix.nix
     ./sops.nix
   ];
@@ -12,7 +8,6 @@
   sops.secrets.user_password.neededForUsers = true;
   sops.secrets.root_password.neededForUsers = true;
 
-  programs.fish.enable = true;
   users = {
     mutableUsers =
       if config.persistance.enable
@@ -20,7 +15,7 @@
       else true;
     users = {
       ${config.preferences.user.name} = {
-        shell = pkgs.fish;
+        shell = config.wrappers.fish.wrapper;
         isNormalUser = true;
         description = config.preferences.user.description;
         extraGroups = ["networkmanager" "wheel"];
