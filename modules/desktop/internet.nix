@@ -1,6 +1,7 @@
 {
   sources,
   pkgs,
+  lib,
   ...
 }: {
   nixpkgs.overlays = [
@@ -32,6 +33,11 @@
       };
     })
   ];
+
+  environment.sessionVariables = {
+    DEFAULT_BROWSER = lib.getExe pkgs.zen-browser;
+    BROWSER = lib.getExe pkgs.zen-browser;
+  };
 
   environment.systemPackages = [
     pkgs.tor-browser

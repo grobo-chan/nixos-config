@@ -5,10 +5,7 @@ let
   };
   nixosSystem = import "${sources.nixpkgs}/nixos/lib/eval-config.nix";
 
-  nix-wrappers =
-    (import sources.flake-compat {
-      src = sources.wrappers;
-    }).outputs;
+  nix-wrappers = (import sources.wrappers) {inherit pkgs;};
 in {
   vm = nixosSystem {
     inherit pkgs;

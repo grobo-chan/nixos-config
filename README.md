@@ -23,9 +23,12 @@ https://en.wikipedia.org/wiki/Moons_of_Jupiter#List
   - [x] Moving from flakes to npins
   - [ ] Hjem
   - [ ] Wrapped Programs for:
+    - [x] NH
+    - [ ] Fish
     - [ ] Niri
     - [ ] Noctalia
     - [ ] LF
+    - [x] Helix
 
 - [ ] Ricing/Customization
   - [ ] Niri
