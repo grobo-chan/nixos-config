@@ -15,6 +15,8 @@
   pciutils,
   pipewire,
   writeText,
+  makeDesktopItem,
+  copyDesktopItems,
   zenPolicies ? {},
   ...
 }: let
@@ -37,6 +39,18 @@ in
       wrapGAppsHook3
       autoPatchelfHook
       patchelfUnstable
+      copyDesktopItems
+    ];
+
+    desktopItems = [
+      (makeDesktopItem {
+        name = "zen";
+        desktopName = "Zen Browser";
+        exec = "zen %u";
+        icon = "zen";
+        comment = "A fast, private and secure web browser built to improve your day-to-day experience.";
+        categories = ["Network" "WebBrowser"];
+      })
     ];
 
     buildInputs = [
@@ -58,6 +72,8 @@ in
     ];
 
     installPhase = ''
+      runHook preInstall
+
       mkdir -p "$prefix/lib/zen-latest"
       cp -r * "$prefix/lib/zen-latest"
 
@@ -66,6 +82,8 @@ in
 
       mkdir -p "$out/lib/zen-latest/distribution"
       ln -s ${policiesJson} "$out/lib/zen-latest/distribution/policies.json"
+
+      runHook postInstall
     '';
 
     patchelfFlags = ["--no-clobber-old-sections"];
