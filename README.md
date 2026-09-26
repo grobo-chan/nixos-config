@@ -25,9 +25,9 @@ https://en.wikipedia.org/wiki/Moons_of_Jupiter#List
   - [ ] Wrapped Programs for:
     - [x] NH
     - [x] Fish
-    - [ ] Kitty
+    - [x] Kitty
     - [ ] Niri
-    - [ ] Noctalia
+    - [x] Noctalia
     - [x] Helix
 
 - [ ] Ricing/Customization
