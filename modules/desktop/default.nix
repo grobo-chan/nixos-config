@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./internet.nix
+    ./nemo.nix
     ./pipewire.nix
     ./niri.nix
     ./sddm.nix
@@ -75,9 +76,10 @@
 
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
 
   environment.systemPackages = [
-    pkgs.kdePackages.dolphin
     pkgs.ddcutil
 
     # run gparted with all the permissions crap fixed, I don't want it permanently installed

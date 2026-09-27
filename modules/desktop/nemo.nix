@@ -1,0 +1,122 @@
+# Adapted from: https://github.com/iynaix/dotfiles/blob/main/modules/gui/nemo.nix
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
+  environment.systemPackages = with pkgs; [
+    file-roller
+    p7zip-rar # support for encrypted archives
+    nemo-fileroller
+    nemo-with-extensions
+    webp-pixbuf-loader # for webp thumbnails
+    adwaita-icon-theme
+  ];
+
+  xdg = {
+    # fix opening terminal for nemo / thunar by using xdg-terminal-exec spec
+    terminal-exec = {
+      enable = true;
+      settings = {
+        default = ["kitty"];
+      };
+    };
+
+    # fix mimetype associations
+    mime.defaultApplications = {
+      "inode/directory" = "nemo.desktop";
+      "application/zip" = "org.gnome.FileRoller.desktop";
+      "application/vnd.rar" = "org.gnome.FileRoller.desktop";
+      "application/x-7z-compressed" = "org.gnome.FileRoller.desktop";
+      "application/x-bzip2-compressed-tar" = "org.gnome.FileRoller.desktop";
+      "application/x-tar" = "org.gnome.FileRoller.desktop";
+    };
+  };
+
+  # add a custom "open in terminal" option to the context menu
+  hj.xdg.data.files."nemo/actions/open-in-kitty.nemo_action".text = ''
+    [Nemo Action]
+    Name=Open in Terminal
+    Comment=Open a terminal in this location
+    Exec=kitty --directory=%F
+    Icon-Name=utilities-terminal
+    Selection=Any
+    Extensions=dir;
+  '';
+
+  programs.dconf.enable = true;
+  programs.dconf.profiles.user.databases = [
+    {
+      settings = {
+        # Temporary Icon Theme
+        "org/gnome/desktop/interface" = {
+          icon-theme-name = "Adwaita";
+        };
+
+        # fix open in terminal
+        "org/gnome/desktop/default-applications/terminal" = {
+          exec = "xdg-terminal-exec";
+        };
+        "org/cinnamon/desktop/default-applications/terminal" = {
+          exec = "xdg-terminal-exec";
+        };
+        "org/nemo/list-view" = {
+          default-visible-columns = [
+            "name"
+            "size"
+            "mime_type"
+            "date_modified"
+          ];
+          enable-folder-expansion = true;
+        };
+        "org/nemo/preferences" = {
+          default-folder-viewer = "list-view";
+          show-hidden-files = true;
+          start-with-dual-pane = false;
+          date-format-monospace = true;
+          # needs to be a uint64!
+          thumbnail-limit = lib.gvariant.mkUint64 (100 * 1024 * 1024); # 100 mb
+        };
+        "org/nemo/window-state" = {
+          sidebar-bookmark-breakpoint = lib.gvariant.mkInt32 0;
+          sidebar-width = lib.gvariant.mkInt32 180;
+        };
+        "org/nemo/preferences/menu-config" = {
+          selection-menu-make-link = true;
+          selection-menu-copy-to = true;
+          selection-menu-move-to = true;
+          # hide the default "open in terminal options" to use the custom one
+          background-menu-open-in-terminal = false;
+          selection-menu-open-in-terminal = false;
+        };
+      };
+    }
+  ];
+
+  # Bookmarks
+  hj.xdg = {
+    config.files."gtk-3.0/bookmarks".text =
+      lib.concatMapStringsSep "\n" (
+        b: "file://${b}"
+      ) [
+        "${config.hj.directory}/Downloads"
+        "${config.hj.directory}/Projects"
+        "${config.hj.directory}/.config/nixos NixConfig"
+        "${config.hj.directory}/Documents"
+        "${config.hj.directory}/Pictures/Wallpapers"
+        "/persistent Persist"
+      ];
+  };
+
+  persistance.user = {
+    directories = [
+      # folder preferences such as view mode and sort order
+      ".local/share/gvfs-metadata"
+    ];
+    cache.directories = [
+      # thumbnail cache
+      ".cache/thumbnails"
+    ];
+  };
+}

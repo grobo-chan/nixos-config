@@ -62,7 +62,6 @@
   networking.hostName = "vm";
   networking.networkmanager.enable = true;
 
-  services.udisks2.enable = true;
   hardware.enableRedistributableFirmware = true;
 
   services.qemuGuest.enable = true;
