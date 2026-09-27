@@ -12,7 +12,7 @@ https://en.wikipedia.org/wiki/Moons_of_Jupiter#List
 
 ## TODO List
 
-- [ ] Core
+- [x] Core
   - [x] Impermanence
   - [x] Backups (very extremely ultra important yes)
   - [x] Disk Encryption
@@ -21,7 +21,7 @@ https://en.wikipedia.org/wiki/Moons_of_Jupiter#List
   - [x] SOPS
   - [x] Network Manager
   - [x] Moving from flakes to npins
-  - [ ] Hjem
+  - [x] Hjem
   - [x] Wrapped Programs for:
     - [x] NH
     - [x] Fish

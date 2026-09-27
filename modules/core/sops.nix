@@ -5,8 +5,8 @@
 }: let
   homeDir =
     if config.persistance.enable
-    then "/persistent/home/${config.preferences.user.name}"
-    else "/home/${config.preferences.user.name}";
+    then "/persistent/${config.hj.directory}"
+    else "${config.hj.directory}";
   ageKeyPath = "${homeDir}/.config/sops/age/keys.txt";
 in {
   imports = ["${sources.sops-nix}/modules/sops"];

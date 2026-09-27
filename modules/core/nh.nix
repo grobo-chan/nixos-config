@@ -12,7 +12,7 @@
 
   wrappers.nh = {
     env = {
-      "NH_FILE" = "/home/grobo/.config/nixos/system.nix";
+      "NH_FILE" = "${config.hj.directory}/.config/nixos/system.nix";
       "NH_ATTRP" = config.networking.hostName;
     };
   };

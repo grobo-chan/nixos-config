@@ -1,5 +1,6 @@
 {config, ...}: {
   imports = [
+    ./hjem.nix
     ./fish.nix
     ./nix.nix
     ./sops.nix
