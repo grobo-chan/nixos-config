@@ -1,18 +1,12 @@
-{
-  sources,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = with (import ../../modules); [
     ./hardware-configuration.nix
     core
     desktop
-    editors
     git
-
-    # server stuff
-    ssh-server
+    editors
     vnstat
+    keepassxc
 
     # disko
     "${sources.disko}/module.nix"
@@ -31,13 +25,16 @@
   };
 
   boot = {
-    consoleLogLevel = 4;
-    initrd.verbose = true;
+    # silence first boot output
+    consoleLogLevel = 3;
+    initrd.verbose = false;
     initrd.systemd.enable = true;
     kernelParams = [
+      "quiet"
       "splash"
       "intremap=on"
       "boot.shell_on_fail"
+      "udev.log_priority=3"
       "rd.systemd.show_status=auto"
     ];
 
@@ -52,18 +49,21 @@
   boot.loader.limine = {
     enable = true;
     efiSupport = true;
-    secureBoot.enable = false;
+    secureBoot.enable = true;
   };
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot";
 
-  networking.hostName = "vm";
+  # Secure Boot stuff
+  environment.systemPackages = [pkgs.sbctl];
+  persistance.sys.directories = ["/var/lib/sbctl"];
+
+  networking.hostName = "europa";
   networking.networkmanager.enable = true;
 
   hardware.enableRedistributableFirmware = true;
 
-  services.qemuGuest.enable = true;
-  services.spice-vdagentd.enable = true;
+  services.logind.settings.Login.HandleLidSwitch = "ignore"; # Do nothing when Lid is closed
 
   system.stateVersion = "25.11"; # DO NOT EDIT
 }

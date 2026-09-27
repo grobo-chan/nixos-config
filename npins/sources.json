@@ -1,5 +1,32 @@
 {
   "pins": {
+    "audio-16iax10h": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nadimkobeissi",
+        "repo": "16iax10h-linux-sound-saga"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "46fa24ed8b87403e3079aca3e1496c19093053bb",
+      "url": "https://github.com/nadimkobeissi/16iax10h-linux-sound-saga/archive/46fa24ed8b87403e3079aca3e1496c19093053bb.tar.gz",
+      "hash": "sha256-6EC5m2kVOWRbH3syMdgZniyeXcaYCwd+rmXsFtLvJ8g="
+    },
+    "delta-no-override-tilde.patch": {
+      "type": "MutableUrl",
+      "update_url": "https://coca.codes/plural-delta/patches/latest/no-override-tilde.patch",
+      "unpack": false,
+      "url": "https://coca.codes/plural-delta/patches/2026-07-30/no-override-tilde.patch",
+      "hash": "sha256-k/pFH5i76rjQ474lH63CPRoeLpolAbl5h+BFBMPLnaQ="
+    },
+    "delta-override-name.patch": {
+      "type": "MutableUrl",
+      "update_url": "https://coca.codes/plural-delta/patches/latest/override-name.patch",
+      "unpack": false,
+      "url": "https://coca.codes/plural-delta/patches/2026-07-30/override-name.patch",
+      "hash": "sha256-wCTSl6ldRaCy72FsLIm0Y79ebAwR9AEAEBDGdHOoh0o="
+    },
     "disko": {
       "type": "Git",
       "repository": {
@@ -49,8 +76,8 @@
       "type": "Channel",
       "name": "nixpkgs-unstable",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1079672.79b6d20e5559/nixexprs.tar.xz",
-      "hash": "sha256-7dZDc7YUsLkMH2GAKunEeSV1Z32Zk3ssnwxV6ei575k="
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1080219.8d5d270900d3/nixexprs.tar.xz",
+      "hash": "sha256-d3hOIhc3atvdRbTI+jZygt5ld0eQKfgBjhQ/VKpV3dM="
     },
     "preservation": {
       "type": "Git",
@@ -74,9 +101,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "2bd00bd9bb35fe6d114888c8f1c2e946c541dd8f",
-      "url": "https://github.com/Mic92/sops-nix/archive/2bd00bd9bb35fe6d114888c8f1c2e946c541dd8f.tar.gz",
-      "hash": "sha256-TNfgoHsqsYYvaJImlWctfRkh4PseTagzegU1Dgdbehw="
+      "revision": "5efb5a6f4f5ab192817d28557dd4d650fa14d866",
+      "url": "https://github.com/Mic92/sops-nix/archive/5efb5a6f4f5ab192817d28557dd4d650fa14d866.tar.gz",
+      "hash": "sha256-rs9meAYxW3zzrh43yaW7htrqCD+X9+pupDPHN86fumI="
     },
     "wrappers": {
       "type": "Git",
