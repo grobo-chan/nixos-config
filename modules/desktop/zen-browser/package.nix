@@ -30,7 +30,7 @@
 in
   stdenv.mkDerivation (finalAttrs: {
     version = "latest";
-    pname = "zen-browser-unwrapped";
+    pname = "zen-browser";
     applicationName = "Zen Browser";
 
     src = sources.zen-browser;
@@ -82,6 +82,17 @@ in
 
       mkdir -p "$out/lib/zen-latest/distribution"
       ln -s ${policiesJson} "$out/lib/zen-latest/distribution/policies.json"
+
+      mkdir -p $out/share/icons/hicolor/128x128/apps
+      mkdir -p $out/share/icons/hicolor/64x64/apps
+      mkdir -p $out/share/icons/hicolor/48x48/apps
+      mkdir -p $out/share/icons/hicolor/32x32/apps
+      mkdir -p $out/share/icons/hicolor/16x16/apps
+      cp $prefix/lib/zen-latest/browser/chrome/icons/default/default128.png $out/share/icons/hicolor/128x128/apps/zen.png
+      cp $prefix/lib/zen-latest/browser/chrome/icons/default/default64.png $out/share/icons/hicolor/64x64/apps/zen.png
+      cp $prefix/lib/zen-latest/browser/chrome/icons/default/default48.png $out/share/icons/hicolor/48x48/apps/zen.png
+      cp $prefix/lib/zen-latest/browser/chrome/icons/default/default32.png $out/share/icons/hicolor/32x32/apps/zen.png
+      cp $prefix/lib/zen-latest/browser/chrome/icons/default/default16.png $out/share/icons/hicolor/16x16/apps/zen.png
 
       runHook postInstall
     '';

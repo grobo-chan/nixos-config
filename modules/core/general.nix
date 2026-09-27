@@ -36,6 +36,7 @@
     "Pictures"
     "Documents"
     "Projects"
+    ".config/nixos"
     ".ssh"
 
     # TODO: Move
