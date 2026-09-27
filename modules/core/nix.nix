@@ -64,5 +64,6 @@
     alejandra
     manix
     nix-inspect
+    npins
   ];
 }
