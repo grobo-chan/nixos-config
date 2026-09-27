@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  sources,
+  pkgs,
+  ...
+}: {
   imports = with (import ../../modules); [
     ./hardware-configuration.nix
     core
