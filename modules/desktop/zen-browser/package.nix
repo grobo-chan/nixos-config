@@ -17,14 +17,12 @@
   writeText,
   makeDesktopItem,
   copyDesktopItems,
-  zenPolicies ? {},
+  libpulseaudio,
   ...
 }: let
-  policies =
-    {
-      DisableAppUpdate = true;
-    }
-    // zenPolicies;
+  policies = {
+    DisableAppUpdate = true;
+  };
 
   policiesJson = writeText "firefox-policies.json" (builtins.toJSON {inherit policies;});
 in
@@ -65,6 +63,7 @@ in
       curl
       libva.out
       pciutils
+      libpulseaudio
     ];
 
     appendRunpaths = [
