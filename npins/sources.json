@@ -9,9 +9,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "46fa24ed8b87403e3079aca3e1496c19093053bb",
-      "url": "https://github.com/nadimkobeissi/16iax10h-linux-sound-saga/archive/46fa24ed8b87403e3079aca3e1496c19093053bb.tar.gz",
-      "hash": "sha256-6EC5m2kVOWRbH3syMdgZniyeXcaYCwd+rmXsFtLvJ8g="
+      "revision": "2a5627f5bb3754a27c6b6afb2fad73a5c171a473",
+      "url": "https://github.com/nadimkobeissi/16iax10h-linux-sound-saga/archive/2a5627f5bb3754a27c6b6afb2fad73a5c171a473.tar.gz",
+      "hash": "sha256-faskQgEdma90zifT/xcuefOTJ/Scx6TQfKcSVEtL/cU="
     },
     "delta-no-override-tilde.patch": {
       "type": "MutableUrl",
@@ -68,16 +68,29 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "06f9ecaea5f64b6ff61cf42cb32f21621c4fa14a",
-      "url": "https://github.com/NixOS/nixos-hardware/archive/06f9ecaea5f64b6ff61cf42cb32f21621c4fa14a.tar.gz",
-      "hash": "sha256-XwFt1uLyaBCQU1/nUeGqeBnqNXPVgGRnz20YVYdmF6Y="
+      "revision": "31cc5f4d9b9ba601071e8b8504601b9b176e2756",
+      "url": "https://github.com/NixOS/nixos-hardware/archive/31cc5f4d9b9ba601071e8b8504601b9b176e2756.tar.gz",
+      "hash": "sha256-rlsYY/Dg/LhbIj51Aa6TLvRpZeb3KZgUTd7llQ5XcJE="
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1081052.f45c6f04c2f0/nixexprs.tar.xz",
-      "hash": "sha256-k0ouG9zZIYS9D2B6yADfOoMbcUDSBrFg+tfHuUgbHDU="
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1085727.8c6b39505383/nixexprs.tar.xz",
+      "hash": "sha256-FlkIecEaptr60mewZ/3SWP1CPKa1CpAwD3Xd8pL1bPk="
+    },
+    "noctalia": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "noctalia-dev",
+        "repo": "noctalia"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "e639a87e811ad3268c73f6d5e77669c94184ba15",
+      "url": "https://github.com/noctalia-dev/noctalia/archive/e639a87e811ad3268c73f6d5e77669c94184ba15.tar.gz",
+      "hash": "sha256-R+cq28uDVDRY//7BjWXh/oKGv+yIrDsuFJJX9H41yEo="
     },
     "preservation": {
       "type": "Git",
@@ -101,9 +114,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "5efb5a6f4f5ab192817d28557dd4d650fa14d866",
-      "url": "https://github.com/Mic92/sops-nix/archive/5efb5a6f4f5ab192817d28557dd4d650fa14d866.tar.gz",
-      "hash": "sha256-rs9meAYxW3zzrh43yaW7htrqCD+X9+pupDPHN86fumI="
+      "revision": "dcd241ba97088c22569d1573286e1b9daad340c0",
+      "url": "https://github.com/Mic92/sops-nix/archive/dcd241ba97088c22569d1573286e1b9daad340c0.tar.gz",
+      "hash": "sha256-nFxM+pKoZ8LJAEnUXARyCaOAloWgaW9kZQOSjWzKcTE="
     },
     "wrappers": {
       "type": "Git",
