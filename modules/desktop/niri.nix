@@ -15,7 +15,7 @@
   ];
 
   wrappers.niri = let
-    noctalia = lib.getExe config.wrappers.noctalia.wrapper;
+    noctalia = lib.getExe pkgs.noctalia;
     kitty = lib.getExe config.wrappers.kitty.wrapper;
   in {
     enable = true;
@@ -65,7 +65,7 @@
         }
         {
           matches = [
-            {namespace = "^noctalia-overview";}
+            {namespace = "^noctalia-backdrop";}
           ];
           place-within-backdrop = true;
         }
@@ -97,16 +97,15 @@
         "Mod+Shift+Slash".show-hotkey-overlay = _: {};
 
         "Mod+T".spawn-sh = kitty;
-        "Mod+D".spawn-sh = "${noctalia} ipc call launcher toggle";
-        "Super+Alt+L".spawn-sh = "${noctalia} ipc call lockScreen lock";
+        "Mod+D".spawn-sh = "${noctalia} msg panel-toggle launcher";
+        "Super+Alt+L".spawn-sh = "${noctalia} msg session lock";
 
-        "Super+P".spawn-sh = "${noctalia} ipc call plugin:pomodoro toggle";
+        "XF86AudioRaiseVolume".spawn-sh = "${noctalia} msg volume-up";
+        "XF86AudioLowerVolume".spawn-sh = "${noctalia} msg volume-down";
+        "XF86AudioMute".spawn-sh = "${noctalia} msg volume-mute";
 
-        "XF86AudioRaiseVolume".spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0";
-        "XF86AudioLowerVolume".spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-";
-
-        "XF86MonBrightnessUp".spawn-sh = "${noctalia} ipc call brightness increase";
-        "XF86MonBrightnessDown".spawn-sh = "${noctalia} ipc call brightness decrease";
+        "XF86MonBrightnessUp".spawn-sh = "${noctalia} msg brightness-up";
+        "XF86MonBrightnessDown".spawn-sh = "${noctalia} msg brightness-down";
 
         "Mod+Q".close-window = _: {};
         "Mod+O".toggle-overview = _: {};

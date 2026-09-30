@@ -22,13 +22,12 @@ https://en.wikipedia.org/wiki/Moons_of_Jupiter#List
   - [x] Network Manager
   - [x] Moving from flakes to npins
   - [x] Hjem
+    - [x] Noctalia
   - [x] Wrapped Programs for:
     - [x] NH
     - [x] Fish
     - [x] Kitty
     - [x] Niri
-    - [x] Noctalia
-      - [ ] TODO: Replace with Hjem Module
     - [x] Helix
 
 - [ ] Ricing/Customization
