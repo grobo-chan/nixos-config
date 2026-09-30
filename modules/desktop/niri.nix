@@ -19,15 +19,57 @@
     kitty = lib.getExe config.wrappers.kitty.wrapper;
   in {
     enable = true;
+
     settings = {
       spawn-at-startup = [noctalia];
 
       xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
-      window-rule = {
-        geometry-corner-radius = 20;
-        clip-to-geometry = true;
-      };
+      window-rules = [
+        {
+          geometry-corner-radius = 20;
+          clip-to-geometry = true;
+          background-effect = {
+            blur = true;
+          };
+        }
+        {
+          matches = [
+            {app-id = "zen";}
+            {app-id = "kitty";}
+          ];
+          background-effect = {
+            blur = true;
+          };
+          draw-border-with-background = false;
+        }
+      ];
+
+      extraConfig = ''
+        window-rule {
+            match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+            default-floating-position x=10 y=10 relative-to="bottom-right"
+        }
+      '';
+
+      layer-rules = [
+        {
+          matches = [
+            {namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$";}
+            {namespace = "noctalia-window-switcher";}
+          ];
+          background-effect = {
+            blur = true;
+            xray = false;
+          };
+        }
+        {
+          matches = [
+            {namespace = "^noctalia-overview";}
+          ];
+          place-within-backdrop = true;
+        }
+      ];
 
       debug = {
         honor-xdg-activation-with-invalid-serial = _: {};

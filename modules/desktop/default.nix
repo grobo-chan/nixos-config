@@ -8,7 +8,7 @@
     ./nemo.nix
     ./pipewire.nix
     ./niri.nix
-    ./sddm.nix
+    ./noctalia-greeter.nix
   ];
 
   services.xserver.enable = true;

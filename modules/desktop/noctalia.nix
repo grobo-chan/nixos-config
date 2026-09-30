@@ -10,11 +10,18 @@
     })
   ];
 
+  # nixpkgs.overlays = [
+  #  (final: prev: {
+  #    noctalia-shell = prev.noctalia;
+  #  })
+  # ];
+
   wrappers.noctalia = {
     enable = true;
     env = {
       "NOCTALIA_CACHE_DIR" = "/tmp/noctalia-cache/";
     };
+    
     colors = {
       mError = "#fb4934";
       mHover = "#83a598";
@@ -73,7 +80,7 @@
         customCommands = "[]";
       };
       bar = {
-        capsuleOpacity = 1;
+        capsuleOpacity = 0.8;
         density = "comfortable";
         exclusive = true;
         floating = false;
@@ -243,19 +250,7 @@
         ];
       };
       dock = {
-        animationSpeed = 2;
-        backgroundOpacity = 1;
-        colorizeIcons = false;
-        deadOpacity = 0.6;
-        displayMode = "auto_hide";
         enabled = false;
-        floatingRatio = 1;
-        inactiveIndicators = false;
-        monitors = [];
-        onlySameOutput = true;
-        pinnedApps = [];
-        pinnedStatic = false;
-        size = 1;
       };
       general = {
         allowPanelsOnScreenWithoutBar = true;
@@ -311,7 +306,7 @@
         manualSunset = "19:00";
       };
       notifications = {
-        backgroundOpacity = 1;
+        backgroundOpacity = 0.8;
         criticalUrgencyDuration = 15;
         enableKeyboardLayoutToast = true;
         enabled = true;
@@ -333,7 +328,7 @@
       };
       osd = {
         autoHideMs = 3000;
-        backgroundOpacity = 1;
+        backgroundOpacity = 0.8;
         enabled = true;
         enabledTypes = [
           0
@@ -458,15 +453,22 @@
         fontDefaultScale = 1;
         fontFixed = "monospace";
         fontFixedScale = 1;
-        panelBackgroundOpacity = 1;
+        panelBackgroundOpacity = 0.8;
         panelsAttachedToBar = true;
         settingsPanelMode = "attached";
         tooltipsEnabled = true;
         wifiDetailsViewMode = "grid";
       };
       wallpaper = {
-        # bye bye
-        enabled = false;
+        enabled = true;
+        overviewEnabled = true;
+        overviewBlur = 0.5;
+        overviewTint = 0.3;
+      };
+      shell = {
+        greeter_sync = {
+          auto_sync = true;
+        };
       };
     };
   };

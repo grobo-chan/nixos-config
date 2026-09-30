@@ -36,7 +36,7 @@
   environment.etc = {
     "nixos/nixpkgs".source = builtins.storePath pkgs.path;
   };
-  nix.nixPath = [
+  nix.settings.nix-path = [
     "nixpkgs=/etc/nixos/nixpkgs"
   ];
 

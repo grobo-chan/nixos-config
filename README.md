@@ -28,6 +28,7 @@ https://en.wikipedia.org/wiki/Moons_of_Jupiter#List
     - [x] Kitty
     - [x] Niri
     - [x] Noctalia
+      - [ ] TODO: Replace with Hjem Module
     - [x] Helix
 
 - [ ] Ricing/Customization
