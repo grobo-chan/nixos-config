@@ -11,9 +11,16 @@
     enable = true;
 
     settings = {
-      wallpaper = {
+      wallpaper = rec {
         enabled = true;
         directory = "${config.hj.directory}/Pictures/Wallpapers";
+        default.path = "${directory}/default.jpg";
+        automation = {
+          enabled = true;
+          interval_seconds = 1800;
+          order = "random";
+          recursive = true;
+        };
       };
       backdrop = {
         enabled = true;
