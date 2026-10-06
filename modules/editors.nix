@@ -36,5 +36,17 @@
 
   environment.systemPackages = with pkgs; [
     obsidian
+    godot
   ];
+
+  persistance.user = {
+    directories = [
+      ".config/obsidian"
+      ".config/godot"
+      ".local/share/godot"
+    ];
+    cache.directories = [
+      ".cache/godot"
+    ];
+  };
 }
