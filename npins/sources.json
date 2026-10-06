@@ -9,9 +9,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "2a5627f5bb3754a27c6b6afb2fad73a5c171a473",
-      "url": "https://github.com/nadimkobeissi/16iax10h-linux-sound-saga/archive/2a5627f5bb3754a27c6b6afb2fad73a5c171a473.tar.gz",
-      "hash": "sha256-faskQgEdma90zifT/xcuefOTJ/Scx6TQfKcSVEtL/cU="
+      "revision": "36feef83b174e7bc47ba2396c8362a955bc26d8a",
+      "url": "https://github.com/nadimkobeissi/16iax10h-linux-sound-saga/archive/36feef83b174e7bc47ba2396c8362a955bc26d8a.tar.gz",
+      "hash": "sha256-2lNJ1ozgJf4ducSc8g1cgrQ+oHJ0I8Ad+2ZcaJMz5t8="
     },
     "delta-no-override-tilde.patch": {
       "type": "MutableUrl",
@@ -55,9 +55,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "cef02450f2c18a7e2b9297ea8d366f9a597254f7",
-      "url": "https://github.com/feel-co/hjem/archive/cef02450f2c18a7e2b9297ea8d366f9a597254f7.tar.gz",
-      "hash": "sha256-tycoVCB2KSVdy9ERT1lJGHdP9Hf4FHanaEY25hUxylw="
+      "revision": "2b155694ce412300f240de06735c93779f9e19a4",
+      "url": "https://github.com/feel-co/hjem/archive/2b155694ce412300f240de06735c93779f9e19a4.tar.gz",
+      "hash": "sha256-JdmZVrzGDRRcOAwsYujnE7f/d1YZ9Xtk4z/1MWmQXxM="
     },
     "nixos-hardware": {
       "type": "Git",
@@ -76,8 +76,8 @@
       "type": "Channel",
       "name": "nixpkgs-unstable",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1085727.8c6b39505383/nixexprs.tar.xz",
-      "hash": "sha256-FlkIecEaptr60mewZ/3SWP1CPKa1CpAwD3Xd8pL1bPk="
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1085827.aa48d3470809/nixexprs.tar.xz",
+      "hash": "sha256-R4B+RRYmze9htmPZ8xeF19mchTSH99GdaqanKCW8CF8="
     },
     "noctalia": {
       "type": "Git",
@@ -88,9 +88,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "e639a87e811ad3268c73f6d5e77669c94184ba15",
-      "url": "https://github.com/noctalia-dev/noctalia/archive/e639a87e811ad3268c73f6d5e77669c94184ba15.tar.gz",
-      "hash": "sha256-R+cq28uDVDRY//7BjWXh/oKGv+yIrDsuFJJX9H41yEo="
+      "revision": "4237bc286bb9db7fec8ba663bfc42779af9b1372",
+      "url": "https://github.com/noctalia-dev/noctalia/archive/4237bc286bb9db7fec8ba663bfc42779af9b1372.tar.gz",
+      "hash": "sha256-ucUgpRWCvXd17/29C1rPYliLTz8mdNeOvsSGdtBGMAY="
     },
     "preservation": {
       "type": "Git",

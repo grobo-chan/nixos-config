@@ -44,7 +44,7 @@
   nix.registry.nixpkgs.flake = sources.nixpkgs;
 
   nix.settings = {
-    experimental-features = ["nix-command" "pipe-operator"];
+    experimental-features = ["nix-command" "flakes" "pipe-operator"];
     trusted-users = ["root" "@wheel"];
 
     extra-substituters = [
