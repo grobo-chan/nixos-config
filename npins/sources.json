@@ -68,16 +68,16 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "31cc5f4d9b9ba601071e8b8504601b9b176e2756",
-      "url": "https://github.com/NixOS/nixos-hardware/archive/31cc5f4d9b9ba601071e8b8504601b9b176e2756.tar.gz",
-      "hash": "sha256-rlsYY/Dg/LhbIj51Aa6TLvRpZeb3KZgUTd7llQ5XcJE="
+      "revision": "4bc63156b109ee7b4103e3ec30565c8c92bde435",
+      "url": "https://github.com/NixOS/nixos-hardware/archive/4bc63156b109ee7b4103e3ec30565c8c92bde435.tar.gz",
+      "hash": "sha256-c3oMt0QoE+4yiRk6u1m2L9ogjaUw0uTGn9yk808KkgE="
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1085827.aa48d3470809/nixexprs.tar.xz",
-      "hash": "sha256-R4B+RRYmze9htmPZ8xeF19mchTSH99GdaqanKCW8CF8="
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1087089.39ad350a0602/nixexprs.tar.xz",
+      "hash": "sha256-/4ezBOv6aldGab7qTb6ls3SDpgzG8kuuSqEAA9zEZ8E="
     },
     "noctalia": {
       "type": "Git",
@@ -88,9 +88,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "4237bc286bb9db7fec8ba663bfc42779af9b1372",
-      "url": "https://github.com/noctalia-dev/noctalia/archive/4237bc286bb9db7fec8ba663bfc42779af9b1372.tar.gz",
-      "hash": "sha256-ucUgpRWCvXd17/29C1rPYliLTz8mdNeOvsSGdtBGMAY="
+      "revision": "fbf410e26592091614c1c0d2c21e9702150e0b67",
+      "url": "https://github.com/noctalia-dev/noctalia/archive/fbf410e26592091614c1c0d2c21e9702150e0b67.tar.gz",
+      "hash": "sha256-uGxd5qjR958lfB5TtmiPuHyTTQxk2izO8/AkagcwB5g="
     },
     "preservation": {
       "type": "Git",
@@ -127,9 +127,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "1db3c116a6aa61823f8d8f3c47c306846428fc54",
-      "url": "https://github.com/nix-community/nix-wrapper-modules/archive/1db3c116a6aa61823f8d8f3c47c306846428fc54.tar.gz",
-      "hash": "sha256-7xWS16u13YGlRNKWaAPzRbEyh4OLOXJe31k7h4AnXNU="
+      "revision": "d82c328c504648fa952f25fac8332319eb425d4c",
+      "url": "https://github.com/nix-community/nix-wrapper-modules/archive/d82c328c504648fa952f25fac8332319eb425d4c.tar.gz",
+      "hash": "sha256-PwiSn1VO3/6BD/Gxw/3Ei2sPB3SccyKyJ7nD72Y+WU4="
     },
     "zen-browser": {
       "type": "Url",

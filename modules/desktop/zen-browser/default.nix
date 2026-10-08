@@ -27,16 +27,11 @@
 in {
   nixpkgs.overlays = [
     (final: prev: {
-      zen-browser = pkgs.callPackage ./package.nix {
+      zen-browser-unwrapped = pkgs.callPackage ./package.nix {
         inherit sources;
       };
-    })
-  ];
-
-  environment.systemPackages = [
-    (
-      pkgs.wrapFirefox pkgs.zen-browser
-      {
+      
+      zen-browser = pkgs.wrapFirefox pkgs.zen-browser-unwrapped {
         extraPrefs = lib.concatLines (
           lib.mapAttrsToList (
             name: value: ''lockPref(${lib.strings.toJSON name}, ${lib.strings.toJSON value});''
@@ -78,8 +73,12 @@ in {
             ];
           };
         };
-      }
-    )
+      };
+    })
+  ];
+
+  environment.systemPackages = [
+    pkgs.zen-browser
   ];
 
   environment.sessionVariables = {
