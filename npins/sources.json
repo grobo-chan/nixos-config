@@ -42,9 +42,9 @@
     },
     "helium": {
       "type": "Url",
-      "url": "https://github.com/imputnet/helium-linux/releases/latest/download/helium-0.18.1.1-x86_64.AppImage",
+      "url": "https://github.com/imputnet/helium-linux/releases/download/0.19.2.1/helium-0.19.2.1-arm64.AppImage",
       "unpack": false,
-      "hash": "sha256-0eG5k9+/7gbp+Q6KKc1Y6HpHUZewT8BIdQYifDOFacs="
+      "hash": "sha256-1X5njYlqQrEB7v7BU//ClgoHSNNopq+8U9bE3hbMYDQ="
     },
     "hjem": {
       "type": "Git",
