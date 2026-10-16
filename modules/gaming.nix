@@ -47,6 +47,7 @@ in {
     ".local/share/Terraria"
     ".local/share/Paradox Interactive"
     ".local/share/Archipelago"
+    ".factorio"
   ];
 
   persistance.user.cache.directories = [

@@ -30,7 +30,7 @@ in {
       zen-browser-unwrapped = pkgs.callPackage ./package.nix {
         inherit sources;
       };
-      
+
       zen-browser = pkgs.wrapFirefox pkgs.zen-browser-unwrapped {
         extraPrefs = lib.concatLines (
           lib.mapAttrsToList (
