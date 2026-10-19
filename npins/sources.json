@@ -9,9 +9,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "65d988f775245b0506a66f57c31d1920b9fb4cad",
-      "url": "https://github.com/nadimkobeissi/16iax10h-linux-sound-saga/archive/65d988f775245b0506a66f57c31d1920b9fb4cad.tar.gz",
-      "hash": "sha256-9r1SxtRwCxz+3Lbega9dDkgJJZlMMI0/RWItZq6vpno="
+      "revision": "113031db46e1781ad55a2eafbcb284c2d7df9830",
+      "url": "https://github.com/nadimkobeissi/16iax10h-linux-sound-saga/archive/113031db46e1781ad55a2eafbcb284c2d7df9830.tar.gz",
+      "hash": "sha256-ZK6k6mpDXOglc9hPK460ylguXBRefkU17ESQfjWzBS4="
     },
     "delta-no-override-tilde.patch": {
       "type": "MutableUrl",
@@ -36,15 +36,28 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "725ea35e410ad83be4931d1bff7e090eacaf3563",
-      "url": "https://github.com/nix-community/disko/archive/725ea35e410ad83be4931d1bff7e090eacaf3563.tar.gz",
-      "hash": "sha256-uZkBR7yHdIKUFB5SZdfgh1qkGfI3XmYmI/lTiquxbck="
+      "revision": "cedd626e11b635470fa6f9fdb8ad79b0075dd7f9",
+      "url": "https://github.com/nix-community/disko/archive/cedd626e11b635470fa6f9fdb8ad79b0075dd7f9.tar.gz",
+      "hash": "sha256-3hSJlv8mUVnZPMWK2+CM7a9O+nR6Z4mCh27NfLCmTPc="
+    },
+    "grobo-hardware": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "grobo-chan",
+        "repo": "nixos-hardware"
+      },
+      "branch": "legion-16iax10h-fixes",
+      "submodules": false,
+      "revision": "6670a98a6d394f6d91242d64d5e0272292d87316",
+      "url": "https://github.com/grobo-chan/nixos-hardware/archive/6670a98a6d394f6d91242d64d5e0272292d87316.tar.gz",
+      "hash": "sha256-Yyw/6APenlyrcT70haTdCjzqdcNj7uvQfwosP6OaH0s="
     },
     "helium": {
       "type": "Url",
-      "url": "https://github.com/imputnet/helium-linux/releases/download/0.19.3.1/helium-0.19.3.1-x86_64.AppImage",
+      "url": "https://github.com/imputnet/helium-linux/releases/download/0.19.4.1/helium-0.19.4.1-x86_64.AppImage",
       "unpack": false,
-      "hash": "sha256-Rg5tKlyG0DkhYkItGyF6NmMb2DD40h5WUYyWAgl5eQY="
+      "hash": "sha256-Wy2zkrPth/JKqESTYFnWisqYvCBUjqqg3s+jwoCioKc="
     },
     "hjem": {
       "type": "Git",
@@ -55,9 +68,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "6b2cc57463bbbac3d7c61206ab365a2c928861a4",
-      "url": "https://github.com/feel-co/hjem/archive/6b2cc57463bbbac3d7c61206ab365a2c928861a4.tar.gz",
-      "hash": "sha256-Q5hGcKBaqz1L0neSRDfQgQPBKmSCkV1N5YBRwp+RtUc="
+      "revision": "4cd448d5b3220b8bbccdb6e7e8185b515f63a776",
+      "url": "https://github.com/feel-co/hjem/archive/4cd448d5b3220b8bbccdb6e7e8185b515f63a776.tar.gz",
+      "hash": "sha256-xj1hq1P05Lekx9tAtyJGSMFw8Z5oK4jh+n7Qr0Q1m5k="
     },
     "nixos-hardware": {
       "type": "Git",
@@ -68,16 +81,16 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "60a624466c08787ee8303393b7d4752d1826f14f",
-      "url": "https://github.com/NixOS/nixos-hardware/archive/60a624466c08787ee8303393b7d4752d1826f14f.tar.gz",
-      "hash": "sha256-BYhx89XJltnRyQeuDKHVL5eSqbbfAcOKuDts7QRsrxQ="
+      "revision": "1b418b8f203e49a92f250f8babdd19af1b6f7a7f",
+      "url": "https://github.com/NixOS/nixos-hardware/archive/1b418b8f203e49a92f250f8babdd19af1b6f7a7f.tar.gz",
+      "hash": "sha256-2UBK0jdmPANGaeAIoVOZY+hSPB2Gy13ZuZeSxP3vF8k="
     },
     "nixpkgs": {
       "type": "Channel",
-      "name": "nixpkgs-unstable",
+      "name": "nixos-unstable",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1092129.319e4cebef10/nixexprs.tar.xz",
-      "hash": "sha256-UwKRZKua8BOagYl0cou05BHtu7F6XV62FD2Hb+f0QYs="
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1097682.02c087f3fe67/nixexprs.tar.xz",
+      "hash": "sha256-ij8QUxzTOHovLrNOxVRx+RAhGQFOMsJbji0veiatH5k="
     },
     "noctalia": {
       "type": "Git",
@@ -88,9 +101,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "eeea6ff75cd71f9dbcd3acea6035449fefe3c71a",
-      "url": "https://github.com/noctalia-dev/noctalia/archive/eeea6ff75cd71f9dbcd3acea6035449fefe3c71a.tar.gz",
-      "hash": "sha256-OAXcxtszGBk6CSHFnqT0bpH+AovFgBYsJBMHEh50UsA="
+      "revision": "6423cc232e5b0900f28852b97f50d2836f4d39b7",
+      "url": "https://github.com/noctalia-dev/noctalia/archive/6423cc232e5b0900f28852b97f50d2836f4d39b7.tar.gz",
+      "hash": "sha256-uRWUwtNuhaFESC1wEqA652+9vM/OGumIxgIQuJ24rZI="
     },
     "preservation": {
       "type": "Git",
@@ -114,9 +127,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "44931708c62937c2b1bf7953902989fa5bb9ee1b",
-      "url": "https://github.com/Mic92/sops-nix/archive/44931708c62937c2b1bf7953902989fa5bb9ee1b.tar.gz",
-      "hash": "sha256-YU1LjDe1o2Ymg5zEiCHbmMXLkDCtxHQRiVqZ3nC5GGk="
+      "revision": "a1438ca361b05d1e70854d5495abcb34fdf6ff47",
+      "url": "https://github.com/Mic92/sops-nix/archive/a1438ca361b05d1e70854d5495abcb34fdf6ff47.tar.gz",
+      "hash": "sha256-r4G33ygU307QCwyngAS6E9BMhnCRPyZrL7UxRCMrqo0="
     },
     "wrappers": {
       "type": "Git",
@@ -127,9 +140,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "6bc32f5cc67ee0f1bfb246c47b4b2c53ba1bc014",
-      "url": "https://github.com/nix-community/nix-wrapper-modules/archive/6bc32f5cc67ee0f1bfb246c47b4b2c53ba1bc014.tar.gz",
-      "hash": "sha256-J3sKT3dVyCXlblkgzWc41cUZ4ezZbR5XZzfvETkAH78="
+      "revision": "e40208b34e08f764e6b972eb0ee919706e960eb2",
+      "url": "https://github.com/nix-community/nix-wrapper-modules/archive/e40208b34e08f764e6b972eb0ee919706e960eb2.tar.gz",
+      "hash": "sha256-rasFTcWJo7CdUaCFcxcDTnMWlY6WxZo/X6EsbEqgIpM="
     },
     "zen-browser": {
       "type": "Url",

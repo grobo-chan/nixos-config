@@ -7,19 +7,19 @@
     ./nh.nix
   ];
 
-  # nixpkgs.overlays = [
-  #   (final: prev: {
-  #     inherit
-  #       (prev.lixPackageSets.latest)
-  #       nixpkgs-review
-  #       nix-eval-jobs
-  #       nix-fast-build
-  #       colmena
-  #       ;
-  #   })
-  # ];
+  nixpkgs.overlays = [
+    (final: prev: {
+      inherit
+        (prev.lixPackageSets.latest)
+        nixpkgs-review
+        nix-eval-jobs
+        nix-fast-build
+        colmena
+        ;
+    })
+  ];
 
-  # nix.package = pkgs.lixPackageSets.latest.lix;
+  nix.package = pkgs.lixPackageSets.latest.lix;
 
   programs.direnv = {
     enable = true;
@@ -43,7 +43,7 @@
   nix.registry.nixpkgs.flake = sources.nixpkgs;
 
   nix.settings = {
-    experimental-features = ["nix-command" "flakes" "pipe-operators"];
+    experimental-features = ["nix-command" "flakes" "pipe-operator"];
     trusted-users = ["root" "@wheel"];
 
     extra-substituters = [

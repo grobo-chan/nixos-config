@@ -5,7 +5,6 @@
   ...
 }: {
   imports = with (import ../../modules); [
-    "${sources.nixos-hardware}/lenovo/legion/16iax10h"
     ./hardware-configuration.nix
     core
     desktop

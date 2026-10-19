@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     wireguard-tools
-    eddie
   ];
 
   networking.firewall = {

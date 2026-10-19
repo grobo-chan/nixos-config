@@ -9,8 +9,10 @@
     ];
   };
 
+  # Temporarily disabled
+  # Wait until: https://github.com/NixOS/nixpkgs/pull/575801 is merged
   services.open-webui = {
-    enable = true;
+    enable = false;
     environment = {
       ANONYMIZED_TELEMETRY = "False";
       DO_NOT_TRACK = "True";
