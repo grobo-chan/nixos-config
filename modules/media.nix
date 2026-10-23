@@ -1,4 +1,8 @@
-{pkgs, nix-wrappers, ...}: {
+{
+  pkgs,
+  nix-wrappers,
+  ...
+}: {
   imports = [
     (nix-wrappers.lib.getInstallModule {
       name = "mpv";
