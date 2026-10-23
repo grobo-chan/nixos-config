@@ -37,6 +37,7 @@
   environment.systemPackages = with pkgs; [
     obsidian
     godot
+    sqlitebrowser
   ];
 
   persistance.user = {

@@ -63,7 +63,6 @@
 
   environment.systemPackages = with pkgs; [
     # Nix tooling
-    nil
     nixd
     statix
     alejandra
