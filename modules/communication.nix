@@ -6,8 +6,8 @@
   environment.systemPackages = with pkgs; [
     (deltachat-desktop.overrideAttrs {
       patches = [
-        (sources."delta-no-override-tilde.patch" {inherit pkgs;})
-        (sources."delta-override-name.patch" {inherit pkgs;})
+        # (sources.delta-no-override-tilde-patch {inherit pkgs;})
+        # (sources.delta-override-name-patch {inherit pkgs;})
       ];
     })
     vesktop
