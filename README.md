@@ -20,7 +20,7 @@ https://en.wikipedia.org/wiki/Moons_of_Jupiter#List
   - [x] Pipewire
   - [x] SOPS
   - [x] Network Manager
-  - [x] Moving from flakes to npins
+  - [x] Tacks
   - [x] Hjem
     - [x] Noctalia
   - [x] Wrapped Programs for:
@@ -71,13 +71,13 @@ https://en.wikipedia.org/wiki/Moons_of_Jupiter#List
   - [x] KDE Connect
   - [x] Thunderbird
   - [ ] LibreOffice
-  - [ ] SyncThing
+  - [x] SyncThing
 
 # References n stuff
 
-Just a general list of shit I saw while I made this
-I may/may not be forgetting some
-Will keep updating (Hopefully)
+Just a general list of shit I saw while I made this <br />
+I may/may not be forgetting some <br />
+Will keep updating (Hopefully) 
 
 - [Vimjoyer's Niri + Noctalia Shell guide](https://youtu.be/aNgujRXDTdE)
 - [Saylesss88's Impermanence (BTRFS Encrypted) guide](https://saylesss88.github.io/installation/enc/encrypted_impermanence.html)
@@ -92,3 +92,9 @@ Will keep updating (Hopefully)
 - [Iynaix's Dotfiles](https://github.com/iynaix/dotfiles)
 - [Coca's quickstart on NPins](https://coca.codes/npins-nixos/)
 - [Tipson's guide on Flakes to NPins](https://tipson.xyz/posts/npins/#npins-instead-of-flakes)
+
+- [Tack's GitHub Readme](https://github.com/manic-systems/tack)
+
+  NOTE: For anyone planning on moving from NPins to Tacks (like how I did) it was pretty simple <br />
+  Just refer to the commits in [#9](https://github.com/grobo-chan/nixos-config/pull/9) it should be clear <br />
+  Explaining more in-depth is kinda beyond the scope of this README sorry <br />
