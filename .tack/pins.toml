@@ -42,7 +42,7 @@ type = "fetch"
 
 [inputs.tack]
 url = "gh:manic-systems/tack"
-type = "fetch"
+type = "flake"
 
 [inputs.helium]
 url = "https://github.com/imputnet/helium-linux/releases/download/{version}/helium-{version}-x86_64.AppImage"

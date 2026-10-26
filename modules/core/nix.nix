@@ -34,7 +34,7 @@
   programs.nix-ld.enable = true;
   programs.tack = {
     enable = true;
-    package = (pkgs.callPackage "${sources.tack}/nix/package.nix") {};
+    package = sources.tack.packages.${pkgs.stdenv.hostPlatform.system}.default;
     nixConfTokens = true;
   };
 
