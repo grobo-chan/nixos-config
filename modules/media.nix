@@ -12,9 +12,6 @@
 
   wrappers.mpv = {
     enable = true;
-    "mpv.conf".content = ''
-      sub-visibility=no
-    '';
   };
 
   environment.systemPackages = with pkgs; [
