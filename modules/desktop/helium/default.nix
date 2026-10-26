@@ -6,7 +6,8 @@
   nixpkgs.overlays = [
     (final: prev: {
       helium = pkgs.callPackage ./package.nix {
-        inherit sources;
+        inherit (sources._meta.helium) version;
+        src = sources.helium;
         flags = [
           "--restore-last-session"
           "--hide-crash-restore-bubble"
@@ -22,8 +23,6 @@
     extensions = [
       # JSON Viewer
       "gbdbademeighmnbliehmnoifmabbedbp"
-      # DDG Extension
-      "bkdgflcldnnnapblkhphbgpggdiikppg"
     ];
   };
 

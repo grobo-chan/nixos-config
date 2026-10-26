@@ -1,14 +1,13 @@
 # Adapted from: https://github.com/iynaix/dotfiles/blob/main/modules/gui/helium/_package.nix
 {
-  sources,
+  version,
+  src,
   lib,
   appimageTools,
   makeWrapper,
   flags ? [],
 }: let
   pname = "helium";
-  version = "latest";
-  src = sources.helium;
   appimageContents = appimageTools.extract {
     inherit pname version src;
   };

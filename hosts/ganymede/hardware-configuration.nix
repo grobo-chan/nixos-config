@@ -8,7 +8,7 @@
 }: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
-    "${sources.grobo-hardware}/lenovo/legion/16iax10h"
+    "${sources.nixos-hardware}/lenovo/legion/16iax10h"
     ./audio.nix
   ];
 

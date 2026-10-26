@@ -32,8 +32,6 @@
 
   boot = {
     consoleLogLevel = 4;
-    initrd.verbose = true;
-    initrd.systemd.enable = true;
     kernelParams = [
       "splash"
       "intremap=on"

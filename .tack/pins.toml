@@ -1,0 +1,69 @@
+[shorturls]
+gh = "github:{path}"
+
+[inputs.nixpkgs]
+url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"
+type = "fetch"
+patches = [
+  "https://github.com/NixOS/nixpkgs/pull/575468"
+]
+
+[inputs.nixos-hardware]
+url = "gh:NixOS/nixos-hardware"
+type = "fetch"
+
+[inputs.preservation]
+url = "gh:nix-community/preservation"
+type = "fetch"
+
+[inputs.sops-nix]
+url = "gh:Mic92/sops-nix"
+type = "fetch"
+
+[inputs.disko]
+url = "gh:nix-community/disko"
+type = "fetch"
+
+[inputs.wrappers]
+url = "gh:nix-community/nix-wrapper-modules"
+type = "fetch"
+
+[inputs.hjem]
+url = "gh:feel-co/hjem"
+type = "fetch"
+
+[inputs.noctalia]
+url = "gh:noctalia-dev/Noctalia"
+type = "fetch"
+
+[inputs.audio-16iax10h]
+url = "gh:nadimkobeissi/16iax10h-linux-sound-saga"
+type = "fetch"
+
+[inputs.tack]
+url = "github:manic-systems/tack"
+
+[inputs.helium]
+url = "https://github.com/imputnet/helium-linux/releases/download/{version}/helium-{version}-x86_64.AppImage"
+type = "fixed"
+tag = "{version}"
+unpack = "file"
+
+[inputs.zen-browser]
+url = "https://github.com/zen-browser/desktop/releases/download/{version}b/zen.linux-x86_64.tar.xz"
+type = "fixed"
+tag = "{version}b"
+
+[inputs.delta-no-override-tilde-patch]
+url = "https://coca.codes/plural-delta/patches/{version}/no-override-tilde.patch"
+type = "fixed"
+tag = "{version}"
+tags_from = "https://coca.codes/plural-delta/patches/"
+unpack = "file"
+
+[inputs.delta-override-name-patch]
+url = "https://coca.codes/plural-delta/patches/{version}/override-name.patch"
+type = "fixed"
+tag = "{version}"
+tags_from = "https://coca.codes/plural-delta/patches/"
+unpack = "file"

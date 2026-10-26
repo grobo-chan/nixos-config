@@ -1,6 +1,7 @@
 # Adapted from: https://github.com/youwen5/zen-browser-flake/blob/master/zen-browser-unwrapped.nix
 {
-  sources,
+  src,
+  version,
   stdenv,
   wrapGAppsHook3,
   autoPatchelfHook,
@@ -27,11 +28,10 @@
   policiesJson = writeText "firefox-policies.json" (builtins.toJSON {inherit policies;});
 in
   stdenv.mkDerivation (finalAttrs: {
-    version = "latest";
     pname = "zen-browser";
     applicationName = "Zen Browser";
 
-    src = sources.zen-browser;
+    inherit src version;
 
     nativeBuildInputs = [
       wrapGAppsHook3
