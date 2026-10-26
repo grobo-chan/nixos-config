@@ -31,16 +31,26 @@
     };
   };
 
+  programs.nix-ld.enable = true;
+  programs.tack = {
+    enable = true;
+    package = (pkgs.callPackage "${sources.tack}/nix/package.nix") {};
+    nixConfTokens = true;
+  };
+
   nix.channel.enable = false;
   environment.etc = {
     "nixos/nixpkgs".source = builtins.storePath pkgs.path;
   };
   nix.settings.nix-path = [
-    "nixpkgs=/etc/nixos/nixpkgs"
+    "nixpkgs=${sources.nixpkgs}"
   ];
 
   # make `nix run nixpkgs#nixpkgs` use the same nixpkgs as the one used by nixos.
-  nix.registry.nixpkgs.flake = sources.nixpkgs;
+  nix.registry.nixpkgs.to = {
+    type = "path";
+    path = sources.nixpkgs;
+  };
 
   nix.settings = {
     experimental-features = ["nix-command" "flakes" "pipe-operator"];
@@ -55,7 +65,6 @@
       "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
     ];
   };
-  programs.nix-ld.enable = true;
 
   persistance.user.files = [
     ".local/share/nix/trusted-settings.json"
@@ -68,6 +77,5 @@
     alejandra
     manix
     nix-inspect
-    npins
   ];
 }
