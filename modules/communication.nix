@@ -4,12 +4,14 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    (deltachat-desktop.overrideAttrs {
-      patches = [
-        # (sources.delta-no-override-tilde-patch {inherit pkgs;})
-        # (sources.delta-override-name-patch {inherit pkgs;})
-      ];
-    })
+    (deltachat-desktop.overrideAttrs (oldAttrs: {
+      patches =
+        (oldAttrs.patches or [])
+        ++ [
+          sources.delta-no-override-tilde-patch
+          sources.delta-override-name-patch
+        ];
+    }))
     vesktop
     thunderbird
   ];

@@ -41,7 +41,8 @@ url = "gh:nadimkobeissi/16iax10h-linux-sound-saga"
 type = "fetch"
 
 [inputs.tack]
-url = "github:manic-systems/tack"
+url = "gh:manic-systems/tack"
+type = "fetch"
 
 [inputs.helium]
 url = "https://github.com/imputnet/helium-linux/releases/download/{version}/helium-{version}-x86_64.AppImage"
