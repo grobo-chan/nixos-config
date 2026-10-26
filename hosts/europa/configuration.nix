@@ -8,7 +8,7 @@
     core
     desktop
     git
-    editors
+    media
     vnstat
     keepassxc
     syncthing
