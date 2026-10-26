@@ -23,6 +23,7 @@
     kde-connect
     virt-manager
     vnstat
+    syncthing
 
     # disko
     "${sources.disko}/module.nix"

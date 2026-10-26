@@ -11,6 +11,7 @@
     editors
     vnstat
     keepassxc
+    syncthing
 
     # disko
     "${sources.disko}/module.nix"

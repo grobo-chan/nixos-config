@@ -13,6 +13,7 @@
   ollama = import ./ollama.nix;
   podman = import ./podman.nix;
   ssh-server = import ./ssh-server.nix;
+  syncthing = import ./syncthing.nix;
   virt-manager = import ./virt-manager.nix;
   vnstat = import ./vnstat.nix;
   wireguard = import ./wireguard.nix;
