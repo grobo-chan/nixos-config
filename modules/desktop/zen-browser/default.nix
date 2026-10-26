@@ -28,7 +28,8 @@ in {
   nixpkgs.overlays = [
     (final: prev: {
       zen-browser-unwrapped = pkgs.callPackage ./package.nix {
-        inherit sources;
+        inherit (sources._meta.zen-browser) version;
+        src = sources.zen-browser;
       };
 
       zen-browser = pkgs.wrapFirefox pkgs.zen-browser-unwrapped {
@@ -44,8 +45,14 @@ in {
           ExtensionSettings = builtins.listToAttrs extensions;
 
           SearchEngines = {
-            Default = "ddg";
+            Default = "ddg-noai";
             Add = [
+              {
+                Name = "DuckDuckGo NoAI";
+                URLTemplate = "https://noai.duckduckgo.com/packages?query={searchTerms}";
+                IconURL = "https://duckduckgo.com/favicon.ico";
+                Alias = "@ddg-noai";
+              }
               {
                 Name = "nixpkgs packages";
                 URLTemplate = "https://search.nixos.org/packages?query={searchTerms}";
