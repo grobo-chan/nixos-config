@@ -5,7 +5,7 @@
 }: let
   homeDir =
     if config.persistance.enable
-    then "/persistent/${config.hj.directory}"
+    then "/persistent${config.hj.directory}"
     else "${config.hj.directory}";
   ageKeyPath = "${homeDir}/.config/sops/age/keys.txt";
 in {

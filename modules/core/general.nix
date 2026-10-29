@@ -21,12 +21,12 @@
         description = config.preferences.user.description;
         extraGroups = ["networkmanager" "wheel"];
         hashedPasswordFile = config.sops.secrets.user_password.path;
-        initialPassword = "password";
+        password = "password";
       };
 
       root = {
         hashedPasswordFile = config.sops.secrets.root_password.path;
-        initialPassword = "password";
+        password = "password";
       };
     };
   };
