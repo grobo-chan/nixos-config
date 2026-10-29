@@ -5,7 +5,8 @@ gh = "github:{path}"
 url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"
 type = "fetch"
 patches = [
-  "https://github.com/NixOS/nixpkgs/pull/575468"
+  "https://github.com/NixOS/nixpkgs/pull/575468",
+  "https://github.com/NixOS/nixpkgs/pull/579694"
 ]
 
 [inputs.nixos-hardware]
