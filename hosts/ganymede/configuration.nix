@@ -2,6 +2,7 @@
   pkgs,
   lib,
   sources,
+  hostName,
   ...
 }: {
   imports = with (import ../../modules); [
@@ -78,8 +79,10 @@
   environment.systemPackages = [pkgs.sbctl];
   persistance.sys.directories = ["/var/lib/sbctl"];
 
-  networking.hostName = "ganymede";
-  networking.networkmanager.enable = true;
+  networking = {
+    inherit hostName;
+    networkmanager.enable = true;
+  };
 
   services.printing.enable = true;
 

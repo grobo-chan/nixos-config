@@ -1,6 +1,7 @@
 {
   config,
   nix-wrappers,
+  hostName,
   ...
 }: {
   imports = [
@@ -13,7 +14,7 @@
   wrappers.nh = {
     env = {
       "NH_FILE" = "${config.hj.directory}/.config/nixos/system.nix";
-      "NH_ATTRP" = config.networking.hostName;
+      "NH_ATTRP" = hostName;
     };
   };
 

@@ -62,4 +62,10 @@
       tldr
     ];
   };
+
+  persistance.user.directories = [
+    ".local/share/zoxide"
+    ".local/share/direnv"
+    ".local/share/fish"
+  ];
 }

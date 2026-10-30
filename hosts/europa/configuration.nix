@@ -1,6 +1,7 @@
 {
   sources,
   pkgs,
+  hostName,
   ...
 }: {
   imports = with (import ../../modules); [
@@ -61,8 +62,10 @@
   environment.systemPackages = [pkgs.sbctl];
   persistance.sys.directories = ["/var/lib/sbctl"];
 
-  networking.hostName = "europa";
-  networking.networkmanager.enable = true;
+  networking = {
+    inherit hostName;
+    networkmanager.enable = true;
+  };
 
   hardware.enableRedistributableFirmware = true;
 

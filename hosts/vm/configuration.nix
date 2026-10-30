@@ -1,6 +1,7 @@
 {
   sources,
   pkgs,
+  hostName,
   ...
 }: {
   imports = with (import ../../modules); [
@@ -9,8 +10,6 @@
     desktop
     editors
     git
-
-    # server stuff
     ssh-server
     vnstat
 
@@ -26,7 +25,7 @@
     enable = true;
     nukeRoot = {
       enable = true;
-      volumeGroup = "mapper/cryptroot";
+      volumeGroup = "vda3";
     };
   };
 
@@ -55,8 +54,10 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot";
 
-  networking.hostName = "vm";
-  networking.networkmanager.enable = true;
+  networking = {
+    inherit hostName;
+    networkmanager.enable = true;
+  };
 
   hardware.enableRedistributableFirmware = true;
 

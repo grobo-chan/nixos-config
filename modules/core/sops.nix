@@ -19,6 +19,14 @@ in {
     age.sshKeyPaths = [];
   };
 
+  sops.secrets.user_password.neededForUsers = true;
+  sops.secrets.root_password.neededForUsers = true;
+
+  users.users = {
+    ${config.preferences.user.name}.hashedPasswordFile = config.sops.secrets.user_password.path;
+    root.hashedPasswordFile = config.sops.secrets.root_password.path;
+  };
+
   persistance.user.directories = [
     ".config/sops"
   ];

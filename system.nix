@@ -13,14 +13,14 @@ let
     |> pkgs.lib.filterAttrs (name: type: type == "directory")
     |> pkgs.lib.attrNames;
 in
-  pkgs.lib.genAttrs hosts (name:
+  pkgs.lib.genAttrs hosts (hostName:
     nixosSystem {
       inherit pkgs;
       specialArgs = {
-        inherit sources nix-wrappers;
+        inherit sources nix-wrappers hostName;
       };
 
       modules = [
-        ./hosts/${name}/configuration.nix
+        ./hosts/${hostName}/configuration.nix
       ];
     })

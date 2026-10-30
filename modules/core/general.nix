@@ -1,13 +1,18 @@
-{config, ...}: {
-  imports = [
-    ./hjem.nix
-    ./fish.nix
-    ./nix.nix
-    ./sops.nix
-  ];
-
-  sops.secrets.user_password.neededForUsers = true;
-  sops.secrets.root_password.neededForUsers = true;
+{
+  config,
+  lib,
+  hostName,
+  ...
+}: {
+  imports =
+    [
+      ./hjem.nix
+      ./fish.nix
+      ./nix.nix
+    ]
+    ++ lib.optionals (hostName != "vm") [
+      ./sops.nix
+    ];
 
   users = {
     mutableUsers =
@@ -20,13 +25,11 @@
         isNormalUser = true;
         description = config.preferences.user.description;
         extraGroups = ["networkmanager" "wheel"];
-        hashedPasswordFile = config.sops.secrets.user_password.path;
-        password = "password";
+        initialPassword = "password";
       };
 
       root = {
-        hashedPasswordFile = config.sops.secrets.root_password.path;
-        password = "password";
+        initialPassword = "password";
       };
     };
   };
@@ -39,10 +42,5 @@
     "Projects"
     ".config/nixos"
     ".ssh"
-
-    # TODO: Move
-    ".local/share/zoxide"
-    ".local/share/direnv"
-    ".local/share/fish"
   ];
 }
