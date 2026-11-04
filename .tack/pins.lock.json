@@ -2,7 +2,8 @@
   "$declared": {
     "audio-16iax10h": "github:nadimkobeissi/16iax10h-linux-sound-saga",
     "delta-no-override-tilde-patch": "https://coca.codes/plural-delta/patches/{version}/no-override-tilde.patch",
-    "delta-override-name-patch": "https://coca.codes/plural-delta/patches/{version}/override-name.patch",
+    "delta-persistent-pk-overriding-patch": "https://coca.codes/plural-delta/patches/{version}/persistent-pk-overriding.patch",
+    "delta-text-override-name-patch": "https://coca.codes/plural-delta/patches/{version}/text-override-name.patch",
     "disko": "github:nix-community/disko",
     "helium": "https://github.com/imputnet/helium-linux/releases/download/{version}/helium-{version}-x86_64.AppImage",
     "hjem": "github:feel-co/hjem",
@@ -25,19 +26,27 @@
   },
   "delta-no-override-tilde-patch": {
     "type": "fixed",
-    "url": "https://coca.codes/plural-delta/patches/2026-07-30/no-override-tilde.patch",
-    "sha256": "sha256-k/pFH5i76rjQ474lH63CPRoeLpolAbl5h+BFBMPLnaQ=",
+    "url": "https://coca.codes/plural-delta/patches/2026-10-29/no-override-tilde.patch",
+    "sha256": "sha256-dchTJS6XrxVvEdi66DRId8l+0OKrWB0sKZ6VQx9+xYY=",
     "unpack": "file",
-    "tag": "2026-07-30",
-    "version": "2026-07-30"
+    "tag": "2026-10-29",
+    "version": "2026-10-29"
   },
-  "delta-override-name-patch": {
+  "delta-persistent-pk-overriding-patch": {
     "type": "fixed",
-    "url": "https://coca.codes/plural-delta/patches/2026-07-30/override-name.patch",
-    "sha256": "sha256-wCTSl6ldRaCy72FsLIm0Y79ebAwR9AEAEBDGdHOoh0o=",
+    "url": "https://coca.codes/plural-delta/patches/2026-10-30/persistent-pk-overriding.patch",
+    "sha256": "sha256-zaz/DeFpWyre1eTB9AVYtTPg+hEqQFcizb2nbIhbwxo=",
     "unpack": "file",
-    "tag": "2026-07-30",
-    "version": "2026-07-30"
+    "tag": "2026-10-30",
+    "version": "2026-10-30"
+  },
+  "delta-text-override-name-patch": {
+    "type": "fixed",
+    "url": "https://coca.codes/plural-delta/patches/2026-10-30/text-override-name.patch",
+    "sha256": "sha256-A22+x9BrSY0uCRmHCQQH7kO52QYt+TwY0PKgu3Q47TA=",
+    "unpack": "file",
+    "tag": "2026-10-30",
+    "version": "2026-10-30"
   },
   "disko": {
     "type": "github",
@@ -49,38 +58,38 @@
   },
   "helium": {
     "type": "fixed",
-    "url": "https://github.com/imputnet/helium-linux/releases/download/0.20.2.1/helium-0.20.2.1-x86_64.AppImage",
-    "sha256": "sha256-rEkoQk0xyGP/86t1076HPfyS7eAOaIljTcvFiBoSA5c=",
+    "url": "https://github.com/imputnet/helium-linux/releases/download/0.20.3.1/helium-0.20.3.1-x86_64.AppImage",
+    "sha256": "sha256-H69Thkj+FKHqkuMlyxI4rojEeGZsteY9DSrxcP5MoDc=",
     "unpack": "file",
-    "tag": "0.20.2.1",
-    "version": "0.20.2.1"
+    "tag": "0.20.3.1",
+    "version": "0.20.3.1"
   },
   "hjem": {
     "type": "github",
     "owner": "feel-co",
     "repo": "hjem",
-    "rev": "d219ef55ab7311d884cf33e114561082fec95f34",
-    "narHash": "sha256-BohcZsIqBOd6YL6+jUkdM4GE+aQc72E6yrqVyt1z5X4=",
-    "lastModified": 1793026809
+    "rev": "8408642aa3035135fa6d70269dc93e0814e2a4f6",
+    "narHash": "sha256-hmlUXxCk6On7Hrop/TyS3//dgI2BLvaN4TEsOq1ma+Y=",
+    "lastModified": 1793333241
   },
   "nixos-hardware": {
     "type": "github",
     "owner": "NixOS",
     "repo": "nixos-hardware",
-    "rev": "b6754c901c21478fd8450d62101e712b2a4f0d75",
-    "narHash": "sha256-jGFe4xdrCw6xpgH2zgKwslACyt/NGuPwGILPEMFxmcQ=",
-    "lastModified": 1793236063
+    "rev": "04c6b94fa104bc23650983a4513aea196794d321",
+    "narHash": "sha256-/Zs18x+IW4LuVH0rKxra0WPRgsk0DQsi0Bwkf8sOC5c=",
+    "lastModified": 1793355509
   },
   "nixpkgs": {
     "type": "tarball",
-    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1103272.31ecbaca1bde/nixexprs.tar.xz?rev=31ecbaca1bdefa45dffc409f0250bd8039ea0010&lastModified=1793110635",
-    "rev": "31ecbaca1bdefa45dffc409f0250bd8039ea0010",
-    "narHash": "sha256-yXRSdZdZZqccEL+j11lc1gFG1f7V5j8N7oPBTHwf7n4=",
-    "lastModified": 1793110635,
+    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1107793.1d060086d60c/nixexprs.tar.xz?rev=1d060086d60cb76a40cf37109f979d88a5bd6396&lastModified=1793726008",
+    "rev": "1d060086d60cb76a40cf37109f979d88a5bd6396",
+    "narHash": "sha256-iNjybNORi/2+shilhMlkNr01UHWKOHRGzQyIyvobs9o=",
+    "lastModified": 1793726008,
     "patched": {
-      "path": "/nix/store/cbn478cq1p91pjg24mwrxp03is1ylgki-source",
-      "narHash": "sha256-FwxO+vAvmAkt2velKh8nZlXHfc/xO7S3C+htMJSMX4M=",
-      "lastModified": 1793110635,
+      "path": "/nix/store/k3n4s5f59n39bmclq7b9a0kzb54hpgxb-source",
+      "narHash": "sha256-pyWiQSWAXeTMWbZvH3hoe27bWj/7H1IF79VuI4F+LX0=",
+      "lastModified": 1793726008,
       "patches": [
         {
           "source": "https://github.com/NixOS/nixpkgs/pull/575468",
@@ -88,13 +97,6 @@
           "file": "patches/nixpkgs/pr-575468.patch",
           "sha256": "b1f42938d5c404c23b210342ef33332005205d34794ae27cf09ba6d805c38ab8",
           "head": "288945330387aef930af997b8f8a0d64e452606e"
-        },
-        {
-          "source": "https://github.com/NixOS/nixpkgs/pull/579694",
-          "url": "https://github.com/NixOS/nixpkgs/pull/579694",
-          "file": "patches/nixpkgs/pr-579694.patch",
-          "sha256": "9523d6a803d569d5652cd065eab162ab652caa0da8a13f4d07bd6057f9b139d5",
-          "head": "cdc7e24ab3e2534cf1637295bb0342db0321f62e"
         }
       ]
     }
@@ -103,9 +105,9 @@
     "type": "github",
     "owner": "noctalia-dev",
     "repo": "Noctalia",
-    "rev": "e4390429240b7c761c948289a87463ff9d5b18c4",
-    "narHash": "sha256-A4kvKDRsOW2zdLCHjRwJgzOKrpOg9XJgxsDdKG2jr90=",
-    "lastModified": 1793239480
+    "rev": "28f1702d2dfb349ced501d0d0ae106efa91bcefd",
+    "narHash": "sha256-2lmsYuJY3hor/9zPnwbe7VAdrShfpLguqZswMX8EbGk=",
+    "lastModified": 1793802327
   },
   "preservation": {
     "type": "github",
@@ -119,32 +121,32 @@
     "type": "github",
     "owner": "Mic92",
     "repo": "sops-nix",
-    "rev": "60182817ee048ac94b4c68ea76d5ef2e8aac730d",
-    "narHash": "sha256-Y/JIHTnMlOabDfyaSBubWGLDIVGihLEUuoMhFvQKaDo=",
-    "lastModified": 1793052255
+    "rev": "b18e01ce148eb3efff5de2f2d3181ca53b2b2a54",
+    "narHash": "sha256-GoOvpdsjO5hqZuO6T6ok9u6sJEjO0iPli2zRr9oNUNw=",
+    "lastModified": 1793657466
   },
   "tack": {
     "type": "github",
     "owner": "manic-systems",
     "repo": "tack",
-    "rev": "c5b02fb90d4ec5f74e90710e4d2aa335b1d6c280",
-    "narHash": "sha256-jIDNBwu9nXXu7iGWiQ9QpUIeC0IzloDdYuqvzlBfqr4=",
-    "lastModified": 1793235360
+    "rev": "4ec7cc54362fdc2aa062ccb38b5b826b31921261",
+    "narHash": "sha256-WFAX4R64cjol4+w1KPTTnq58qm5G/QXCInxLY1pIVIk=",
+    "lastModified": 1793758878
   },
   "wrappers": {
     "type": "github",
     "owner": "nix-community",
     "repo": "nix-wrapper-modules",
-    "rev": "41263424578dbbcdda3e80f9725449afcf9b3e70",
-    "narHash": "sha256-QmYgTfZxdZdO3CkMnYtK8Mxusp4LKNTHpdyjrza/3C8=",
-    "lastModified": 1793125706
+    "rev": "eb41f7cdde918a6467715b189cdadb6d476456c8",
+    "narHash": "sha256-0xLhR6xGbG2oC5RpJYf/o0Tl2nlUUh3H9pulE+ogK0k=",
+    "lastModified": 1793683960
   },
   "zen-browser": {
     "type": "fixed",
-    "url": "https://github.com/zen-browser/desktop/releases/download/1.23.4b/zen.linux-x86_64.tar.xz",
-    "sha256": "sha256-uoHdcK9w1kXy8KaS9/pFEPgZKQq/2NjmAnPT1aYNBTY=",
+    "url": "https://github.com/zen-browser/desktop/releases/download/1.24b/zen.linux-x86_64.tar.xz",
+    "sha256": "sha256-Mj8mguc+OCR6UfvMdeVijtK7m0BNsAz5zxavMpqRb64=",
     "unpack": "tarball",
-    "tag": "1.23.4b",
-    "version": "1.23.4"
+    "tag": "1.24b",
+    "version": "1.24"
   }
 }

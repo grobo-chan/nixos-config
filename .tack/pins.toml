@@ -5,8 +5,7 @@ gh = "github:{path}"
 url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"
 type = "fetch"
 patches = [
-  "https://github.com/NixOS/nixpkgs/pull/575468",
-  "https://github.com/NixOS/nixpkgs/pull/579694"
+  "https://github.com/NixOS/nixpkgs/pull/575468"
 ]
 
 [inputs.nixos-hardware]
@@ -63,8 +62,15 @@ tag = "{version}"
 tags_from = "https://coca.codes/plural-delta/patches/"
 unpack = "file"
 
-[inputs.delta-override-name-patch]
-url = "https://coca.codes/plural-delta/patches/{version}/override-name.patch"
+[inputs.delta-text-override-name-patch]
+url = "https://coca.codes/plural-delta/patches/{version}/text-override-name.patch"
+type = "fixed"
+tag = "{version}"
+tags_from = "https://coca.codes/plural-delta/patches/"
+unpack = "file"
+
+[inputs.delta-persistent-pk-overriding-patch]
+url = "https://coca.codes/plural-delta/patches/{version}/persistent-pk-overriding.patch"
 type = "fixed"
 tag = "{version}"
 tags_from = "https://coca.codes/plural-delta/patches/"
