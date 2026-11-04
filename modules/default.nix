@@ -1,10 +1,10 @@
 {
   core = import ./core;
   desktop = import ./desktop;
+  editors = import ./editors;
 
   communication = import ./communication.nix;
   creative = import ./creative.nix;
-  editors = import ./editors.nix;
   gaming = import ./gaming.nix;
   git = import ./git.nix;
   kde-connect = import ./kde-connect.nix;

@@ -1,5 +1,4 @@
 {
-  pkgs,
   nix-wrappers,
   lib,
   config,
@@ -7,7 +6,7 @@
 }: {
   imports = [
     (nix-wrappers.lib.getInstallModule {
-      name = "helix";
+        name = "helix";
       value = nix-wrappers.lib.wrapperModules.helix;
     })
   ];
@@ -19,6 +18,7 @@
       theme = "amberwood";
       editor = {
         line-number = "relative";
+        auto-format = true;
         mouse = false;
 
         cursor-shape = {
@@ -48,17 +48,25 @@
       language = [
         {
           name = "nix";
-          auto-format = true;
           language-servers = ["nixd"];
           formatter = {
             command = "alejandra";
             args = ["-q" "-"];
           };
+          auto-format = true;
         }
         {
           name = "python";
-          auto-format = true;
           language-servers = ["basedpyright" "ruff"];
+          auto-format = true;
+        }
+        {
+          name = "typescript";
+          auto-format = true;
+        }
+        {
+          name = "javascript";
+          auto-format = true;
         }
       ];
     };
@@ -66,22 +74,5 @@
 
   environment.sessionVariables = {
     EDITOR = lib.getExe config.wrappers.helix.wrapper;
-  };
-
-  environment.systemPackages = with pkgs; [
-    obsidian
-    godot
-    sqlitebrowser
-  ];
-
-  persistance.user = {
-    directories = [
-      ".config/obsidian"
-      ".config/godot"
-      ".local/share/godot"
-    ];
-    cache.directories = [
-      ".cache/godot"
-    ];
   };
 }

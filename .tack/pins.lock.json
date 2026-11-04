@@ -58,11 +58,11 @@
   },
   "helium": {
     "type": "fixed",
-    "url": "https://github.com/imputnet/helium-linux/releases/download/0.20.3.1/helium-0.20.3.1-x86_64.AppImage",
-    "sha256": "sha256-H69Thkj+FKHqkuMlyxI4rojEeGZsteY9DSrxcP5MoDc=",
+    "url": "https://github.com/imputnet/helium-linux/releases/download/0.21.1.1/helium-0.21.1.1-x86_64.AppImage",
+    "sha256": "sha256-pivECBuZcJsxFxZc96vnER07VEZxqxcjL0KbmwVEs/o=",
     "unpack": "file",
-    "tag": "0.20.3.1",
-    "version": "0.20.3.1"
+    "tag": "0.21.1.1",
+    "version": "0.21.1.1"
   },
   "hjem": {
     "type": "github",
@@ -76,9 +76,13 @@
     "type": "github",
     "owner": "NixOS",
     "repo": "nixos-hardware",
-    "rev": "04c6b94fa104bc23650983a4513aea196794d321",
-    "narHash": "sha256-/Zs18x+IW4LuVH0rKxra0WPRgsk0DQsi0Bwkf8sOC5c=",
-    "lastModified": 1793355509
+    "rev": "d645c71a58dbae3eb17ff551a07aea13a541cb1a",
+    "narHash": "sha256-DbFyxXHjP4SJDWVVIILkgrUZxj29cDusi8ULXoQGuZ8=",
+    "lastModified": 1793871777,
+    "archive": {
+      "hash": "sha256-oIreO5ND9C7IVgUBQfNULfK9z8emndz6eoc8SoA+OG0=",
+      "outHash": "sha256-OUvLHN3/TDeEKpGIUxdsCQ2nd6wzppFv7iB1cd18Sj8="
+    }
   },
   "nixpkgs": {
     "type": "tarball",
@@ -98,16 +102,21 @@
           "sha256": "b1f42938d5c404c23b210342ef33332005205d34794ae27cf09ba6d805c38ab8",
           "head": "288945330387aef930af997b8f8a0d64e452606e"
         }
-      ]
+      ],
+      "diff": "2476a33966afe212bb445e67619c2fe11b715de9660536eb601dec9d6fefda63"
     }
   },
   "noctalia": {
     "type": "github",
     "owner": "noctalia-dev",
     "repo": "Noctalia",
-    "rev": "28f1702d2dfb349ced501d0d0ae106efa91bcefd",
-    "narHash": "sha256-2lmsYuJY3hor/9zPnwbe7VAdrShfpLguqZswMX8EbGk=",
-    "lastModified": 1793802327
+    "rev": "2d64bbebfac0c4b7a007c71f7738f055e75c5e40",
+    "narHash": "sha256-kHzuI3w20vRDMZiohpp89zzuaYs67xOIyfBFIYhbhtQ=",
+    "lastModified": 1793880210,
+    "archive": {
+      "hash": "sha256-OevOpomme3wR6NHpWM8uzkI4RRF4vsDDM8ZSp8pPBzU=",
+      "outHash": "sha256-qBNXGoneBhca46pv0w9cz+h0g1AKkme8OiwSgR+JU9k="
+    }
   },
   "preservation": {
     "type": "github",
@@ -129,17 +138,21 @@
     "type": "github",
     "owner": "manic-systems",
     "repo": "tack",
-    "rev": "4ec7cc54362fdc2aa062ccb38b5b826b31921261",
-    "narHash": "sha256-WFAX4R64cjol4+w1KPTTnq58qm5G/QXCInxLY1pIVIk=",
-    "lastModified": 1793758878
+    "rev": "d50504eb3c803090b299ef02e45186269fc9135b",
+    "narHash": "sha256-8CFNpGShjQDBWIeUIy+DUi25zv5cGbkLHNq+/9ZgPlw=",
+    "lastModified": 1793840241
   },
   "wrappers": {
     "type": "github",
     "owner": "nix-community",
     "repo": "nix-wrapper-modules",
-    "rev": "eb41f7cdde918a6467715b189cdadb6d476456c8",
-    "narHash": "sha256-0xLhR6xGbG2oC5RpJYf/o0Tl2nlUUh3H9pulE+ogK0k=",
-    "lastModified": 1793683960
+    "rev": "fcac2fa0c16711ff7fd09176cb3842d0c0ca5183",
+    "narHash": "sha256-QUeRSbY+kr84e7b+zxIlyHMrHqr8SrMIeuAWNR3lMhY=",
+    "lastModified": 1793856116,
+    "archive": {
+      "hash": "sha256-dMrj7h62Hb6tARHSsm5yniHwbNb1zY8+ycqCU9KJKj4=",
+      "outHash": "sha256-gZ7dZYQtYa9vhKGek7Pf7apEcQdSspLDIBPbUKlHt+s="
+    }
   },
   "zen-browser": {
     "type": "fixed",

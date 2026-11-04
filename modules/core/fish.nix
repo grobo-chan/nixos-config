@@ -68,4 +68,8 @@
     ".local/share/direnv"
     ".local/share/fish"
   ];
+
+  persistance.user.files = [
+    ".config/hyfetch.json"
+  ];
 }
