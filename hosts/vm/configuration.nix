@@ -64,5 +64,7 @@
   services.qemuGuest.enable = true;
   services.spice-vdagentd.enable = true;
 
+  services.xserver.videoDrivers = ["qxl"];
+
   system.stateVersion = "25.11"; # DO NOT EDIT
 }

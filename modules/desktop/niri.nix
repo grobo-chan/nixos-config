@@ -3,6 +3,7 @@
   config,
   lib,
   pkgs,
+  hostName,
   ...
 }: {
   imports = [
@@ -21,7 +22,7 @@
     enable = true;
 
     settings = {
-      spawn-at-startup = [noctalia];
+      spawn-at-startup = [noctalia] ++ lib.optionals (hostName == "vm") [["spice-vdagent" "-x"]];
 
       xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
@@ -228,4 +229,10 @@
     package = config.wrappers.niri.wrapper;
     enable = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    xwayland-satellite
+    wl-clipboard
+    xclip
+  ];
 }
