@@ -110,12 +110,12 @@
     "type": "github",
     "owner": "noctalia-dev",
     "repo": "Noctalia",
-    "rev": "2d64bbebfac0c4b7a007c71f7738f055e75c5e40",
-    "narHash": "sha256-kHzuI3w20vRDMZiohpp89zzuaYs67xOIyfBFIYhbhtQ=",
-    "lastModified": 1793880210,
+    "rev": "aa73518bbd87e19350373aafcc2b950c5ca2a5c2",
+    "narHash": "sha256-/IVroB77K+lb91RoFcQT1AmB7+6+UzX4fBdUwZU1x8s=",
+    "lastModified": 1794001445,
     "archive": {
-      "hash": "sha256-OevOpomme3wR6NHpWM8uzkI4RRF4vsDDM8ZSp8pPBzU=",
-      "outHash": "sha256-qBNXGoneBhca46pv0w9cz+h0g1AKkme8OiwSgR+JU9k="
+      "hash": "sha256-Qg9M9K2ja8ofY6KTSrfmdi1KIkEF2gpTL5/IDeubHvE=",
+      "outHash": "sha256-j9Ycqz5Zgcw6RbjE7jq/FWbO/HrNA2SiEpgfK7sMhYM="
     }
   },
   "preservation": {
@@ -130,36 +130,40 @@
     "type": "github",
     "owner": "Mic92",
     "repo": "sops-nix",
-    "rev": "b18e01ce148eb3efff5de2f2d3181ca53b2b2a54",
-    "narHash": "sha256-GoOvpdsjO5hqZuO6T6ok9u6sJEjO0iPli2zRr9oNUNw=",
-    "lastModified": 1793657466
+    "rev": "89a234ce2daf6e568a7d4b4fe250afdd23d84e20",
+    "narHash": "sha256-ZlE4BtMjWhfC6rFXLO9Qimn36Ene1INqCgKDDvazjhc=",
+    "lastModified": 1793995029,
+    "archive": {
+      "hash": "sha256-Td6pkB5g9EIjrrAGkasfn2UN2/+vUXameLzxahyjhO4=",
+      "outHash": "sha256-fPdxpkqJ0JA1zxAlYXuOZovjTz+RjTWZifcSNodkyQo="
+    }
   },
   "tack": {
     "type": "github",
     "owner": "manic-systems",
     "repo": "tack",
-    "rev": "d50504eb3c803090b299ef02e45186269fc9135b",
-    "narHash": "sha256-8CFNpGShjQDBWIeUIy+DUi25zv5cGbkLHNq+/9ZgPlw=",
-    "lastModified": 1793840241
+    "rev": "8162a7e9d098f6ea0fc00404014a732b8e768da8",
+    "narHash": "sha256-dMyQFIkLF3f0sQFMSzlEWFZV2q4SG5Zrdbon5fbCbdA=",
+    "lastModified": 1793888518
   },
   "wrappers": {
     "type": "github",
     "owner": "nix-community",
     "repo": "nix-wrapper-modules",
-    "rev": "fcac2fa0c16711ff7fd09176cb3842d0c0ca5183",
-    "narHash": "sha256-QUeRSbY+kr84e7b+zxIlyHMrHqr8SrMIeuAWNR3lMhY=",
-    "lastModified": 1793856116,
+    "rev": "6361961599683bc751e752add968337cfd5add27",
+    "narHash": "sha256-Ld7/0G/duRjHXon9Okjg1Pl9WwCas1oC2nLBOXpNw60=",
+    "lastModified": 1794032874,
     "archive": {
-      "hash": "sha256-dMrj7h62Hb6tARHSsm5yniHwbNb1zY8+ycqCU9KJKj4=",
-      "outHash": "sha256-gZ7dZYQtYa9vhKGek7Pf7apEcQdSspLDIBPbUKlHt+s="
+      "hash": "sha256-J6pmdA60CHUpf/I9G3fdMoqrM2GpixAcXMnczruX8Lo=",
+      "outHash": "sha256-AVPZ1yBP+ODqBKsKLywnNuRkpndGBMKwewu1Fdd8m80="
     }
   },
   "zen-browser": {
     "type": "fixed",
-    "url": "https://github.com/zen-browser/desktop/releases/download/1.24b/zen.linux-x86_64.tar.xz",
-    "sha256": "sha256-Mj8mguc+OCR6UfvMdeVijtK7m0BNsAz5zxavMpqRb64=",
+    "url": "https://github.com/zen-browser/desktop/releases/download/1.24.1b/zen.linux-x86_64.tar.xz",
+    "sha256": "sha256-xZKjH+j6pd3+kdYkO1DDEH4YMcEkdTn+A8wE8P1cuc0=",
     "unpack": "tarball",
-    "tag": "1.24b",
-    "version": "1.24"
+    "tag": "1.24.1b",
+    "version": "1.24.1"
   }
 }
