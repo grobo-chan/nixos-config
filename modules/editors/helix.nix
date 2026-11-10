@@ -6,7 +6,7 @@
 }: {
   imports = [
     (nix-wrappers.lib.getInstallModule {
-        name = "helix";
+      name = "helix";
       value = nix-wrappers.lib.wrapperModules.helix;
     })
   ];
@@ -43,6 +43,29 @@
           command = "ruff";
           args = ["server"];
         };
+
+        typescript-language-server = {
+          command = "typescript-language-server";
+          args = ["--stdio"];
+          required-root-patterns = ["package.json"];
+          config.plugins = [
+            {
+              name = "@vue/typescript-plugin";
+              location = "./node_modules/@vue/typescript-plugin";
+              languages = ["vue"];
+            }
+          ];
+        };
+
+        vue-language-server = {
+          command = "vue-language-server";
+          args = ["--stdio"];
+        };
+
+        emmet-lsp = {
+          command = "emmet-language-server";
+          args = ["--stdio"];
+        };
       };
 
       language = [
@@ -63,10 +86,47 @@
         {
           name = "typescript";
           auto-format = true;
+          language-servers = ["typescript-language-server"];
+          formatter = {
+            command = "prettier";
+            args = ["--parser" "typescript"];
+          };
         }
         {
           name = "javascript";
           auto-format = true;
+          language-servers = ["typescript-language-server"];
+          formatter = {
+            command = "prettier";
+            args = ["--parser" "javascript"];
+          };
+        }
+        {
+          name = "vue";
+          auto-format = true;
+          language-servers = ["vue-language-server" "typescript-language-server" "emmet-lsp"];
+          formatter = {
+            command = "prettier";
+            args = ["--parser" "vue"];
+          };
+        }
+        {
+          name = "html";
+          auto-format = true;
+          language-servers = ["vscode-html-language-server" "emmet-lsp"];
+          formatter = {
+            command = "prettier";
+            args = ["--parser" "html"];
+          };
+        }
+        {
+          name = "css";
+          auto-format = true;
+          language-servers = ["vscode-css-language-server" "emmet-lsp"];
+          formatter = {
+            command = "prettier";
+            args = ["--parser" "css"];
+          };
         }
       ];
     };

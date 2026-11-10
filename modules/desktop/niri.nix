@@ -24,8 +24,6 @@
     settings = {
       spawn-at-startup = [noctalia] ++ lib.optionals (hostName == "vm") [["spice-vdagent" "-x"]];
 
-      xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
-
       window-rules = [
         {
           geometry-corner-radius = 20;
@@ -231,8 +229,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    xwayland-satellite
     wl-clipboard
-    xclip
   ];
 }

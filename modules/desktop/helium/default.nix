@@ -23,6 +23,8 @@
     extensions = [
       # JSON Viewer
       "gbdbademeighmnbliehmnoifmabbedbp"
+      # Vue.JS DevTools
+      "nhdogjmejiglipccpnnnanhbledajbpd"
     ];
   };
 
