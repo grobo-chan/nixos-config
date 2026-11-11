@@ -23,6 +23,7 @@
 
     settings = {
       spawn-at-startup = [noctalia] ++ lib.optionals (hostName == "vm") [["spice-vdagent" "-x"]];
+      xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
       window-rules = [
         {
@@ -34,7 +35,6 @@
         }
         {
           matches = [
-            {app-id = "zen";}
             {app-id = "kitty";}
           ];
           background-effect = {

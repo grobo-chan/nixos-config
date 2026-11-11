@@ -15,8 +15,8 @@
   prefs = {
     "extensions.autoDisableScopes" = 0;
     "extensions.pocket.enabled" = false;
-    "browser.tabs.allow_transparent_browser" = true;
-    "zen.widget.linux.transparency" = true;
+    "browser.tabs.allow_transparent_browser" = false;
+    "zen.widget.linux.transparency" = false;
     "zen.view.grey-out-inactive-windows" = false;
   };
 
